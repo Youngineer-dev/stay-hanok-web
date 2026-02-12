@@ -8,7 +8,6 @@
       name="description"
       content="서촌의 정취를 담은 독채 한옥 스테이. 고즈넉한 마당과 현대적인 편안함이 공존하는 공간입니다."
     />
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Swiper CSS -->
@@ -16,8 +15,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-
-    <!-- Open Graph -->
     <meta property="og:title" content="서촌별곡 - Hanok Stay" />
     <meta
       property="og:image"
@@ -25,18 +22,16 @@
     />
   </head>
   <body>
-    <!-- Header Placeholder -->
     <div id="header-placeholder"></div>
 
-    <!-- Main Content -->
     <main>
-      <!-- Hero Section -->
       <section class="hero">
         <div class="swiper hero-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <div class="hero-overlay"></div>
               <img
-                src="https://placehold.co/1920x1080/4a3b32/ffffff?text=Hanok+Exterior"
+                src="https://placehold.co/1920x1080/4a3b32/ffffff?text=Hanok+Courtyard+Sunset"
                 alt="Hanok Exterior"
                 class="hero-img"
               />
@@ -47,8 +42,9 @@
               </div>
             </div>
             <div class="swiper-slide">
+              <div class="hero-overlay"></div>
               <img
-                src="https://placehold.co/1920x1080/5f4b3a/ffffff?text=Cozy+Interior"
+                src="https://placehold.co/1920x1080/5f4b3a/ffffff?text=Premium+Interior"
                 alt="Cozy Interior"
                 class="hero-img"
               />
@@ -63,124 +59,112 @@
         </div>
       </section>
 
-      <!-- Intro Section (About) -->
-      <section class="intro container text-center">
-        <span class="section-subtitle">About Us</span>
-        <h2 class="section-title">도심 속 여유를<br />선물합니다</h2>
-        <p
-          style="
-            max-width: 600px;
-            margin: 0 auto;
-            margin-bottom: 2rem;
-            color: var(--color-text-sub);
-          "
-        >
-          서촌별곡은 1930년대 지어진 개량 한옥을 현대적으로 재해석한 공간입니다.
-          서까래의 따스함과 황토의 숨결을 그대로 간직한 채, 머무시는 분들의
-          편안함을 최우선으로 생각했습니다.
-        </p>
-        <div class="features-grid">
-          <div class="feature-card">
-            <h3>Private</h3>
-            <p>오직 한 팀만을 위한<br />독채 스테이</p>
-          </div>
-          <div class="feature-card">
-            <h3>Relax</h3>
-            <p>히노끼탕에서 즐기는<br />따뜻한 족욕</p>
-          </div>
-          <div class="feature-card">
-            <h3>Experience</h3>
-            <p>다도 세트와 함께하는<br />차 한잔의 여유</p>
+      <section class="intro">
+        <div class="container text-center fade-up">
+          <span class="section-subtitle">About Us</span>
+          <h2 class="section-title">도심 속 여유를<br />선물합니다</h2>
+          <p
+            style="
+              max-width: 600px;
+              margin: 0 auto;
+              margin-bottom: 2rem;
+              color: var(--color-text-sub);
+              font-size: 1.1rem;
+            "
+          >
+            서촌별곡은 1930년대 지어진 개량 한옥을 현대적으로 재해석한
+            공간입니다. 서까래의 따스함과 황토의 숨결을 그대로 간직한 채,
+            머무시는 분들의 편안함을 최우선으로 생각했습니다.
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card fade-up">
+              <h3>Private</h3>
+              <p>오직 한 팀만을 위한<br />프라이빗 독채 스테이</p>
+            </div>
+            <div class="feature-card fade-up">
+              <h3>Relax</h3>
+              <p>히노끼탕에서 즐기는<br />따뜻한 족욕과 힐링</p>
+            </div>
+            <div class="feature-card fade-up">
+              <h3>Experience</h3>
+              <p>다도 세트와 함께하는<br />차 한잔의 여유</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Room Preview -->
-      <section
-        class="room-preview"
-        style="background-color: var(--color-bg-section)"
-      >
+      <section class="room-preview">
         <div class="container">
-          <div class="text-center">
+          <div class="text-center fade-up">
             <span class="section-subtitle">Rooms</span>
             <h2 class="section-title">머무름의 미학</h2>
           </div>
 
-          <div class="room-card-large">
+          <div class="room-card-large fade-up">
             <div class="room-img-wrapper">
               <img
-                src="https://placehold.co/800x600/8c7b6c/ffffff?text=Main+Bedroom"
+                src="https://placehold.co/1200x800/8c7b6c/ffffff?text=Master+Bedroom+View"
                 alt="Main Bedroom"
               />
             </div>
             <div class="room-info">
               <h3>안채 (Main Room)</h3>
-              <p>
+              <p style="margin-bottom: 2rem; color: var(--color-text-sub)">
                 따스한 햇살이 들어오는 침실과 넓은 대청마루가 있는 메인
-                공간입니다.
+                공간입니다. 가장 한국적인 아름다움을 현대적인 감각으로
+                풀어냈습니다.
               </p>
-              <ul class="room-specs">
-                <li>퀸 사이즈 침대 1</li>
-                <li>다도 공간</li>
-                <li>빔 프로젝터</li>
-              </ul>
               <a href="rooms.html" class="btn-outline">자세히 보기</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Location/Map -->
-      <section class="location container">
+      <section class="location container fade-up">
         <div class="text-center">
           <span class="section-subtitle">Location</span>
           <h2 class="section-title">오시는 길</h2>
         </div>
-        <!-- Interactive Map Placeholder -->
-        <div
-          id="map"
-          style="
-            width: 100%;
-            height: 400px;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-          "
-        >
-          <p>지도 영역 (네이버/카카오 지도 API 연동 예정)</p>
+        <div class="map-container custom-cursor">
+          <img
+            src="https://placehold.co/1200x600/e6e2d8/4a3b32?text=Map+Illustration"
+            alt="서촌별곡 약도"
+            class="static-map-img"
+          />
+          <div class="map-overlay">
+            <a
+              href="https://map.naver.com/v5/search/서촌별곡"
+              target="_blank"
+              class="btn"
+              >네이버 지도로 보기</a
+            >
+          </div>
         </div>
         <div class="location-details text-center">
-          <p><strong>주소:</strong> 서울특별시 종로구 자하문로 123-45</p>
-          <p><strong>주차:</strong> 인근 공영주차장 이용 (도보 3분)</p>
-          <div class="btn-group" style="margin-top: 1.5rem">
-            <a href="#" class="btn">네이버 지도 보기</a>
-            <a href="#" class="btn-outline">카카오맵 보기</a>
-          </div>
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem">
+            <strong>주소:</strong> 서울특별시 종로구 자하문로 123-45
+          </p>
         </div>
       </section>
     </main>
 
-    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
-
-    <!-- Scripts -->
     <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+    <!-- ADDED -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // Initialize Swiper
       const swiper = new Swiper(".hero-slider", {
         loop: true,
         effect: "fade",
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+        speed: 1500,
+        fadeEffect: { crossFade: true },
+        autoplay: { delay: 6000, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
       });
     </script>
   </body>

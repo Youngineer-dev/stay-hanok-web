@@ -5,40 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>부대시설 | 서촌별곡</title>
     <link rel="stylesheet" href="css/style.css" />
-
-    <style>
-      .special-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-        margin-top: 3rem;
-      }
-      .special-item img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        margin-bottom: 1.5rem;
-      }
-      @media (max-width: 768px) {
-        .special-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container" style="padding-top: 150px">
+      <section class="container fade-up" style="padding-top: 150px">
         <div class="text-center">
           <span class="section-subtitle">Special</span>
           <h2 class="section-title">특별함</h2>
-          <p>서촌별곡에서만 즐길 수 있는 특별한 경험들을 소개합니다.</p>
+          <p style="color: var(--color-text-sub)">
+            서촌별곡에서만 즐길 수 있는 특별한 경험들을 소개합니다.
+          </p>
         </div>
 
         <div class="special-grid">
-          <div class="special-item">
+          <div class="special-item fade-up">
             <img
               src="https://placehold.co/600x400/8c7b6c/ffffff?text=Hinoki+Bath"
               alt="히노끼탕"
@@ -46,7 +28,7 @@
             <h3>히노끼 족욕</h3>
             <p>여행의 피로를 풀어주는 편백나무 향 가득한 족욕 공간입니다.</p>
           </div>
-          <div class="special-item">
+          <div class="special-item fade-up">
             <img
               src="https://placehold.co/600x400/4a3b32/ffffff?text=Tea+Ceremony"
               alt="다도 체험"
@@ -54,7 +36,7 @@
             <h3>다도 체험</h3>
             <p>엄선된 찻잎과 다기 세트로 고요한 차의 시간을 가져보세요.</p>
           </div>
-          <div class="special-item">
+          <div class="special-item fade-up">
             <img
               src="https://placehold.co/600x400/5f4b3a/ffffff?text=Garden"
               alt="마당"
@@ -62,7 +44,7 @@
             <h3>작은 정원</h3>
             <p>사계절의 변화를 느낄 수 있는 프라이빗한 마당입니다.</p>
           </div>
-          <div class="special-item">
+          <div class="special-item fade-up">
             <img
               src="https://placehold.co/600x400/c7b299/ffffff?text=Beam+Projector"
               alt="빔 프로젝터"
@@ -76,5 +58,8 @@
 
     <div id="footer-placeholder"></div>
     <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+    <!-- ADDED -->
   </body>
 </html>

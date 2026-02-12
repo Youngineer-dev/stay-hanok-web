@@ -10,49 +10,78 @@
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container" style="padding-top: 150px">
+      <section class="container fade-up" style="padding-top: 150px">
         <div class="text-center">
-          <span class="section-subtitle">Access</span>
+          <span class="section-subtitle">Location</span>
           <h2 class="section-title">오시는 길</h2>
+          <p style="margin-bottom: 3rem; color: var(--color-text-sub)">
+            서촌의 고즈넉한 골목 끝자락,<br />
+            조용한 쉼터가 기다리고 있습니다.
+          </p>
         </div>
 
-        <!-- Map Placeholder -->
-        <div
-          style="
-            width: 100%;
-            height: 450px;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-          "
-        >
-          <p>지도 로딩 중... (실제 서비스 시 API 키 연동 필요)</p>
+        <!-- Static Map Image (No API Key Required) -->
+        <div class="map-container custom-cursor">
+          <img
+            src="https://placehold.co/1200x600/e6e2d8/4a3b32?text=Map+Illustration+(Design+Placeholder)"
+            alt="서촌별곡 약도"
+            class="static-map-img"
+          />
+          <div class="map-overlay">
+            <a
+              href="https://map.naver.com/v5/search/서촌별곡"
+              target="_blank"
+              class="btn"
+            >
+              네이버 지도로 보기
+            </a>
+          </div>
         </div>
 
-        <div
-          style="
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 4rem;
-          "
-        >
-          <div>
-            <h3>대중교통 이용 시</h3>
-            <p style="margin-top: 1rem; color: var(--color-text-sub)">
-              <strong>지하철:</strong> 3호선 경복궁역 2번 출구 (도보 10분)<br />
-              <strong>버스:</strong> 통인시장 종로구보건소 하차 (도보 3분)
+        <div class="features-grid" style="margin-top: 0">
+          <div class="feature-card fade-up">
+            <h3>Subway</h3>
+            <p style="margin-top: 0.5rem; line-height: 1.8">
+              <strong>3호선 경복궁역</strong><br />
+              2번 출구 도보 10분<br />
+              <span style="font-size: 0.9rem; color: #888"
+                >(자하문로 방향 직진)</span
+              >
             </p>
           </div>
-          <div>
-            <h3>자가용 이용 시</h3>
-            <p style="margin-top: 1rem; color: var(--color-text-sub)">
-              <strong>주소:</strong> 서울특별시 종로구 자하문로 123-45<br />
-              <strong>주차:</strong> 숙소 내 주차 불가, 인근 신교공영주차장 이용
-              권장
+          <div class="feature-card fade-up">
+            <h3>Bus</h3>
+            <p style="margin-top: 0.5rem; line-height: 1.8">
+              <strong>통인시장 종로구보건소</strong><br />
+              도보 3분<br />
+              <span style="font-size: 0.9rem; color: #888"
+                >(1020, 1711, 7016, 7018, 7022, 7212)</span
+              >
             </p>
+          </div>
+          <div class="feature-card fade-up">
+            <h3>Car / Parking</h3>
+            <p style="margin-top: 0.5rem; line-height: 1.8">
+              <strong>신교공영주차장</strong> 권장<br />
+              서울 종로구 자하문로 89<br />
+              <span style="font-size: 0.9rem; color: #888"
+                >(숙소 내 주차 불가 / 도보 5분 거리)</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center fade-up" style="margin-top: 4rem">
+          <p style="font-size: 1.1rem; margin-bottom: 1.5rem">
+            <strong>Address:</strong> 서울특별시 종로구 자하문로 123-45
+          </p>
+          <div class="btn-group">
+            <a
+              href="https://map.kakao.com/link/search/서촌별곡"
+              target="_blank"
+              class="btn-outline"
+              >카카오맵 바로가기</a
+            >
           </div>
         </div>
       </section>
@@ -60,5 +89,8 @@
 
     <div id="footer-placeholder"></div>
     <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+    <!-- ADDED -->
   </body>
 </html>
