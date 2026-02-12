@@ -65,6 +65,10 @@ body.loaded {
   opacity: 1; /* Fade in when JS adds this class */
 }
 
+body.menu-open {
+  overflow: hidden; /* Prevent scrolling when menu is open */
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -146,6 +150,210 @@ section {
   position: relative;
 }
 
+/* Header (Fixed & Solid Dark) */
+header {
+  height: var(--header-height);
+  background-color: #3e322b; /* Solid Dark Wood Color (Brand Primary) */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+  transition: all 0.4s ease;
+}
+
+header.scrolled,
+header.active {
+  height: 80px;
+  background-color: rgba(62, 50, 43, 0.98); /* Less transparent dark */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 2100;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-white); /* Always White for contrast */
+  z-index: 2100;
+  transition: color 0.4s ease;
+}
+
+/* No color change on scroll needed anymore as bg is dark */
+header.scrolled .logo,
+header.active .logo {
+  color: var(--color-white);
+}
+
+/* Desktop Navigation Menu (Visible) */
+.nav-menu {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85); /* Slightly muted white */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color 0.4s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+/* Underline Effect - Gold Accent */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: #d4c5b0; /* Gold/Beige Accent */
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* Scrolled State for Nav Links - Stay White */
+header.scrolled .nav-menu a,
+header.active .nav-menu a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+header.scrolled .nav-menu a:hover,
+header.active .nav-menu a:hover {
+  color: var(--color-white);
+}
+
+header.scrolled .nav-menu a::after,
+header.active .nav-menu a::after {
+  background-color: #d4c5b0;
+}
+
+/* Hide specific mobile elements on Desktop */
+.menu-toggle {
+  display: none !important;
+}
+.menu-overlay {
+  display: none !important;
+}
+
+/* Responsive: Show Hamburger & Hide Desktop Nav on Mobile */
+@media (max-width: 900px) {
+  .nav-menu {
+    display: none; /* Hide desktop links */
+  }
+
+  .menu-toggle {
+    display: flex !important; /* Show Hamburger */
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 2200;
+    margin-right: -10px;
+  }
+
+  .menu-toggle span {
+    background-color: var(--color-white); /* White lines always */
+    display: block;
+    height: 2px;
+    margin-bottom: 6px;
+    width: 25px;
+    transition: all 0.3s ease;
+  }
+
+  header.scrolled .menu-toggle span,
+  header.active .menu-toggle span {
+    background-color: var(--color-white); /* Keep white on scroll */
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    background-color: var(--color-white);
+  }
+  .menu-toggle.open span:nth-child(3) {
+    background-color: var(--color-white);
+  }
+
+  /* Mobile Overlay Menu (Re-using structure) */
+  .menu-overlay {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #3e322b; /* Dark Background for Mobile Menu too */
+    z-index: 1500;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    max-height: none; /* Reset desktop styles */
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  .menu-items a {
+    font-size: 1.5rem;
+    color: var(--color-white); /* White Text */
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .menu-items a:hover {
+    color: #d4c5b0; /* Gold Accent */
+  }
+
+  .menu-overlay.active .menu-items a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-info {
+  display: none;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -199,72 +407,6 @@ section {
 .btn-outline:hover {
   border-color: var(--color-primary);
   background-color: rgba(62, 50, 43, 0.03);
-}
-
-/* Header */
-header {
-  height: var(--header-height);
-  background-color: rgba(253, 251, 247, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-  transition:
-    height 0.3s ease,
-    background-color 0.3s ease;
-}
-
-header.scrolled {
-  height: 70px;
-  background-color: rgba(253, 251, 247, 0.95);
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.nav-links {
-  display: flex;
-  gap: 3.5rem;
-}
-
-.nav-links a {
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--color-text-main);
-  position: relative;
-  padding: 5px 0;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--color-primary);
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
 }
 
 /* Hero Section */
@@ -337,6 +479,15 @@ header .container {
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 3rem;
   font-weight: 300;
+}
+
+/* Intro Section (About) */
+.intro {
+  background-color: var(--color-bg-body); /* Ensure opaque background */
+  position: relative;
+  z-index: 20; /* Higher than hero content */
+  padding-top: 8rem; /* Extra spacing from Hero */
+  margin-top: -1px; /* Fix sub-pixel gaps */
 }
 
 /* Features Grid */
@@ -438,11 +589,23 @@ header .container {
   color: var(--color-accent);
 }
 
+/* Room Card Vertical Modifier */
+.room-card-vertical {
+  flex-direction: column !important;
+}
+
+.room-card-vertical .room-img-wrapper {
+  flex: none; /* Reset flex-grow/shrink */
+  width: 100%;
+  height: 400px; /* Reduced fixed height */
+}
+
 /* Map specific styles */
 .map-container {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 400px; /* Reduced height */
+
   overflow: hidden;
   border-radius: 4px;
   box-shadow: var(--shadow-soft);
@@ -479,7 +642,7 @@ header .container {
   transform: scale(1.05);
 }
 
-/* Special Grid (Facilities) */
+/* Special Grid */
 .special-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -488,7 +651,7 @@ header .container {
 }
 .special-item img {
   width: 100%;
-  height: 300px;
+  height: 250px; /* Reduced from 300px */
   object-fit: cover;
   margin-bottom: 1.5rem;
   transition: transform 0.5s ease;
@@ -497,9 +660,34 @@ header .container {
   transform: scale(1.02);
 }
 
+/* Responsive Image Heights */
+@media (max-width: 768px) {
+  .room-card-large {
+    flex-direction: column;
+  }
+
+  .room-img-wrapper {
+    flex: none;
+    width: 100%;
+    height: 280px !important; /* Force smaller height on mobile */
+  }
+
+  .room-card-vertical .room-img-wrapper {
+    height: 280px;
+  }
+
+  .special-item img {
+    height: 220px;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+}
+
 /* Footer */
 footer {
-  background-color: #26201d; /* Rich Dark Brown */
+  background-color: #26201d;
   color: rgba(255, 255, 255, 0.6);
   padding: 6rem 0;
   text-align: center;
@@ -511,47 +699,4 @@ footer h3 {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   letter-spacing: 0.1em;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .section-title {
-    font-size: 2.5rem;
-  }
-  .hero-content h2 {
-    font-size: 3.5rem;
-  }
-  .room-card-large {
-    flex-direction: column;
-  }
-  .room-img-wrapper {
-    height: 400px;
-  }
-  .room-info {
-    padding: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  .special-grid {
-    grid-template-columns: 1fr;
-  }
-  .hero-content h2 {
-    font-size: 2.5rem;
-  }
-  .nav-links {
-    display: none;
-  }
-  header .container {
-    padding: 0 1.5rem;
-  }
-  .mobile-menu-btn {
-    display: block;
-    border: none;
-    background: transparent;
-    font-size: 1.5rem;
-  }
 }
