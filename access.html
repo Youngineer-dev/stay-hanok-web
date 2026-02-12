@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오시는 길 | 서촌별곡</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="container" style="padding-top: 150px">
+        <div class="text-center">
+          <span class="section-subtitle">Access</span>
+          <h2 class="section-title">오시는 길</h2>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div
+          style="
+            width: 100%;
+            height: 450px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+          "
+        >
+          <p>지도 로딩 중... (실제 서비스 시 API 키 연동 필요)</p>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+          "
+        >
+          <div>
+            <h3>대중교통 이용 시</h3>
+            <p style="margin-top: 1rem; color: var(--color-text-sub)">
+              <strong>지하철:</strong> 3호선 경복궁역 2번 출구 (도보 10분)<br />
+              <strong>버스:</strong> 통인시장 종로구보건소 하차 (도보 3분)
+            </p>
+          </div>
+          <div>
+            <h3>자가용 이용 시</h3>
+            <p style="margin-top: 1rem; color: var(--color-text-sub)">
+              <strong>주소:</strong> 서울특별시 종로구 자하문로 123-45<br />
+              <strong>주차:</strong> 숙소 내 주차 불가, 인근 신교공영주차장 이용
+              권장
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/include.js"></script>
+  </body>
+</html>
