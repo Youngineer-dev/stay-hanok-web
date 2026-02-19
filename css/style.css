@@ -666,6 +666,20 @@ header.active .nav-menu a::after {
   width: 100%;
 }
 
+.btn-naver {
+  background-color: #03cf5d;
+  border-color: #03cf5d;
+  color: #ffffff;
+}
+
+.btn-naver::before {
+  background-color: #e9fbee;
+}
+
+.btn-naver:hover {
+  color: #0b6b36;
+}
+
 .btn-outline {
   display: inline-flex;
   align-items: center;
