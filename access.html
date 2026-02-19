@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오시는 길 | 서촌별곡</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="container fade-up" style="padding-top: 150px">
+        <div class="text-center">
+          <span class="section-subtitle">Location</span>
+          <h2 class="section-title">찾아오시는 길</h2>
+        </div>
+
+        <!-- Use map illustration -->
+        <div
+          class="map-container custom-cursor fade-up"
+          style="margin-top: 3rem"
+        >
+          <img
+            src="images/map_illustration.jpg"
+            alt="서촌별곡 약도"
+            class="static-map-img"
+          />
+          <div class="map-overlay">
+            <div style="display: flex; gap: 1rem">
+              <a
+                href="https://map.naver.com/v5/search/서촌별곡"
+                target="_blank"
+                class="btn"
+                >네이버 지도</a
+              >
+              <a
+                href="https://map.kakao.com/link/search/서촌별곡"
+                target="_blank"
+                class="btn"
+                style="
+                  background-color: #ffe812;
+                  color: #3c1e1e;
+                  border-color: #ffe812;
+                "
+                >카카오맵</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="location-info fade-up"
+          style="
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+          "
+        >
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1rem">주소</h3>
+            <p style="color: var(--color-text-sub)">
+              서울특별시 종로구 자하문로 123-45 (서촌마을 내)
+            </p>
+          </div>
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 1rem">주차 안내</h3>
+            <p style="color: var(--color-text-sub)">
+              한옥마을 특성상 전용 주차장이 없습니다.<br />
+              인근 '신교 공영주차장'을 이용해 주시기 바랍니다. (도보 3분 거리)
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+  </body>
+</html>

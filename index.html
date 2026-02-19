@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>서촌별곡 | 도심 속의 휴식, 프리미엄 한옥 스테이</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <meta property="og:title" content="서촌별곡 - Hanok Stay" />
+    <meta property="og:image" content="images/hero_main.jpg" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="hero">
+        <div class="swiper hero-slider">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: Main (Fixed) -->
+            <div class="swiper-slide">
+              <div class="hero-overlay"></div>
+              <img
+                src="images/hero_main.jpg"
+                alt="Hanok Exterior Sunset"
+                class="hero-img"
+              />
+              <div class="hero-content">
+                <h2>시간이 머무르는 곳,<br />서촌별곡</h2>
+                <p>고즈넉한 한옥의 정취와 현대적인 편안함</p>
+                <a href="rooms.html" class="btn">객실 둘러보기</a>
+              </div>
+            </div>
+            <!-- Slide 2: Interior -->
+            <div class="swiper-slide">
+              <div class="hero-overlay"></div>
+              <img
+                src="images/hero_interior.jpg"
+                alt="Cozy Interior"
+                class="hero-img"
+              />
+              <div class="hero-content">
+                <h2>온전한 쉼을 위한<br />프라이빗 공간</h2>
+                <p>오직 당신만을 위한 특별한 하루</p>
+                <a href="reserve.html" class="btn">예약하기</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <section class="intro">
+        <div class="container text-center fade-up">
+          <span class="section-subtitle">About Us</span>
+          <h2 class="section-title">도심 속 여유를<br />선물합니다</h2>
+          <p
+            style="
+              max-width: 600px;
+              margin: 0 auto;
+              margin-bottom: 2rem;
+              color: var(--color-text-sub);
+              font-size: 1.1rem;
+            "
+          >
+            서촌별곡은 1930년대 지어진 개량 한옥을 현대적으로 재해석한
+            공간입니다. 서까래의 따스함과 황토의 숨결을 그대로 간직한 채,
+            머무시는 분들의 편안함을 최우선으로 생각했습니다.
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="features-grid">
+            <div class="feature-card fade-up">
+              <h3>Private</h3>
+              <p>오직 한 팀만을 위한<br />프라이빗 독채 스테이</p>
+            </div>
+            <div class="feature-card fade-up">
+              <h3>Cafe</h3>
+              <p>향긋한 커피와 함께하는<br />여유로운 아침의 시작</p>
+            </div>
+            <div class="feature-card fade-up">
+              <h3>Experience</h3>
+              <p>다도 세트와 함께하는<br />차 한잔의 여유</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="room-preview">
+        <div class="container">
+          <div class="text-center fade-up">
+            <span class="section-subtitle">Rooms</span>
+            <h2 class="section-title">머무름의 미학</h2>
+          </div>
+
+          <div class="room-card-large fade-up">
+            <div class="room-img-wrapper">
+              <!-- Use the updated room flow image here too -->
+              <img src="images/open_plan.jpg" alt="Main Bedroom" />
+            </div>
+            <div class="room-info">
+              <h3>안채 (Main Room)</h3>
+              <p style="margin-bottom: 2rem; color: var(--color-text-sub)">
+                따스한 햇살이 들어오는 침실과 넓은 대청마루가 있는 메인
+                공간입니다. 가장 한국적인 아름다움을 현대적인 감각으로
+                풀어냈습니다.
+              </p>
+              <ul class="room-specs">
+                <li>퀸 사이즈 침대 1개</li>
+                <li>프라이빗 히노끼탕</li>
+                <li>다도 세트 구비</li>
+              </ul>
+              <a href="rooms.html" class="btn-outline" style="margin-top: 2rem"
+                >자세히 보기</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="location container fade-up">
+        <div class="text-center">
+          <span class="section-subtitle">Location</span>
+          <h2 class="section-title">오시는 길</h2>
+        </div>
+        <div class="map-container custom-cursor">
+          <img
+            src="images/map_illustration.jpg"
+            alt="서촌별곡 약도"
+            class="static-map-img"
+          />
+          <div class="map-overlay">
+            <a
+              href="https://map.naver.com/v5/search/서촌별곡"
+              target="_blank"
+              class="btn"
+              >네이버 지도로 보기</a
+            >
+          </div>
+        </div>
+        <div class="location-details text-center">
+          <p style="font-size: 1.1rem; margin-bottom: 0.5rem">
+            <strong>주소:</strong> 서울특별시 종로구 자하문로 123-45
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".hero-slider", {
+        loop: true,
+        effect: "fade",
+        speed: 1500,
+        fadeEffect: { crossFade: true },
+        autoplay: { delay: 6000, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+      });
+    </script>
+  </body>
+</html>
