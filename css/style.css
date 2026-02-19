@@ -33,6 +33,14 @@
   --container-width: 1240px;
   --header-height: 90px;
   --section-padding: 120px 0;
+  --copy-title-gap: 0.9rem;
+  --copy-block-gap: 2.1rem;
+
+  /* Motion */
+  --motion-enter-duration: 620ms;
+  --motion-enter-delay-step: 80ms;
+  --motion-distance-y: 16px;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Easings */
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
@@ -118,13 +126,61 @@ h6 {
   font-weight: 600;
 }
 
-/* Scroll Animation Classes */
-.fade-up {
+/* Copy Utilities */
+.copy-lead {
+  margin-top: var(--copy-title-gap);
+  margin-bottom: var(--copy-block-gap);
+  color: var(--color-text-sub);
+  font-size: clamp(1rem, 1.18vw, 1.12rem);
+  line-height: 1.82;
+}
+
+.copy-body {
+  margin-top: 0;
+  margin-bottom: 1.55rem;
+  color: var(--color-text-sub);
+  font-size: 1rem;
+  line-height: 1.74;
+}
+
+.copy-narrow {
+  max-width: 34ch;
+}
+
+.copy-medium {
+  max-width: 40ch;
+}
+
+.copy-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.copy-headline {
+  font-size: clamp(1.75rem, 2.45vw, 2.1rem);
+  margin-bottom: 1.15rem;
+}
+
+.info-title {
+  font-size: 1.26rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Scroll Reveal Classes */
+.fade-up,
+.fade-in {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(var(--motion-distance-y));
   transition:
-    opacity 1s var(--ease-out-expo),
-    transform 1s var(--ease-out-expo);
+    opacity var(--motion-enter-duration) var(--motion-ease),
+    transform var(--motion-enter-duration) var(--motion-ease);
+  transition-delay: 0ms;
+  will-change: opacity, transform;
+}
+
+.fade-up {
+  /* Alias class kept for semantic usage */
 }
 
 .fade-up.visible {
@@ -133,12 +189,12 @@ h6 {
 }
 
 .fade-in {
-  opacity: 0;
-  transition: opacity 1.2s ease-out;
+  /* Alias class kept for semantic usage */
 }
 
 .fade-in.visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -702,7 +758,12 @@ header.active .nav-menu a::after {
 .feature-card {
   padding: 3.5rem 2.5rem;
   border: 1px solid transparent;
-  transition: all 0.5s var(--ease-out-expo);
+  transition:
+    opacity var(--motion-enter-duration) var(--motion-ease),
+    transform var(--motion-enter-duration) var(--motion-ease),
+    top 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo),
+    border-color 0.35s var(--ease-out-expo);
   background-color: var(--color-white);
   border-radius: 4px;
   text-align: center;
@@ -748,7 +809,10 @@ header.active .nav-menu a::after {
   background-color: var(--color-white);
   box-shadow: var(--shadow-soft);
   margin-top: 4rem;
-  transition: box-shadow 0.4s ease;
+  transition:
+    opacity var(--motion-enter-duration) var(--motion-ease),
+    transform var(--motion-enter-duration) var(--motion-ease),
+    box-shadow 0.4s ease;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -872,6 +936,7 @@ header.active .nav-menu a::after {
   text-align: left;
   box-shadow: 0 8px 18px -16px rgba(0, 0, 0, 0.2);
   transition:
+    opacity var(--motion-enter-duration) var(--motion-ease),
     transform 0.28s ease,
     box-shadow 0.28s ease,
     border-color 0.28s ease;
@@ -1011,6 +1076,33 @@ header.active .nav-menu a::after {
     font-size: clamp(1.9rem, 7.6vw, 2.45rem);
     line-height: 1.35;
     margin-bottom: 1rem;
+  }
+
+  .copy-lead {
+    font-size: 0.99rem;
+    line-height: 1.74;
+    margin-bottom: 1.65rem;
+  }
+
+  .copy-body {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .copy-medium,
+  .copy-narrow {
+    max-width: none;
+  }
+
+  .copy-headline {
+    font-size: 1.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .info-title {
+    font-size: 1.08rem;
+    margin-bottom: 0.55rem;
   }
 
   main > section.container[style*="padding-top: 150px"] {
