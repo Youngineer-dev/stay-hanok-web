@@ -698,6 +698,21 @@ header.active .nav-menu a::after {
   background-color: var(--color-bg-section);
 }
 
+.open-plan-heading {
+  margin-top: 6.2rem;
+  margin-bottom: 2.8rem;
+}
+
+.open-plan-section-title {
+  font-size: 2.05rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+.open-plan-section-copy {
+  color: var(--color-text-sub);
+  font-size: 1.02rem;
+}
+
 .room-card-large {
   display: flex;
   background-color: var(--color-white);
@@ -773,6 +788,100 @@ header.active .nav-menu a::after {
   flex: none; /* Reset flex-grow/shrink */
   width: 100%;
   height: 400px; /* Reduced fixed height */
+}
+
+/* Open Plan Layout */
+.open-plan-info {
+  padding: 4.6rem 3rem;
+  text-align: center;
+  background: #fcfaf7;
+}
+
+.open-plan-title {
+  font-size: clamp(2rem, 2.6vw, 2.5rem);
+  margin-bottom: 0.8rem !important;
+}
+
+.open-plan-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-sub);
+  margin-bottom: 2.4rem;
+}
+
+.open-plan-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.open-plan-track::before {
+  content: "";
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  top: 26px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(157, 140, 124, 0),
+    rgba(157, 140, 124, 0.38),
+    rgba(157, 140, 124, 0)
+  );
+}
+
+.open-plan-step {
+  position: relative;
+  z-index: 1;
+  background: var(--color-white);
+  border: 1px solid rgba(157, 140, 124, 0.2);
+  border-radius: 18px;
+  padding: 2.6rem 1.5rem 1.8rem;
+  text-align: left;
+  box-shadow: 0 8px 18px -16px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.open-plan-step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px -18px rgba(0, 0, 0, 0.24);
+  border-color: rgba(157, 140, 124, 0.3);
+}
+
+.open-plan-step-no {
+  position: absolute;
+  top: -14px;
+  left: 1.4rem;
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: #fcf9f4;
+  border: 1px solid rgba(157, 140, 124, 0.34);
+  box-shadow: 0 6px 14px -12px rgba(62, 50, 43, 0.4);
+}
+
+.open-plan-step h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+  color: var(--color-primary);
+}
+
+.open-plan-step p {
+  color: var(--color-text-sub);
+  font-size: 0.96rem;
+  line-height: 1.68;
 }
 
 /* Map specific styles */
@@ -981,6 +1090,66 @@ header.active .nav-menu a::after {
 
   .room-card-vertical .room-img-wrapper {
     height: 280px;
+  }
+
+  .open-plan-heading {
+    margin-top: 3.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .open-plan-section-title {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+
+  .open-plan-section-copy {
+    font-size: 0.95rem;
+  }
+
+  .open-plan-info {
+    padding: 2.3rem 1.2rem;
+    text-align: left;
+  }
+
+  .open-plan-title {
+    margin-bottom: 0.55rem !important;
+  }
+
+  .open-plan-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .open-plan-track {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .open-plan-track::before {
+    display: none;
+  }
+
+  .open-plan-step {
+    padding: 2.15rem 1.2rem 1.3rem;
+    border-radius: 14px;
+  }
+
+  .open-plan-step-no {
+    left: 1rem;
+    min-width: 38px;
+    height: 38px;
+    top: -12px;
+    font-size: 0.7rem;
+  }
+
+  .open-plan-step h4 {
+    font-size: 1.08rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .open-plan-step p {
+    font-size: 0.93rem;
+    line-height: 1.62;
   }
 
   .special-grid {
