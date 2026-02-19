@@ -133,6 +133,8 @@ h6 {
   color: var(--color-text-sub);
   font-size: clamp(1rem, 1.18vw, 1.12rem);
   line-height: 1.82;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .copy-body {
@@ -141,20 +143,31 @@ h6 {
   color: var(--color-text-sub);
   font-size: 1rem;
   line-height: 1.74;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .copy-narrow {
-  max-width: 34ch;
+  max-width: min(92vw, 29rem);
 }
 
 .copy-medium {
-  max-width: 40ch;
+  max-width: min(92vw, 36rem);
+}
+
+.copy-wide {
+  max-width: min(96vw, 70rem);
 }
 
 .copy-center {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.copy-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .copy-headline {
@@ -418,6 +431,10 @@ header.active .nav-menu a::after {
   .logo {
     font-size: 1.28rem;
     letter-spacing: 0.02em;
+  }
+
+  .copy-line {
+    white-space: normal;
   }
 
   .nav-menu {
@@ -1024,10 +1041,10 @@ header.active .nav-menu a::after {
 /* Special Grid */
 .special-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 420px));
+  grid-template-columns: repeat(2, minmax(340px, 1fr));
   justify-content: center;
-  gap: 3.8rem 4rem;
-  max-width: 980px;
+  gap: 3.8rem 4.4rem;
+  max-width: 1120px;
   margin: 4rem auto 0;
 }
 .special-item img {
@@ -1041,6 +1058,11 @@ header.active .nav-menu a::after {
 
 .special-item h3 {
   margin-bottom: 1rem;
+}
+
+.special-item .copy-body {
+  font-size: 0.93rem;
+  line-height: 1.72;
 }
 
 .special-item:hover img {
