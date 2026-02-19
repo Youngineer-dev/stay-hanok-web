@@ -662,6 +662,46 @@ header.active .nav-menu a::after {
 
 /* Responsive Image Heights */
 @media (max-width: 768px) {
+  :root {
+    --section-padding: 88px 0;
+  }
+
+  .hero {
+    height: 72vh;
+    min-height: 420px;
+  }
+
+  @supports (height: 72dvh) {
+    .hero {
+      height: 72dvh;
+    }
+  }
+
+  .hero-slider,
+  .hero-slider .swiper-wrapper,
+  .hero-slider .swiper-slide {
+    height: 100%;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 1.25rem;
+  }
+
+  .hero-content h2 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro {
+    padding-top: 3.5rem;
+  }
+
   .room-card-large {
     flex-direction: column;
   }
