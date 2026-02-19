@@ -14,7 +14,12 @@
     </nav>
 
     <!-- Hamburger (Mobile Only - Hidden by CSS on Desktop) -->
-    <button class="menu-toggle" aria-label="Open Menu">
+    <button
+      class="menu-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu-overlay"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -23,7 +28,7 @@
 </header>
 
 <!-- Mobile Menu Overlay (Hidden by CSS on Desktop) -->
-<div class="menu-overlay">
+<div class="menu-overlay" id="mobile-menu-overlay">
   <nav class="menu-items">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>

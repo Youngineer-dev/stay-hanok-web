@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Initialize Header Logic
         if (file.includes("header")) {
           initMenu(); // Mobile Menu Toggle
+          initHeaderScroll(); // Header scroll state
           highlightActiveLink(); // Highlight Current Page
         }
 
@@ -51,35 +52,75 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 3. Mobile Menu Toggle Logic
+  // 3. Header Scroll State
+  function initHeaderScroll() {
+    const header = document.querySelector("header");
+    if (!header) return;
+
+    const syncHeaderScroll = () => {
+      header.classList.toggle("scrolled", window.scrollY > 40);
+    };
+
+    syncHeaderScroll();
+    window.addEventListener("scroll", syncHeaderScroll, { passive: true });
+  }
+
+  // 4. Mobile Menu Toggle Logic
   function initMenu() {
     const menuBtn = document.querySelector(".menu-toggle");
     const overlay = document.querySelector(".menu-overlay");
+    const header = document.querySelector("header");
     const body = document.body;
     const menuLinks = document.querySelectorAll(".menu-items a");
 
     if (!menuBtn || !overlay) return;
 
-    // Toggle Menu
-    menuBtn.addEventListener("click", () => {
-      menuBtn.classList.toggle("open");
-      overlay.classList.toggle("active");
+    const setMenuState = (isOpen) => {
+      menuBtn.classList.toggle("open", isOpen);
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      overlay.classList.toggle("active", isOpen);
+      overlay.setAttribute("aria-hidden", String(!isOpen));
+      body.classList.toggle("menu-open", isOpen);
+      body.style.overflow = isOpen ? "hidden" : "";
+      if (header) header.classList.toggle("active", isOpen);
+    };
 
-      // Prevent scrolling on body when mobile menu is open
-      if (overlay.classList.contains("active")) {
-        body.style.overflow = "hidden";
-      } else {
-        body.style.overflow = "";
+    // Init ARIA state
+    menuBtn.setAttribute("aria-expanded", "false");
+    overlay.setAttribute("aria-hidden", "true");
+
+    // Toggle menu
+    menuBtn.addEventListener("click", () => {
+      setMenuState(!overlay.classList.contains("active"));
+    });
+
+    // Close menu when clicking a link
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        setMenuState(false);
+      });
+    });
+
+    // Close when tapping outside menu panel
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) {
+        setMenuState(false);
       }
     });
 
-    // Close Menu when clicking a link
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        menuBtn.classList.remove("open");
-        overlay.classList.remove("active");
-        body.style.overflow = "";
-      });
+    // Close on Escape
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && overlay.classList.contains("active")) {
+        setMenuState(false);
+      }
+    });
+
+    // Ensure desktop state is clean after resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900 && overlay.classList.contains("active")) {
+        setMenuState(false);
+      }
     });
   }
 });
