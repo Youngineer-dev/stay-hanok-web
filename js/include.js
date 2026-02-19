@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const getCurrentPath = () => {
+    let currentPath = window.location.pathname.split("/").pop();
+
+    // Handle root path or empty path as index.html
+    if (currentPath === "" || currentPath === "stay-hanok-web") {
+      currentPath = "index.html";
+    }
+
+    return currentPath;
+  };
+
+  const currentPath = getCurrentPath();
+  if (currentPath === "reserve.html") {
+    document.body.classList.add("is-reserve-page");
+  }
+
   // 1. Function to Load External HTML Files
   const loadComponent = (selector, file) => {
     fetch(file)
@@ -31,14 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 2. Highlight Current Navigation Link
   function highlightActiveLink() {
-    // Get current filename (e.g., 'about.html')
-    let currentPath = window.location.pathname.split("/").pop();
-
-    // Handle root path or empty path as index.html
-    if (currentPath === "" || currentPath === "stay-hanok-web") {
-      currentPath = "index.html";
-    }
-
     // Select all nav links (Desktop + Mobile)
     const links = document.querySelectorAll(".nav-menu a, .menu-items a");
 

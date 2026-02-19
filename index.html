@@ -28,6 +28,9 @@
                 src="images/hero_main.jpg"
                 alt="Hanok Exterior Sunset"
                 class="hero-img"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
               />
               <div class="hero-content">
                 <h2>시간이 머무르는 곳,<br />서촌별곡</h2>
@@ -42,6 +45,8 @@
                 src="images/hero_interior.jpg"
                 alt="Cozy Interior"
                 class="hero-img"
+                loading="lazy"
+                decoding="async"
               />
               <div class="hero-content">
                 <h2>온전한 쉼을 위한<br />프라이빗 공간</h2>
@@ -101,7 +106,12 @@
           <div class="room-card-large fade-up">
             <div class="room-img-wrapper">
               <!-- Use the updated room flow image here too -->
-              <img src="images/open_plan.jpg" alt="Main Bedroom" />
+              <img
+                src="images/open_plan.jpg"
+                alt="Main Bedroom"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="room-info">
               <h3>안채 (Main Room)</h3>
@@ -133,6 +143,8 @@
             src="images/map_illustration.jpg"
             alt="서촌별곡 약도"
             class="static-map-img"
+            loading="lazy"
+            decoding="async"
           />
           <div class="map-overlay">
             <a
@@ -157,12 +169,18 @@
     <script src="js/transitions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
       const swiper = new Swiper(".hero-slider", {
         loop: true,
         effect: "fade",
-        speed: 1500,
+        speed: prefersReducedMotion ? 0 : 1500,
         fadeEffect: { crossFade: true },
-        autoplay: { delay: 6000, disableOnInteraction: false },
+        autoplay: prefersReducedMotion
+          ? false
+          : { delay: 6000, disableOnInteraction: false },
         pagination: { el: ".swiper-pagination", clickable: true },
       });
     </script>
