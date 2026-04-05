@@ -137,6 +137,20 @@
           "desc": "낮은 턱 너머로 이어지는 침실은 문 없는 개방형 구조로, 더 깊고 부드러운 안락함을 전합니다."
         }
       ]
+    },
+    "gallery": {
+      "subtitle": "Gallery",
+      "title": "공간을 담다",
+      "photos": [
+        { "img": "images/room_main.png",      "alt": "안채 침실", "caption": "햇살이 머무는 안채 침실" },
+        { "img": "images/open_plan.png",      "alt": "오픈 플랜 구조", "caption": "공간의 유연한 흐름" },
+        { "img": "images/hero_main.png",      "alt": "한옥 외관", "caption": "고즈넉한 한옥의 정취" },
+        { "img": "images/hero_interior.png",  "alt": "내부 공간", "caption": "프라이빗한 휴식의 마침표" },
+        { "img": "images/special_cafe.jpg",   "alt": "카페테리아", "caption": "나만의 홈카페 시간" },
+        { "img": "images/special_tea.jpg",    "alt": "다도 체험", "caption": "차 한 잔에 담긴 여유" },
+        { "img": "images/about_detail.jpg",   "alt": "공간 상세", "caption": "정갈하게 차려진 공간" },
+        { "img": "images/special_hinoki.jpg", "alt": "히노끼 욕조", "caption": "몸과 마음을 녹이는 온기" }
+      ]
     }
   },
   "special": {

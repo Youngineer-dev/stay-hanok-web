@@ -1039,6 +1039,80 @@ header.active .nav-menu a::after {
   line-height: 1.68;
 }
 
+/* Room Gallery Horizontal Slider */
+.room-gallery {
+  padding: var(--section-padding);
+  background-color: var(--color-bg-section);
+  overflow: hidden;
+}
+
+.room-gallery-header {
+  margin-bottom: 3rem;
+}
+
+.room-gallery-slider {
+  width: 100%;
+  overflow: visible;
+  padding: 0 calc((100% - 1200px) / 2);
+}
+
+@media (max-width: 1240px) {
+  .room-gallery-slider {
+    padding: 0 5%;
+  }
+}
+
+.room-gallery-slide {
+  width: 520px !important;
+  height: 360px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative; /* 추가된 오버레이 부모 기준 */
+}
+
+.room-gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.slide-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 3rem 1.8rem 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  color: var(--color-white);
+  z-index: 2;
+  pointer-events: none; /* 텍스트가 드래그를 방해하지 않도록 */
+}
+
+.slide-overlay p {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  opacity: 0.95;
+}
+
+.room-gallery-slide:hover img {
+  transform: scale(1.04);
+}
+
+.room-gallery-hint {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-sub);
+  opacity: 0.65;
+}
+
 /* Map specific styles */
 .map-container {
   position: relative;
@@ -1348,6 +1422,11 @@ header.active .nav-menu a::after {
     grid-template-columns: 1fr;
     gap: 6.2rem;
     margin-top: 2rem;
+  }
+
+  .room-gallery-slide {
+    width: 80vw !important;
+    height: 220px;
   }
 
   .special-item img {
