@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>서촌별곡 | 도심 속의 휴식, 프리미엄 한옥 스테이</title>
+    <title>차담한옥(차담옥) | 쉼이 머무는 차담옥</title>
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!-- Swiper CSS -->
@@ -11,49 +11,17 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <meta property="og:title" content="서촌별곡 - Hanok Stay" />
+    <meta property="og:title" content="차담한옥(차담옥) - 쉼이 머무는 차담옥" />
     <meta property="og:image" content="images/hero_main.jpg" />
   </head>
-  <body>
+  <body data-page="index">
     <div id="header-placeholder"></div>
 
     <main>
       <section class="hero">
         <div class="swiper hero-slider">
-          <div class="swiper-wrapper">
-            <!-- Slide 1: Main (Fixed) -->
-            <div class="swiper-slide">
-              <div class="hero-overlay"></div>
-              <img
-                src="images/hero_main.jpg"
-                alt="Hanok Exterior Sunset"
-                class="hero-img"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
-              <div class="hero-content">
-                <h2>시간이 머무르는 곳,<br />서촌별곡</h2>
-                <p>도심의 소음을 덜어내고, 한옥의 온기에 머무는 시간</p>
-                <a href="rooms.html" class="btn">객실 둘러보기</a>
-              </div>
-            </div>
-            <!-- Slide 2: Interior -->
-            <div class="swiper-slide">
-              <div class="hero-overlay"></div>
-              <img
-                src="images/hero_interior.jpg"
-                alt="Cozy Interior"
-                class="hero-img"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="hero-content">
-                <h2>온전한 쉼을 위한<br />프라이빗 공간</h2>
-                <p>한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비</p>
-                <a href="reserve.html" class="btn">예약하기</a>
-              </div>
-            </div>
+          <div class="swiper-wrapper" id="hero-slides">
+            <!-- data.json index.hero 배열에서 동적 생성 -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -61,16 +29,20 @@
 
       <section class="intro">
         <div class="container text-center fade-up">
-          <span class="section-subtitle">About Us</span>
-          <h2 class="section-title">도심 속 여유를<br />선물합니다</h2>
+          <span class="section-subtitle" data-text="index.intro.subtitle"
+            >About Us</span
+          >
+          <h2 class="section-title" data-text="index.intro.title">
+            도심 속 여유를<br />선물합니다
+          </h2>
           <p class="copy-lead copy-medium copy-wide copy-center">
-            <span class="copy-line"
-              >서촌별곡은 오래된 한옥의 결을 보존하면서, 오늘의 휴식을 위해
-              정제한 프라이빗 스테이입니다.</span
+            <span class="copy-line" data-text="index.intro.desc1"
+              >차담한옥(차담옥)은 한옥스테이뿐만 아니라 홈카페와 다도체험을 즐길
+              수 있는 공간입니다.</span
             >
-            <span class="copy-line"
-              >나무와 흙이 주는 자연의 온기 위에 필요한 편의만 담아, 머무는
-              시간의 밀도를 높였습니다.</span
+            <span class="copy-line" data-text="index.intro.desc2"
+              >그 외에도 영화감상, 노래 등 다양한 즐길 거리를 제공하여 풍성한
+              머무름을 선사합니다.</span
             >
           </p>
         </div>
@@ -78,16 +50,22 @@
         <div class="container">
           <div class="features-grid">
             <div class="feature-card fade-up">
-              <h3>Private</h3>
-              <p>오직 한 팀만을 위한<br />프라이빗 독채 스테이</p>
+              <h3 data-text="index.intro.features[0].title">Private</h3>
+              <p data-text="index.intro.features[0].desc">
+                오직 한 팀만을 위한<br />프라이빗 독채 스테이
+              </p>
             </div>
             <div class="feature-card fade-up">
-              <h3>Cafe</h3>
-              <p>향긋한 커피와 함께하는<br />여유로운 아침의 시작</p>
+              <h3 data-text="index.intro.features[1].title">Cafe</h3>
+              <p data-text="index.intro.features[1].desc">
+                향긋한 커피와 함께하는<br />여유로운 아침의 시작
+              </p>
             </div>
             <div class="feature-card fade-up">
-              <h3>Experience</h3>
-              <p>다도 세트와 함께하는<br />차 한잔의 여유</p>
+              <h3 data-text="index.intro.features[2].title">Experience</h3>
+              <p data-text="index.intro.features[2].desc">
+                다도 세트와 함께하는<br />차 한잔의 여유
+              </p>
             </div>
           </div>
         </div>
@@ -96,8 +74,12 @@
       <section class="room-preview">
         <div class="container">
           <div class="text-center fade-up">
-            <span class="section-subtitle">Rooms</span>
-            <h2 class="section-title">머무름의 미학</h2>
+            <span class="section-subtitle" data-text="index.rooms.subtitle"
+              >Rooms</span
+            >
+            <h2 class="section-title" data-text="index.rooms.title">
+              머무름의 미학
+            </h2>
           </div>
 
           <div class="room-card-large fade-up">
@@ -108,22 +90,27 @@
                 alt="Main Bedroom"
                 loading="lazy"
                 decoding="async"
+                data-img="index.rooms.img"
               />
             </div>
             <div class="room-info">
-              <h3>안채 (Main Room)</h3>
-              <p class="copy-body copy-medium">
+              <h3 data-text="index.rooms.roomTitle">안채 (Main Room)</h3>
+              <p class="copy-body copy-medium" data-text="index.rooms.roomDesc">
                 안채는 햇살이 오래 머무는 침실과 넓은 대청마루가 자연스럽게
                 이어지는 대표 객실입니다.<br />
-                전통의 균형과 현대의 편안함을 한 공간
-                안에서 함께 경험하실 수 있습니다.
+                전통의 균형과 현대의 편안함을 한 공간 안에서 함께 경험하실 수
+                있습니다.
               </p>
               <ul class="room-specs">
-                <li>퀸 사이즈 침대 1개</li>
-                <li>프라이빗 히노끼탕</li>
-                <li>다도 세트 구비</li>
+                <li data-text="index.rooms.specs[0]">킹 사이즈 침구 1개</li>
+                <li data-text="index.rooms.specs[1]">넓은 앞마당</li>
+                <li data-text="index.rooms.specs[2]">다도 세트 구비</li>
               </ul>
-              <a href="rooms.html" class="btn-outline" style="margin-top: 2rem"
+              <a
+                href="rooms.html"
+                class="btn-outline"
+                style="margin-top: 2rem"
+                data-text="index.rooms.btnText"
                 >자세히 보기</a
               >
             </div>
@@ -133,53 +120,91 @@
 
       <section class="location container fade-up">
         <div class="text-center">
-          <span class="section-subtitle">Location</span>
-          <h2 class="section-title">오시는 길</h2>
+          <span class="section-subtitle" data-text="index.location.subtitle"
+            >Location</span
+          >
+          <h2 class="section-title" data-text="index.location.title">
+            오시는 길
+          </h2>
         </div>
         <div class="map-container custom-cursor">
           <img
             src="images/map_illustration.jpg"
-            alt="서촌별곡 약도"
+            alt="차담한옥 약도"
             class="static-map-img"
             loading="lazy"
             decoding="async"
+            data-img="index.location.img"
           />
           <div class="map-overlay">
             <a
-              href="https://map.naver.com/v5/search/서촌별곡"
+              href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
               target="_blank"
               class="btn"
+              data-text="index.location.naverMapBtn"
+              data-link="index.location.naverMapLink"
               >네이버 지도로 보기</a
             >
           </div>
         </div>
         <div class="location-details text-center">
           <p class="copy-body copy-center">
-            <strong>주소:</strong> 서울특별시 종로구 자하문로 123-45
+            <strong data-text="index.location.addressLabel">주소:</strong>
+            <span data-text="index.location.addressValue"
+              >경기 이천시 마장면 마도로248번길 32-101</span
+            >
           </p>
         </div>
       </section>
     </main>
 
     <div id="footer-placeholder"></div>
+    <script src="js/data-loader.js"></script>
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
-      const swiper = new Swiper(".hero-slider", {
-        loop: true,
-        effect: "fade",
-        speed: prefersReducedMotion ? 0 : 1500,
-        fadeEffect: { crossFade: true },
-        autoplay: prefersReducedMotion
-          ? false
-          : { delay: 6000, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", clickable: true },
+      window.dataLoadPromise.then(() => {
+        const heroItems = (window.siteData?.index?.hero) || [];
+        const wrapper = document.getElementById('hero-slides');
+
+        heroItems.forEach((item, i) => {
+          const slide = document.createElement('div');
+          slide.className = 'swiper-slide';
+          slide.innerHTML = `
+            <div class="hero-overlay"></div>
+            <img
+              src="${item.img || ''}"
+              alt="Hero Slide ${i + 1}"
+              class="hero-img"
+              loading="${i === 0 ? 'eager' : 'lazy'}"
+              ${i === 0 ? 'fetchpriority="high"' : ''}
+              decoding="async"
+            />
+            <div class="hero-content">
+              <h2>${item.title || ''}</h2>
+              <p>${item.desc || ''}</p>
+              <a href="${item.btnLink || '#'}" class="btn">${item.btnText || ''}</a>
+            </div>
+          `;
+          wrapper.appendChild(slide);
+        });
+
+        new Swiper(".hero-slider", {
+          loop: heroItems.length > 1,
+          effect: "fade",
+          speed: prefersReducedMotion ? 0 : 1500,
+          fadeEffect: { crossFade: true },
+          autoplay: prefersReducedMotion
+            ? false
+            : { delay: 6000, disableOnInteraction: false },
+          pagination: { el: ".swiper-pagination", clickable: true },
+        });
       });
     </script>
   </body>

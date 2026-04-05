@@ -6,14 +6,14 @@
     <title>About Us | 서촌별곡</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body data-page="about">
     <div id="header-placeholder"></div>
 
     <main>
       <section class="container fade-up" style="padding-top: 150px">
         <div class="text-center">
-          <span class="section-subtitle">Philosophy</span>
-          <h2 class="section-title">공간의 이야기</h2>
+          <span class="section-subtitle" data-text="about.subtitle">Philosophy</span>
+          <h2 class="section-title" data-text="about.mainTitle">공간의 이야기</h2>
         </div>
 
         <div
@@ -30,6 +30,7 @@
               alt="Hanok Detail"
               loading="lazy"
               decoding="async"
+              data-img="about.img"
               style="
                 width: 100%;
                 height: 500px;
@@ -44,21 +45,21 @@
             class="text-center fade-up"
             style="max-width: 1120px; margin: 0 auto"
           >
-            <h3 class="copy-headline">오랜 시간을 견뎌온 나무의 숨결</h3>
+            <h3 class="copy-headline" data-text="about.headline">오랜 시간을 견뎌온 나무의 숨결</h3>
             <p class="copy-lead copy-medium copy-wide copy-center">
-              <span class="copy-line"
+              <span class="copy-line" data-text="about.desc1"
                 >서촌별곡은 한옥이 지닌 시간의 결을 존중하며, 현대의 휴식
                 방식에 맞게 재해석한 공간입니다.</span
               >
-              <span class="copy-line"
+              <span class="copy-line" data-text="about.desc2"
                 >오래된 목재와 흙, 그리고 절제된 편의가 균형을 이루어 머무는
                 내내 마음의 속도를 낮춰줍니다.</span
               >
-              <span class="copy-line"
+              <span class="copy-line" data-text="about.desc3"
                 >아침에는 처마 끝으로 스며드는 빛을, 밤에는 마당 위로 내려앉는
                 정적을 느껴보세요.</span
               >
-              <span class="copy-line"
+              <span class="copy-line" data-text="about.desc4"
                 >이곳에서의 하루는 여행보다 깊은 쉼에 가깝습니다.</span
               >
             </p>
@@ -68,6 +69,7 @@
     </main>
 
     <div id="footer-placeholder"></div>
+    <script src="js/data-loader.js"></script>
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>

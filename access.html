@@ -3,23 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>오시는 길 | 서촌별곡</title>
+    <title>오시는 길 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body data-page="access">
     <div id="header-placeholder"></div>
 
     <main>
       <section class="container fade-up" style="padding-top: 150px">
         <div class="text-center">
-          <span class="section-subtitle">Location</span>
-          <h2 class="section-title">찾아오시는 길</h2>
+          <span class="section-subtitle" data-text="access.subtitle"
+            >Location</span
+          >
+          <h2 class="section-title" data-text="access.mainTitle">
+            찾아오시는 길
+          </h2>
           <p class="copy-lead copy-medium copy-center">
-            <span class="copy-line"
-              >서촌의 고요한 골목을 따라 천천히 걸어오시면,</span
+            <span class="copy-line" data-text="access.intro1"
+              >이천의 고요한 골목을 따라 천천히 걸어오시면,</span
             >
-            <span class="copy-line"
-              >한옥의 온기를 담은 서촌별곡을 만나실 수 있습니다.</span
+            <span class="copy-line" data-text="access.intro2"
+              >한옥의 온기를 담은 차담한옥(차담옥)을 만나실 수 있습니다.</span
             >
           </p>
         </div>
@@ -31,23 +35,28 @@
         >
           <img
             src="images/map_illustration.jpg"
-            alt="서촌별곡 약도"
+            alt="차담한옥(차담옥) 약도"
             class="static-map-img"
             loading="lazy"
             decoding="async"
+            data-img="access.mapImg"
           />
           <div class="map-overlay">
             <div style="display: flex; gap: 1rem">
               <a
-                href="https://map.naver.com/v5/search/서촌별곡"
+                href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
                 target="_blank"
                 class="btn"
+                data-text="access.naverText"
+                data-link="access.naverLink"
                 >네이버 지도</a
               >
               <a
-                href="https://map.kakao.com/link/search/서촌별곡"
+                href="https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101"
                 target="_blank"
                 class="btn"
+                data-text="access.kakaoText"
+                data-link="access.kakaoLink"
                 style="
                   background-color: #ffe812;
                   color: #3c1e1e;
@@ -67,17 +76,18 @@
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
           "
-          >
+        >
           <div>
-            <h3 class="info-title">주소</h3>
-            <p class="copy-body">
-              서울특별시 종로구 자하문로 123-45, 서촌의 조용한 골목 안쪽에
-              자리하고 있습니다.
+            <h3 class="info-title" data-text="access.addressTitle">주소</h3>
+            <p class="copy-body" data-text="access.addressDesc">
+              경기도 이천의 조용한 골목 안쪽에 자리하고 있습니다.
             </p>
           </div>
           <div>
-            <h3 class="info-title">주차 안내</h3>
-            <p class="copy-body">
+            <h3 class="info-title" data-text="access.parkingTitle">
+              주차 안내
+            </h3>
+            <p class="copy-body" data-text="access.parkingDesc">
               <span class="copy-line"
                 >한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다.</span
               >
@@ -88,6 +98,7 @@
     </main>
 
     <div id="footer-placeholder"></div>
+    <script src="js/data-loader.js"></script>
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>

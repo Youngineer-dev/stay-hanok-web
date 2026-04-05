@@ -37,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
           const yearEl = document.querySelector(".current-year");
           if (yearEl) yearEl.textContent = new Date().getFullYear();
         }
+
+        // Apply dynamic data to loaded components
+        if (window.dataLoadPromise && window.applyDataToDOM) {
+          window.dataLoadPromise.then(() => {
+            window.applyDataToDOM(document.querySelector(selector));
+          });
+        }
       })
       .catch((error) => console.error("Error loading component:", error));
   };

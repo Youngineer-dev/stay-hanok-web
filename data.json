@@ -1,0 +1,202 @@
+{
+  "common": {
+    "ogTitle": "차담한옥(차담옥) - 쉼이 머무는 차담옥",
+    "ogImage": "images/hero_main.png",
+    "logo": "차담한옥(차담옥)",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "rooms": "Rooms",
+      "special": "Special",
+      "location": "Location",
+      "reservation": "Reservation"
+    },
+    "footer": {
+      "title": "차담한옥",
+      "address": "경기 이천시 마장면 마도로248번길 32-101",
+      "contact": "TEL: 010-1234-5678 | EMAIL: stay@hanok.com",
+      "bizInfo": "사업자등록번호: 123-45-67890 | 대표자: 김한옥",
+      "instagram": "Instagram",
+      "blog": "Blog",
+      "copyright": "&copy; 2026 차담한옥(차담옥). All Rights Reserved.",
+      "mobileCta": "지금 예약하기"
+    }
+  },
+  "index": {
+    "title": "차담한옥(차담옥) | 쉼이 머무는 차담옥",
+    "hero": [
+      {
+        "img": "images/hero_main.png",
+        "title": "쉼이 머무는 차담옥,<br />차담한옥",
+        "desc": "한옥스테이, 홈카페, 다도체험",
+        "btnText": "객실 둘러보기",
+        "btnLink": "rooms.html"
+      },
+      {
+        "img": "images/hero_interior.png",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/open_plan.png",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      }
+    ],
+    "intro": {
+      "subtitle": "쉼이 머무는 차담옥",
+      "title": "다채로운 경험을<br />선물합니다",
+      "desc1": "차담한옥(차담옥)은 온전한 휴식을 위한 '한옥스테이', 나만의 '홈카페', 그리고 마음을 비우는 '다도체험'을 메인으로 준비한 공간입니다.",
+      "desc2": "더불어 객실 내 '영화감상'과 '노래가능'한 시설 등 다양한 즐길 거리가 부가적으로 마련되어 있어, 머무는 내내 풍성한 추억을 남기실 수 있습니다.",
+      "features": [
+        {
+          "title": "한옥스테이",
+          "desc": "오직 한 팀만을 위한<br />프라이빗 독채 스테이"
+        },
+        {
+          "title": "홈카페 & 다도체험",
+          "desc": "향긋한 커피와 차 한잔이<br />선사하는 편안한 여유"
+        },
+        {
+          "title": "영화 & 노래",
+          "desc": "자유롭게 즐기는 영화감상과<br />노래가 가능한 특별한 시간"
+        }
+      ]
+    },
+    "rooms": {
+      "subtitle": "Rooms",
+      "title": "머무름의 미학",
+      "img": "images/open_plan.png",
+      "roomTitle": "안채 (Main Room)",
+      "roomDesc": "안채는 햇살이 오래 머무는 침실과 넓은 대청마루가 자연스럽게 이어지는 대표 객실입니다.<br />전통의 균형과 현대의 편안함을 한 공간 안에서 함께 경험하실 수 있습니다.",
+      "specs": ["킹 사이즈 침대 1개", "넓은 앞마당", "다도 세트 구비"],
+      "btnText": "자세히 보기"
+    },
+    "location": {
+      "subtitle": "Location",
+      "title": "오시는 길",
+      "img": "images/map_illustration.jpg",
+      "naverMapLink": "https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101",
+      "naverMapBtn": "네이버 지도로 보기",
+      "addressLabel": "주소:",
+      "addressValue": "경기 이천시 마장면 마도로248번길 32-101"
+    }
+  },
+  "about": {
+    "title": "About Us | 차담한옥",
+    "subtitle": "Philosophy",
+    "mainTitle": "공간의 이야기",
+    "img": "images/about_detail.jpg",
+    "headline": "오랜 시간을 견뎌온 나무의 숨결",
+    "desc1": "차담한옥은 한옥이 지닌 시간의 결을 존중하며, 현대의 휴식 방식에 맞게 재해석한 공간입니다.",
+    "desc2": "오래된 목재와 흙, 그리고 절제된 편의가 균형을 이루어 머무는 내내 마음의 속도를 낮춰줍니다.",
+    "desc3": "아침에는 처마 끝으로 스며드는 빛을, 밤에는 마당 위로 내려앉는 정적을 느껴보세요.",
+    "desc4": "이곳에서의 하루는 여행보다 깊은 쉼에 가깝습니다."
+  },
+  "roomsPage": {
+    "title": "객실 안내 | 차담한옥",
+    "subtitle": "Rooms",
+    "mainTitle": "편안한 쉼터",
+    "intro1": "한옥의 본연을 해치지 않으면서, 숙면과 여유에 필요한 요소만 정교하게 채웠습니다.",
+    "intro2": "머무는 동선마다 잔잔한 온기가 이어집니다.",
+    "mainRoom": {
+      "img": "images/room_main.png",
+      "title": "안채 (An-chae)",
+      "desc": "안채는 넓은 대청마루와 침실이 자연스럽게 이어지는 메인 공간입니다.<br />창을 열면 차담옥의 지붕선이 펼쳐지고, 부드러운 조명 아래 깊은 휴식을 경험하실 수 있습니다.",
+      "specs": [
+        "기준 인원 2인 (최대 4인)",
+        "킹 사이즈 라텍스 침대",
+        "프리미엄 구스 침구"
+      ],
+      "btnText": "예약하기"
+    },
+    "openPlan": {
+      "title": "공간의 흐름",
+      "desc": "입구에서 침실까지, 막힘 없이 이어지는 동선이 공간의 여백을 완성합니다.",
+      "img": "images/open_plan.png",
+      "subTitle": "오픈 플랜 구조 (Open Plan)",
+      "subDesc": "다이닝부터 거실, 침실까지 이어지는 유연한 구조를 따라 하루의 리듬이 차분하게 정돈됩니다.",
+      "steps": [
+        {
+          "no": "01",
+          "title": "다이닝 & 키친",
+          "desc": "현관에서 가장 먼저 만나는 다이닝과 키친. 원목 테이블에서 느긋한 식사와 대화를 즐겨보세요."
+        },
+        {
+          "no": "02",
+          "title": "거실 (대청)",
+          "desc": "높은 서까래가 만드는 개방감 속에서, 마당 풍경을 바라보며 잠시 호흡을 고르는 시간."
+        },
+        {
+          "no": "03",
+          "title": "툇마루 침실",
+          "desc": "낮은 턱 너머로 이어지는 침실은 문 없는 개방형 구조로, 더 깊고 부드러운 안락함을 전합니다."
+        }
+      ]
+    }
+  },
+  "special": {
+    "title": "Special | 차담한옥",
+    "subtitle": "Experience",
+    "mainTitle": "특별한 경험",
+    "intro": "차담옥의 한옥스테이는 머무름을 넘어 경험으로 확장됩니다.<br />하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.",
+    "items": [
+      {
+        "img": "images/special_tea.jpg",
+        "title": "다도 체험",
+        "desc": "엄선한 잎차와 다기 세트를 준비해 두었습니다.<br />차를 우려내는 짧은 의식만으로도 하루의 결이 차분해집니다."
+      },
+      {
+        "img": "images/special_cafe.jpg",
+        "title": "카페테리아",
+        "desc": "<span class=\"copy-line\">투숙객 전용 라운지에서 커피와 디저트를 편안하게 즐길 수 있습니다.</span><span class=\"copy-line\">아침 햇살과 함께 여유로운 시작을 경험하세요.</span>"
+      },
+      {
+        "img": "images/special_cinema.jpg",
+        "title": "영화감상",
+        "desc": "120인치 대형 스크린과 빔 프로젝터로 나만의 작은 시네마를 즐겨보세요.<br />원하는 콘텐츠를 자유롭게 감상할 수 있습니다."
+      },
+      {
+        "img": "images/special_karaoke.jpg",
+        "title": "노래방",
+        "desc": "신나게 노래를 부르며 스트레스를 날려버릴 수 있는 공간이 준비되어 있습니다.<br />가족, 친구들과 함께 언제든 즐거운 추억을 남겨보세요."
+      }
+    ]
+  },
+  "access": {
+    "title": "오시는 길 | 차담한옥",
+    "subtitle": "Location",
+    "mainTitle": "찾아오시는 길",
+    "intro1": "이천의 고요한 골목을 따라 천천히 걸어오시면,",
+    "intro2": "한옥의 온기를 담은 차담한옥을 만나실 수 있습니다.",
+    "mapImg": "images/map_illustration.jpg",
+    "naverLink": "https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101",
+    "naverText": "네이버 지도",
+    "kakaoLink": "https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101",
+    "kakaoText": "카카오맵",
+    "addressTitle": "주소",
+    "addressDesc": "이천의 조용한 골목 안쪽에 자리하고 있습니다.",
+    "parkingTitle": "주차 안내",
+    "parkingDesc": "<span class=\"copy-line\">한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다.</span>"
+  },
+  "reserve": {
+    "title": "예약 및 문의 | 차담한옥",
+    "subtitle": "Reservation",
+    "mainTitle": "예약 및 문의",
+    "intro": "예약은 네이버 예약으로 간편하게 진행됩니다.<br />숙박 전 문의가 필요한 경우 전화 또는 카카오톡으로 편하게 연락해 주세요.",
+    "reserveTitle": "실시간 예약",
+    "reserveDesc": "원하시는 날짜와 인원을 선택한 뒤, 네이버 예약 페이지에서 결제를 완료해 주세요.",
+    "naverBtn": "네이버 예약 바로가기",
+    "naverLink": "https://booking.naver.com",
+    "contactTitle": "문의하기",
+    "contactDesc": "운영 시간 내 순차적으로 신속하게 안내드립니다.",
+    "phoneBtn": "전화 문의",
+    "phoneLink": "tel:01012345678",
+    "kakaoBtn": "카카오톡 상담",
+    "kakaoLink": "https://pf.kakao.com/_xxxxxx"
+  }
+}
