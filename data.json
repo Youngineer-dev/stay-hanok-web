@@ -13,21 +13,21 @@
     },
     "footer": {
       "title": "차담한옥",
-      "address": "경기 이천시 마장면 마도로248번길 32-101",
-      "contact": "TEL: 010-1234-5678 | EMAIL: stay@hanok.com",
-      "bizInfo": "사업자등록번호: 123-45-67890 | 대표자: 김한옥",
+      "address": "경기 이천시 마장면 마도로248번길 32-101(관리802-6)",
+      "contact": "TEL: 010-3892-8494 | EMAIL: lmw1027@hanmail.net",
+      "bizInfo": "사업자등록번호: 643-60-00723 | 대표자 : 임민웅",
       "instagram": "https://www.instagram.com/chadamjigi",
-      "blog": "https://blog.naver.com/chadamhanok",
+      "blog": "https://blog.naver.com/",
       "copyright": "&copy; 2026 차담한옥(차담옥). All Rights Reserved.",
       "mobileCta": "지금 예약하기"
     }
   },
   "index": {
-    "title": "차담한옥(차담옥) | 쉼이 머무는 차담옥",
+    "title": "차담한옥(차담옥) | 쉼이 머무는 차담한옥",
     "hero": [
       {
         "img": "images/hero_main.png",
-        "title": "쉼이 머무는 차담옥,<br />차담한옥",
+        "title": "쉼이 머무는 차담한옥,<br />차담한옥",
         "desc": "한옥스테이, 홈카페, 다도체험",
         "btnText": "객실 둘러보기",
         "btnLink": "rooms.html"
@@ -40,7 +40,77 @@
         "btnLink": "reserve.html"
       },
       {
-        "img": "images/open_plan.png",
+        "img": "images/마당1.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/마당2.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/마당3.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/마당4.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/마당5.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/마당6.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/봄1.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/여름1.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/가을1.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/겨울1.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/숙성실1.jpg",
         "title": "온전한 쉼을 위한<br />프라이빗 공간",
         "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
         "btnText": "예약하기",
@@ -73,7 +143,11 @@
       "img": "images/open_plan.png",
       "roomTitle": "안채 (Main Room)",
       "roomDesc": "안채는 햇살이 오래 머무는 침실과 넓은 대청마루가 자연스럽게 이어지는 대표 객실입니다.<br />전통의 균형과 현대의 편안함을 한 공간 안에서 함께 경험하실 수 있습니다.",
-      "specs": ["킹 사이즈 침대 1개", "넓은 앞마당", "다도 세트 구비"],
+      "specs": [
+        "퀸 사이즈 침대 1개",
+        "넓은 앞마당",
+        "다도 세트 구비"
+      ],
       "btnText": "자세히 보기"
     },
     "location": {
@@ -108,9 +182,9 @@
       "title": "안채 (An-chae)",
       "desc": "안채는 넓은 대청마루와 침실이 자연스럽게 이어지는 메인 공간입니다.<br />창을 열면 차담옥의 지붕선이 펼쳐지고, 부드러운 조명 아래 깊은 휴식을 경험하실 수 있습니다.",
       "specs": [
-        "기준 인원 2인 (최대 4인)",
-        "킹 사이즈 라텍스 침대",
-        "프리미엄 구스 침구"
+        "기준 인원 2인 (최대 6인)",
+        "퀸 사이즈 침대",
+        "프리미엄 호텔식 침구"
       ],
       "btnText": "예약하기"
     },
@@ -142,14 +216,41 @@
       "subtitle": "Gallery",
       "title": "공간을 담다",
       "photos": [
-        { "img": "images/room_main.png",      "alt": "안채 침실", "caption": "햇살이 머무는 안채 침실" },
-        { "img": "images/open_plan.png",      "alt": "오픈 플랜 구조", "caption": "공간의 유연한 흐름" },
-        { "img": "images/hero_main.png",      "alt": "한옥 외관", "caption": "고즈넉한 한옥의 정취" },
-        { "img": "images/hero_interior.png",  "alt": "내부 공간", "caption": "프라이빗한 휴식의 마침표" },
-        { "img": "images/special_cafe.jpg",   "alt": "카페테리아", "caption": "나만의 홈카페 시간" },
-        { "img": "images/special_tea.jpg",    "alt": "다도 체험", "caption": "차 한 잔에 담긴 여유" },
-        { "img": "images/about_detail.jpg",   "alt": "공간 상세", "caption": "정갈하게 차려진 공간" },
-        { "img": "images/special_hinoki.jpg", "alt": "히노끼 욕조", "caption": "몸과 마음을 녹이는 온기" }
+        {
+          "img": "images/room_main.png",
+          "alt": "안채 침실",
+          "caption": "햇살이 머무는 안채 침실"
+        },
+        {
+          "img": "images/open_plan.png",
+          "alt": "오픈 플랜 구조",
+          "caption": "공간의 유연한 흐름"
+        },
+        {
+          "img": "images/hero_main.png",
+          "alt": "한옥 외관",
+          "caption": "고즈넉한 한옥의 정취"
+        },
+        {
+          "img": "images/hero_interior.png",
+          "alt": "내부 공간",
+          "caption": "프라이빗한 휴식의 마침표"
+        },
+        {
+          "img": "images/special_cafe.jpg",
+          "alt": "카페테리아",
+          "caption": "나만의 홈카페 시간"
+        },
+        {
+          "img": "images/주방1.jpg",
+          "alt": "안채침실",
+          "caption": "가정식 넓은 주방이 요리를 즐겁게 합니다."
+        },
+        {
+          "img": "images/거실1.jpg",
+          "alt": "안채침실",
+          "caption": "고즈넉한 한옥 넓은 거실에서 다양한 즐거움을...."
+        }
       ]
     }
   },
@@ -167,17 +268,17 @@
       {
         "img": "images/special_cafe.jpg",
         "title": "카페테리아",
-        "desc": "<span class=\"copy-line\">투숙객 전용 라운지에서 커피와 디저트를 편안하게 즐길 수 있습니다.</span><span class=\"copy-line\">아침 햇살과 함께 여유로운 시작을 경험하세요.</span>"
+        "desc": "투숙객 전용 라운지에서 커피와 디저트를 편안하게 즐길 수 있습니다.<br />아침 햇살과 함께 여유로운 시작을 경험하세요."
       },
       {
         "img": "images/special_cinema.jpg",
         "title": "영화감상",
-        "desc": "120인치 대형 스크린과 빔 프로젝터로 나만의 작은 시네마를 즐겨보세요.<br />원하는 콘텐츠를 자유롭게 감상할 수 있습니다."
+        "desc": "150인치 이상 대형 스크린과 빔 프로젝터로 나만의 독립 시네마를 즐겨보세요.<br />OTT등 원하는 콘텐츠를 자유롭게 감상할 수 있습니다."
       },
       {
         "img": "images/special_karaoke.jpg",
         "title": "노래방",
-        "desc": "신나게 노래를 부르며 스트레스를 날려버릴 수 있는 공간이 준비되어 있습니다.<br />가족, 친구들과 함께 언제든 즐거운 추억을 남겨보세요."
+        "desc": "통기타로 신나게 노래를 부르며 스트레스를 날려버릴 수 있는 공간이 준비되어 있습니다.<br />가족, 친구들과 함께 언제든 즐거운 추억을 남겨보세요."
       }
     ]
   },
@@ -195,7 +296,7 @@
     "addressTitle": "주소",
     "addressDesc": "이천의 조용한 골목 안쪽에 자리하고 있습니다.",
     "parkingTitle": "주차 안내",
-    "parkingDesc": "<span class=\"copy-line\">한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다.</span>"
+    "parkingDesc": "한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다."
   },
   "reserve": {
     "title": "예약 및 문의 | 차담한옥",
