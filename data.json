@@ -1,7 +1,7 @@
 {
   "common": {
     "ogTitle": "차담한옥(차담옥) - 쉼이 머무는 차담옥",
-    "ogImage": "images/hero_main.png",
+    "ogImage": "images/hero_main.jpg",
     "logo": "차담한옥(차담옥)",
     "nav": {
       "home": "Home",
@@ -26,14 +26,14 @@
     "title": "차담한옥(차담옥) | 쉼이 머무는 차담한옥",
     "hero": [
       {
-        "img": "images/hero_main.png",
-        "title": "쉼이 머무는 차담한옥,<br />차담한옥",
-        "desc": "한옥스테이, 홈카페, 다도체험",
+        "img": "images/hero_main.jpg",
+        "title": "쉼이 머무는 차담한옥",
+        "desc": "한옥스테이, 홈카페, 다도체험, 영화, 노래",
         "btnText": "객실 둘러보기",
         "btnLink": "rooms.html"
       },
       {
-        "img": "images/hero_interior.png",
+        "img": "images/hero_interior.jpg",
         "title": "온전한 쉼을 위한<br />프라이빗 공간",
         "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
         "btnText": "예약하기",
@@ -111,6 +111,27 @@
       },
       {
         "img": "images/숙성실1.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/봄2.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/겨울2.jpg",
+        "title": "온전한 쉼을 위한<br />프라이빗 공간",
+        "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
+        "btnText": "예약하기",
+        "btnLink": "reserve.html"
+      },
+      {
+        "img": "images/겨울3.jpg",
         "title": "온전한 쉼을 위한<br />프라이빗 공간",
         "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
         "btnText": "예약하기",
@@ -227,12 +248,12 @@
           "caption": "공간의 유연한 흐름"
         },
         {
-          "img": "images/hero_main.png",
+          "img": "images/hero_main.jpg",
           "alt": "한옥 외관",
           "caption": "고즈넉한 한옥의 정취"
         },
         {
-          "img": "images/hero_interior.png",
+          "img": "images/hero_interior.jpg",
           "alt": "내부 공간",
           "caption": "프라이빗한 휴식의 마침표"
         },
@@ -279,6 +300,31 @@
         "img": "images/special_karaoke.jpg",
         "title": "노래방",
         "desc": "통기타로 신나게 노래를 부르며 스트레스를 날려버릴 수 있는 공간이 준비되어 있습니다.<br />가족, 친구들과 함께 언제든 즐거운 추억을 남겨보세요."
+      },
+      {
+        "img": "images/bbq1.jpg",
+        "title": "바베큐장",
+        "desc": "아늑하고 여름이면 에어컨 있는 바베큐장에서 식도락을 즐겨보세요<br />"
+      },
+      {
+        "img": "images/다도6.jpg",
+        "title": "다도체험",
+        "desc": "엄선한 잎차와 다기 세트를 준비해 두었습니다.<br />차를 우려내는 짧은 의식만으로도 하루의 결이 차분해집니다.<br />"
+      },
+      {
+        "img": "images/다도6.jpg",
+        "title": "다도체험",
+        "desc": "엄선한 잎차와 다기 세트를 준비해 두었습니다.<br />차를 우려내는 짧은 의식만으로도 하루의 결이 차분해집니다.<br />"
+      },
+      {
+        "img": "images/텃밭1.jpg",
+        "title": "텃밭",
+        "desc": "차담지기가 유기농으로 농사지은 각종 과채소를 즐겨보세요.<br />"
+      },
+      {
+        "img": "images/텃밭3.jpg",
+        "title": "텃밭",
+        "desc": "차담지기가 유기농으로 농사지은 각종 과채소를 즐겨보세요.<br />"
       }
     ]
   },

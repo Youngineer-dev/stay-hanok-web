@@ -730,9 +730,16 @@ header.active .nav-menu a::after {
 .hero {
   padding: 0;
   height: 100vh;
-  min-height: 700px;
+  min-height: 500px;
   width: 100%;
   position: relative;
+  overflow: hidden;
+}
+
+.hero-slider,
+.hero-slider .swiper-wrapper,
+.hero-slider .swiper-slide {
+  height: 100%;
 }
 
 .swiper-slide {
@@ -798,13 +805,41 @@ header.active .nav-menu a::after {
   font-weight: 300;
 }
 
+.hero .swiper-button-prev,
+.hero .swiper-button-next {
+  width: auto;
+  height: auto;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.hero .swiper-button-prev::after,
+.hero .swiper-button-next::after {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.hero .swiper-button-prev {
+  left: 2.5rem;
+}
+
+.hero .swiper-button-next {
+  right: 2.5rem;
+}
+
+.hero .swiper-button-prev:hover,
+.hero .swiper-button-next:hover {
+  color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.15);
+}
+
 /* Intro Section (About) */
 .intro {
   background-color: var(--color-bg-body); /* Ensure opaque background */
   position: relative;
-  z-index: 20; /* Higher than hero content */
-  padding-top: 8rem; /* Extra spacing from Hero */
-  margin-top: -1px; /* Fix sub-pixel gaps */
+  z-index: 20;
+  padding-top: 5rem;
+  margin-top: -1px;
 }
 
 /* Features Grid */
@@ -1249,13 +1284,13 @@ header.active .nav-menu a::after {
   }
 
   .hero {
-    height: 72vh;
-    min-height: 420px;
+    height: 65vh;
+    min-height: 400px;
   }
 
-  @supports (height: 72dvh) {
+  @supports (height: 65dvh) {
     .hero {
-      height: 72dvh;
+      height: 65dvh;
     }
   }
 

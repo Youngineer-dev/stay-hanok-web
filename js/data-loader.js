@@ -1,15 +1,20 @@
 window.siteData = null;
 
-window.dataLoadPromise = fetch('data.json')
+window.dataLoadPromise = fetch('data.json?v=' + new Date().getTime()) // 캐시 방지 파라미터 추가
   .then(response => {
-    if (!response.ok) throw new Error("Failed to load data.json");
+    if (!response.ok) {
+      console.error("Critical: Could not load data.json. Status:", response.status);
+      throw new Error("Failed to load data.json (HTTP " + response.status + ")");
+    }
     return response.json();
   })
   .then(data => {
+    console.log("Success: data.json loaded perfectly.");
     window.siteData = data;
   })
   .catch(error => {
-    console.error("Error loading JSON data:", error);
+    console.error("Critical Error loading JSON data:", error);
+    alert("데이터를 불러오지 못했습니다. 서버 상태나 파일 대소문자를 확인하세요.");
   });
 
 window.applyDataToDOM = function(root = document) {
