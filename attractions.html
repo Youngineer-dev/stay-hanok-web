@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주변 명소 | 차담한옥</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="attractions">
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="container fade-up" style="padding-top: 150px">
+        <div class="text-center">
+          <span class="section-subtitle" data-text="attractions.subtitle">Attractions</span>
+          <h2 class="section-title" data-text="attractions.mainTitle">주변 가볼만한 곳</h2>
+          <p class="copy-lead copy-medium copy-center" data-text="attractions.intro">
+            차담한옥 인근의 아름다운 명소들을 소개합니다.<br />
+            머무시는 동안 여유로운 발걸음으로 주변을 둘러보세요.
+          </p>
+        </div>
+
+        <div class="special-grid" id="attractions-items">
+          <!-- data.json attractions.items 배열에서 동적 생성 -->
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/data-loader.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+    <script>
+      window.dataLoadPromise.then(() => {
+        const items = window.siteData?.attractions?.items || [];
+        const grid = document.getElementById('attractions-items');
+
+        items.forEach((item, i) => {
+          const el = document.createElement('div');
+          el.className = 'special-item fade-up';
+          el.innerHTML = `
+            <img
+              src="${item.img || ''}"
+              alt="${item.title || ''}"
+              loading="${i === 0 ? 'eager' : 'lazy'}"
+              decoding="async"
+            />
+            <h3>${item.title || ''}</h3>
+            <p class="copy-body">${item.desc || ''}</p>
+          `;
+          grid.appendChild(el);
+        });
+
+        if (typeof window.observeFadeUps === 'function') {
+          window.observeFadeUps();
+        } else {
+          document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+        }
+      });
+    </script>
+  </body>
+</html>
