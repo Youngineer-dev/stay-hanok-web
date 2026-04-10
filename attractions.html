@@ -5,6 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>주변 명소 | 차담한옥</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* 명소 카드 클릭 유도 호버 효과 */
+      .attraction-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 6px;
+        transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+      }
+      .attraction-card:hover {
+        transform: translateY(-8px);
+      }
+      .attraction-card h3 {
+        transition: color 0.3s ease;
+      }
+      .attraction-card:hover h3 {
+        color: var(--color-nav-accent); /* 골드 톤 텍스트 변화 */
+      }
+      .attraction-card .img-wrapper {
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+        transition: box-shadow 0.4s ease;
+        margin-bottom: 1.5rem;
+      }
+      .attraction-card img {
+        margin-bottom: 0 !important;
+        transition: transform 0.6s var(--ease-out-expo);
+        width: 100%;
+        display: block;
+      }
+      .attraction-card:hover .img-wrapper {
+        box-shadow: 0 16px 30px rgba(0,0,0,0.12);
+      }
+      .attraction-card:hover img {
+        transform: scale(1.04);
+      }
+    </style>
   </head>
   <body data-page="attractions">
     <div id="header-placeholder"></div>
@@ -37,16 +75,26 @@
         const grid = document.getElementById('attractions-items');
 
         items.forEach((item, i) => {
-          const el = document.createElement('div');
-          el.className = 'special-item fade-up';
+          // 링크가 있으면 <a>로, 없으면 <div>로 생성
+          const el = document.createElement(item.link ? 'a' : 'div');
+          el.className = 'special-item attraction-card fade-up';
+          
+          if (item.link) {
+            el.href = item.link;
+            el.target = '_blank';
+            el.rel = 'noopener noreferrer';
+          }
+
           el.innerHTML = `
-            <img
-              src="${item.img || ''}"
-              alt="${item.title || ''}"
-              loading="${i === 0 ? 'eager' : 'lazy'}"
-              decoding="async"
-            />
-            <h3>${item.title || ''}</h3>
+            <div class="img-wrapper">
+              <img
+                src="${item.img || ''}"
+                alt="${item.title || ''}"
+                loading="${i === 0 ? 'eager' : 'lazy'}"
+                decoding="async"
+              />
+            </div>
+            <h3>${item.title || ''}<span style="font-size: 0.9em; margin-left: 6px; opacity: 0.6; font-weight: 300;">↗</span></h3>
             <p class="copy-body">${item.desc || ''}</p>
           `;
           grid.appendChild(el);
