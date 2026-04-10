@@ -84,38 +84,14 @@
             </h2>
           </div>
 
-          <div class="room-card-large fade-up">
-            <div class="room-img-wrapper">
-              <!-- Use the updated room flow image here too -->
-              <img
-                src="images/open_plan.jpg"
-                alt="Main Bedroom"
-                loading="lazy"
-                decoding="async"
-                data-img="index.rooms.img"
-              />
+          <div class="swiper index-rooms-slider fade-up">
+            <div class="swiper-wrapper" id="index-rooms-wrapper">
+              <!-- data.json index.rooms.list 배열에서 동적 생성 -->
             </div>
-            <div class="room-info">
-              <h3 data-text="index.rooms.roomTitle">안채 (Main Room)</h3>
-              <p class="copy-body copy-medium" data-text="index.rooms.roomDesc">
-                안채는 햇살이 오래 머무는 침실과 넓은 대청마루가 자연스럽게
-                이어지는 대표 객실입니다.<br />
-                전통의 균형과 현대의 편안함을 한 공간 안에서 함께 경험하실 수
-                있습니다.
-              </p>
-              <ul class="room-specs">
-                <li data-text="index.rooms.specs[0]">킹 사이즈 침구 1개</li>
-                <li data-text="index.rooms.specs[1]">넓은 앞마당</li>
-                <li data-text="index.rooms.specs[2]">다도 세트 구비</li>
-              </ul>
-              <a
-                href="rooms.html"
-                class="btn-outline"
-                style="margin-top: 2rem"
-                data-text="index.rooms.btnText"
-                >자세히 보기</a
-              >
-            </div>
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </section>
@@ -208,6 +184,39 @@
           pagination: { el: ".swiper-pagination", clickable: true },
           navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
         });
+
+        // Rooms Slider Rendering
+        const roomItems = window.siteData?.index?.rooms?.list || [];
+        const roomsWrapper = document.getElementById('index-rooms-wrapper');
+        if (roomsWrapper && roomItems.length > 0) {
+          roomItems.forEach((room) => {
+            const specsHtml = room.specs ? room.specs.map(spec => `<li>${spec}</li>`).join('') : '';
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide';
+            slide.innerHTML = `
+              <div class="room-card-large" style="margin: 0; height: 100%;">
+                <div class="room-img-wrapper">
+                  <img src="${room.img || ''}" alt="${room.roomTitle || ''}" loading="lazy" decoding="async" />
+                </div>
+                <div class="room-info">
+                  <h3>${room.roomTitle || ''}</h3>
+                  <p class="copy-body copy-medium">${room.roomDesc || ''}</p>
+                  <ul class="room-specs">${specsHtml}</ul>
+                  <a href="${room.btnLink || 'rooms.html'}" class="btn-outline" style="margin-top: 2rem">${room.btnText || '자세히 보기'}</a>
+                </div>
+              </div>
+            `;
+            roomsWrapper.appendChild(slide);
+          });
+
+          new Swiper(".index-rooms-slider", {
+            loop: roomItems.length > 1,
+            speed: prefersReducedMotion ? 0 : 800,
+            spaceBetween: 30,
+            navigation: { nextEl: ".index-rooms-slider .swiper-button-next", prevEl: ".index-rooms-slider .swiper-button-prev" },
+            pagination: { el: ".index-rooms-slider .swiper-pagination", clickable: true }
+          });
+        }
       });
     </script>
   </body>

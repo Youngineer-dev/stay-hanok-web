@@ -26,49 +26,22 @@
             <span class="copy-line" data-text="roomsPage.intro2"
               >머무는 동선마다 잔잔한 온기가 이어집니다.</span
             >
+            <br />
+            <span class="copy-line" style="color: var(--color-primary); font-weight: 600; margin-top: 1.5rem;">
+              ※ 차담한옥은 오직 한 팀만을 위한 프라이빗 독채 풀빌라입니다.<br />
+              예약 시 안내된 모든 공간을 단독으로 자유롭게 이용하실 수 있습니다.
+            </span>
           </p>
         </div>
 
-        <!-- 1. Main Room Detail -->
-        <div class="room-card-large fade-up" style="margin-bottom: 5rem">
-          <div class="room-img-wrapper">
-            <img
-              src="images/room_main.jpg"
-              alt="안채 침실"
-              loading="lazy"
-              decoding="async"
-              data-img="roomsPage.mainRoom.img"
-            />
+        <!-- 1. Main Rooms Detail (Slider) -->
+        <div class="swiper rooms-page-slider fade-up" style="margin-bottom: 5rem">
+          <div class="swiper-wrapper" id="rooms-page-wrapper">
+            <!-- data.json roomsPage.roomList 배열에서 동적 생성 -->
           </div>
-          <div class="room-info">
-            <h3 data-text="roomsPage.mainRoom.title">안채 (An-chae)</h3>
-            <p
-              class="copy-body copy-medium"
-              data-text="roomsPage.mainRoom.desc"
-            >
-              안채는 넓은 대청마루와 침실이 자연스럽게 이어지는 메인 공간입니다.
-              <br />
-              창을 열면 서촌의 지붕선이 펼쳐지고, 부드러운 조명 아래 깊은 휴식을
-              경험하실 수 있습니다.
-            </p>
-            <ul class="room-specs">
-              <li data-text="roomsPage.mainRoom.specs[0]">
-                기준 인원 2인 (최대 4인)
-              </li>
-              <li data-text="roomsPage.mainRoom.specs[1]">
-                킹 사이즈 라텍스 침대
-              </li>
-              <li data-text="roomsPage.mainRoom.specs[2]">
-                프리미엄 구스 침구
-              </li>
-            </ul>
-            <a
-              href="reserve.html"
-              class="btn"
-              data-text="roomsPage.mainRoom.btnText"
-              >예약하기</a
-            >
-          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
 
         <!-- 2. Space Layout (Open Plan Flow) -->
@@ -174,6 +147,11 @@
           </div>
         </div>
         <div class="room-gallery-hint">이미지를 드래그하여 스크롤하세요</div>
+        
+        <!-- CTA Button at the end of the journey -->
+        <div class="text-center fade-up" style="margin-top: 6rem; padding-bottom: 2rem;">
+          <a href="reserve.html" class="btn" style="font-size: 1.1rem; padding: 1.3rem 4rem;">프라이빗 독채 전체 예약하기</a>
+        </div>
       </section>
     </main>
 
@@ -223,6 +201,38 @@
             768: { spaceBetween: 28 },
           },
         });
+
+        // Main Rooms Dynamic Slider
+        const roomList = window.siteData?.roomsPage?.roomList || [];
+        const roomsWrapper = document.getElementById("rooms-page-wrapper");
+
+        if (roomsWrapper && roomList.length > 0) {
+          roomList.forEach((room) => {
+            const specsHtml = room.specs ? room.specs.map(spec => `<li>${spec}</li>`).join('') : '';
+            const slide = document.createElement("div");
+            slide.className = "swiper-slide";
+            slide.innerHTML = `
+              <div class="room-card-large" style="margin: 0; height: 100%;">
+                <div class="room-img-wrapper">
+                  <img src="${room.img || ''}" alt="${room.title || ''}" loading="lazy" decoding="async" />
+                </div>
+                <div class="room-info">
+                  <h3>${room.title || ''}</h3>
+                  <p class="copy-body copy-medium">${room.desc || ''}</p>
+                  <ul class="room-specs">${specsHtml}</ul>
+                </div>
+              </div>
+            `;
+            roomsWrapper.appendChild(slide);
+          });
+
+          new Swiper(".rooms-page-slider", {
+            loop: roomList.length > 1,
+            spaceBetween: 30,
+            navigation: { nextEl: ".rooms-page-slider .swiper-button-next", prevEl: ".rooms-page-slider .swiper-button-prev" },
+            pagination: { el: ".rooms-page-slider .swiper-pagination", clickable: true }
+          });
+        }
 
         // [중요] 동적으로 생성된 요소들에게 애니메이션 적용 신호 전달
         if (typeof window.observeFadeUps === "function") {

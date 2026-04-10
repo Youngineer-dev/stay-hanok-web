@@ -910,6 +910,7 @@ header.active .nav-menu a::after {
     box-shadow 0.4s ease;
   border-radius: 4px;
   overflow: hidden;
+  min-height: 450px;
 }
 
 .room-card-large:hover {
@@ -923,10 +924,50 @@ header.active .nav-menu a::after {
 }
 
 .room-img-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   transition: transform 0.8s var(--ease-out-expo);
+}
+
+/* Room Slider Navigation Buttons (Mimicking Hero Slider) */
+.index-rooms-slider .swiper-button-prev,
+.index-rooms-slider .swiper-button-next,
+.rooms-page-slider .swiper-button-prev,
+.rooms-page-slider .swiper-button-next {
+  width: auto;
+  height: auto;
+  color: rgba(109, 91, 74, 0.6); /* #6d5b4a with opacity */
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.index-rooms-slider .swiper-button-prev::after,
+.index-rooms-slider .swiper-button-next::after,
+.rooms-page-slider .swiper-button-prev::after,
+.rooms-page-slider .swiper-button-next::after {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.index-rooms-slider .swiper-button-prev:hover,
+.index-rooms-slider .swiper-button-next:hover,
+.rooms-page-slider .swiper-button-prev:hover,
+.rooms-page-slider .swiper-button-next:hover {
+  color: rgba(109, 91, 74, 1);
+  transform: scale(1.15);
+}
+
+.index-rooms-slider .swiper-button-prev,
+.rooms-page-slider .swiper-button-prev {
+  left: 1.5rem;
+}
+
+.index-rooms-slider .swiper-button-next,
+.rooms-page-slider .swiper-button-next {
+  right: 1.5rem;
 }
 
 .room-card-large:hover .room-img-wrapper img {
