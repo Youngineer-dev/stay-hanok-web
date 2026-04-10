@@ -189,7 +189,6 @@ h6 {
     opacity var(--motion-enter-duration) var(--motion-ease),
     transform var(--motion-enter-duration) var(--motion-ease);
   transition-delay: 0ms;
-  will-change: opacity, transform;
 }
 
 .fade-up {
@@ -199,6 +198,8 @@ h6 {
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
+  /* 애니메이션 종료 후 확실히 렌더링 복구를 위해 GPU 레이어 강제 해제 */
+  transform: none; 
 }
 
 .fade-in {
@@ -933,6 +934,13 @@ header.active .nav-menu a::after {
   transition: transform 0.8s var(--ease-out-expo);
 }
 
+/* Swiper Slide Uniform Height Fix */
+.index-rooms-slider .swiper-slide,
+.rooms-page-slider .swiper-slide {
+  height: auto; /* 부모인 wrapper의 높이(가장 긴 슬라이드 기준)를 그대로 따라감 */
+  display: flex; /* 자식 요소 크기를 채우기 위한 Flex 활성화 */
+}
+
 /* Room Slider Navigation Buttons (Mimicking Hero Slider) */
 .index-rooms-slider .swiper-button-prev,
 .index-rooms-slider .swiper-button-next,
@@ -970,6 +978,27 @@ header.active .nav-menu a::after {
   right: 1.5rem;
 }
 
+/* 방해되는 깜빡이는 텍스트 커서(캐럿) 및 드래그, 포커스 아웃라인 제거 */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet,
+.swiper-wrapper,
+.swiper-slide,
+.room-img-wrapper {
+  outline: none !important;
+  user-select: none;
+  -webkit-user-select: none;
+  caret-color: transparent;
+  -webkit-user-drag: none;
+}
+
+/* 단, 객실 정보의 텍스트는 드래그 복사가 가능하도록 정상화 */
+.room-info {
+  user-select: auto;
+  -webkit-user-select: auto;
+  caret-color: auto;
+}
+
 .room-card-large:hover .room-img-wrapper img {
   transform: scale(1.03);
 }
@@ -985,6 +1014,8 @@ header.active .nav-menu a::after {
 .room-info h3 {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
+  -webkit-font-smoothing: auto;
+  transform: translateZ(0);
 }
 
 .room-specs {
@@ -992,6 +1023,9 @@ header.active .nav-menu a::after {
   color: var(--color-text-sub);
   list-style: none;
   padding-left: 0;
+  /* Swiper와 같은 transform 부모 안에서 텍스트 렌더링 선명도 유지 방어 코드 */
+  -webkit-font-smoothing: auto;
+  transform: translateZ(0); 
 }
 
 .room-specs li {
