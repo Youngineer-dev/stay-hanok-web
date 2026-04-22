@@ -1179,6 +1179,13 @@ header.active .nav-menu a::after {
   overflow: hidden;
   flex-shrink: 0;
   position: relative; /* 추가된 오버레이 부모 기준 */
+  cursor: zoom-in;
+  outline: none;
+}
+
+.room-gallery-slide:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .room-gallery-slide img {
@@ -1365,42 +1372,50 @@ header.active .nav-menu a::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.1rem;
+  overflow: hidden;
 }
 
 .lightbox-img {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 62vh;
   width: auto;
   height: auto;
   object-fit: contain;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  flex-shrink: 1;
 }
 
 .lightbox-info {
   color: #f7f3ec;
   text-align: center;
-  max-width: 720px;
+  max-width: 760px;
   padding: 0 1rem;
+  overflow-y: auto;
+  max-height: 26vh;
+  flex-shrink: 0;
 }
 
 .lightbox-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  margin-bottom: 0.7rem;
+  font-size: 1.12rem;
+  margin-bottom: 0.55rem;
   color: #fff;
+  word-break: keep-all;
+  line-height: 1.45;
 }
 
 .lightbox-desc {
-  font-size: 0.95rem;
+  font-size: 0.86rem;
   line-height: 1.7;
-  opacity: 0.88;
+  opacity: 0.9;
+  word-break: keep-all;
 }
 
 .lightbox-counter {
   display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.85rem;
+  margin-top: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   opacity: 0.65;
 }
@@ -1460,14 +1475,177 @@ header.active .nav-menu a::after {
 
 @media (max-width: 768px) {
   .special-lightbox { padding: 1rem; }
-  .lightbox-img { max-height: 58vh; }
-  .lightbox-title { font-size: 1.2rem; }
-  .lightbox-desc { font-size: 0.88rem; }
+  .lightbox-img { max-height: 52vh; }
+  .lightbox-info { max-height: 34vh; }
+  .lightbox-title { font-size: 1rem; }
+  .lightbox-desc { font-size: 0.8rem; line-height: 1.65; }
   .lightbox-close { top: 0.9rem; right: 0.9rem; height: 36px; padding: 0 0.9rem; font-size: 0.82rem; }
   .lightbox-prev,
   .lightbox-next { width: 44px; height: 44px; font-size: 1.8rem; }
   .lightbox-prev { left: 0.7rem; }
   .lightbox-next { right: 0.7rem; }
+}
+
+/* Room Info Section (이용 안내) */
+.room-info-section {
+  padding: 5.5rem 0 4.5rem;
+  background-color: var(--color-bg-section);
+}
+
+.room-info-specs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  max-width: 1040px;
+  margin: 3.2rem auto 2rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 2rem 1.1rem;
+  background: var(--color-white);
+  text-align: center;
+}
+
+.spec-item.is-wide {
+  grid-column: 1 / -1;
+  padding: 1.6rem 1.6rem;
+}
+
+.spec-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: var(--color-text-sub);
+  text-transform: uppercase;
+}
+
+.spec-value {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  color: var(--color-primary);
+  line-height: 1.55;
+  font-weight: 500;
+  word-break: keep-all;
+}
+
+.spec-item.is-wide .spec-value {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.room-info-notice {
+  max-width: 840px;
+  margin: 0 auto 4rem;
+  padding: 1.4rem 1.8rem;
+  background: rgba(157, 140, 124, 0.12);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 2px;
+}
+
+.room-info-notice p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--color-text-main);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.room-info-notice p + p {
+  margin-top: 0.45rem;
+}
+
+.room-info-subheading {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-primary);
+  margin: 0 0 2.2rem;
+  letter-spacing: 0.02em;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 2.8rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.amenity-category h4 {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  letter-spacing: 0.02em;
+}
+
+.amenity-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.amenity-category li {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--color-text-main);
+  word-break: keep-all;
+}
+
+.amenity-category li + li {
+  padding-top: 0.15rem;
+}
+
+@media (max-width: 1024px) {
+  .room-info-specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .amenities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.2rem 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .room-info-section {
+    padding: 4rem 0 3.5rem;
+  }
+  .room-info-specs {
+    grid-template-columns: 1fr;
+    margin: 2.4rem auto 1.6rem;
+  }
+  .spec-item {
+    padding: 1.4rem 1rem;
+  }
+  .spec-item.is-wide {
+    padding: 1.4rem 1.2rem;
+  }
+  .room-info-notice {
+    margin-bottom: 3rem;
+    padding: 1.2rem 1.3rem;
+  }
+  .room-info-notice p {
+    font-size: 0.86rem;
+  }
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .room-info-subheading {
+    font-size: 1.2rem;
+  }
 }
 
 /* Special Preview (Index 메인 화면 전용 - 더 가벼운 프리뷰 그리드) */

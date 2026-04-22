@@ -34,6 +34,11 @@
           </p>
         </div>
 
+        <!-- Quick Specs (기본 정보: 빠른 확인용) -->
+        <div class="room-info-specs fade-up" id="room-info-specs" style="margin-bottom: 4.5rem">
+          <!-- data.json roomsPage.info.specs 배열에서 동적 생성 -->
+        </div>
+
         <!-- 1. Main Rooms Detail (Slider) -->
         <div class="swiper rooms-page-slider fade-up" style="margin-bottom: 5rem">
           <div class="swiper-wrapper" id="rooms-page-wrapper">
@@ -131,28 +136,35 @@
         </div>
       </section>
 
-      <!-- 3. Photo Gallery (Horizontal Drag Slider) -->
-      <section class="room-gallery fade-up">
-        <div class="container text-center room-gallery-header">
-          <span class="section-subtitle" data-text="roomsPage.gallery.subtitle"
-            >Gallery</span
-          >
-          <h2 class="section-title" data-text="roomsPage.gallery.title">
-            공간을 담다
-          </h2>
-        </div>
-        <div class="swiper room-gallery-slider">
-          <div class="swiper-wrapper" id="gallery-slides">
-            <!-- data.json roomsPage.gallery.photos 배열에서 동적 생성 -->
+      <!-- 3. Room Info (이용 안내) -->
+      <section class="room-info-section fade-up">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-subtitle" data-text="roomsPage.info.subtitle"
+              >Info</span
+            >
+            <h2 class="section-title" data-text="roomsPage.info.title">
+              이용 안내
+            </h2>
+          </div>
+
+          <aside class="room-info-notice" id="room-info-notice" aria-label="이용 주의사항" style="margin-top: 3rem">
+            <!-- data.json roomsPage.info.notice 배열에서 동적 생성 -->
+          </aside>
+
+          <h3 class="room-info-subheading" data-text="roomsPage.info.amenitiesHeading">
+            구비 물품
+          </h3>
+          <div class="amenities-grid" id="room-info-amenities">
+            <!-- data.json roomsPage.info.amenities 배열에서 동적 생성 -->
           </div>
         </div>
-        <div class="room-gallery-hint">이미지를 드래그하여 스크롤하세요</div>
-        
-        <!-- CTA Button at the end of the journey -->
-        <div class="text-center fade-up" style="margin-top: 6rem; padding-bottom: 2rem;">
-          <a href="reserve.html" class="btn" style="font-size: 1.1rem; padding: 1.3rem 4rem;">프라이빗 독채 전체 예약하기</a>
-        </div>
       </section>
+
+      <!-- CTA Button at the end of the journey -->
+      <div class="container text-center fade-up" style="padding: 4rem 0 6rem;">
+        <a href="reserve.html" class="btn" style="font-size: 1.1rem; padding: 1.3rem 4rem;">프라이빗 독채 전체 예약하기</a>
+      </div>
     </main>
 
     <div id="footer-placeholder"></div>
@@ -167,41 +179,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       window.dataLoadPromise.then(() => {
-        const photos = window.siteData?.roomsPage?.gallery?.photos || [];
-        const wrapper = document.getElementById("gallery-slides");
-
-        if (photos.length === 0) return;
-
-        wrapper.innerHTML = ""; // 기존 내용 초기화
-
-        photos.forEach((photo, i) => {
-          const slide = document.createElement("div");
-          slide.className = "swiper-slide room-gallery-slide fade-up"; // fade-up 클래스 명시
-
-          const overlayHTML = photo.caption
-            ? `<div class="slide-overlay"><p>${photo.caption}</p></div>`
-            : "";
-
-          slide.innerHTML = `
-            <img src="${photo.img}" alt="${photo.alt || ""}" loading="${i < 2 ? "eager" : "lazy"}" decoding="async" />
-            ${overlayHTML}
-          `;
-          wrapper.appendChild(slide);
-        });
-
-        // Swiper 초기화
-        new Swiper(".room-gallery-slider", {
-          slidesPerView: "auto",
-          spaceBetween: 20,
-          freeMode: true,
-          grabCursor: true,
-          touchEventsTarget: "container",
-          mousewheel: { forceToAxis: true },
-          breakpoints: {
-            768: { spaceBetween: 28 },
-          },
-        });
-
         // Main Rooms Dynamic Slider
         const roomList = window.siteData?.roomsPage?.roomList || [];
         const roomsWrapper = document.getElementById("rooms-page-wrapper");
@@ -234,12 +211,43 @@
           });
         }
 
+        // Room Info Rendering
+        const info = window.siteData?.roomsPage?.info;
+        if (info) {
+          const specsWrap = document.getElementById("room-info-specs");
+          if (specsWrap && Array.isArray(info.specs)) {
+            specsWrap.innerHTML = info.specs.map((s) => `
+              <div class="spec-item${s.wide ? " is-wide" : ""}">
+                <span class="spec-label">${s.label || ""}</span>
+                <span class="spec-value">${s.value || ""}</span>
+              </div>
+            `).join("");
+          }
+
+          const noticeWrap = document.getElementById("room-info-notice");
+          if (noticeWrap && Array.isArray(info.notice) && info.notice.length > 0) {
+            noticeWrap.innerHTML = info.notice.map((n) => `<p>${n}</p>`).join("");
+          }
+
+          const amenitiesWrap = document.getElementById("room-info-amenities");
+          if (amenitiesWrap && Array.isArray(info.amenities)) {
+            amenitiesWrap.innerHTML = info.amenities.map((cat) => {
+              const items = (cat.items || []).map((it) => `<li>${it}</li>`).join("");
+              return `
+                <div class="amenity-category">
+                  <h4>${cat.title || ""}</h4>
+                  <ul>${items}</ul>
+                </div>
+              `;
+            }).join("");
+          }
+        }
+
         // [중요] 동적으로 생성된 요소들에게 애니메이션 적용 신호 전달
         if (typeof window.observeFadeUps === "function") {
           window.observeFadeUps();
         } else {
-          // 옵저버가 없을 경우 강제 표시
-          document.querySelectorAll('.room-gallery-slide').forEach(el => el.classList.add('visible'));
+          document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
       });
     </script>

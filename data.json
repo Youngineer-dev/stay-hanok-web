@@ -189,6 +189,58 @@
         }
       ]
     },
+    "gallery": {
+      "subtitle": "Gallery",
+      "title": "공간을 담다",
+      "hint": "이미지를 드래그하여 스크롤 · 클릭하여 크게 보기",
+      "photos": [
+        {
+          "img": "images/room_main.png",
+          "alt": "안채 침실",
+          "caption": "햇살이 머무는 안채 침실"
+        },
+        {
+          "img": "images/open_plan.png",
+          "alt": "오픈 플랜 구조",
+          "caption": "공간의 유연한 흐름"
+        },
+        {
+          "img": "images/hero_main.png",
+          "alt": "한옥 외관",
+          "caption": "고즈넉한 한옥의 정취"
+        },
+        {
+          "img": "images/hero_interior.png",
+          "alt": "내부 공간",
+          "caption": "프라이빗한 휴식의 마침표"
+        },
+        {
+          "img": "images/special_cafe.jpg",
+          "alt": "카페테리아",
+          "caption": "나만의 홈카페 시간"
+        },
+        {
+          "img": "images/주방1.jpg",
+          "alt": "안채침실",
+          "caption": "가정식 넓은 주방이 요리를 즐겁게 합니다."
+        },
+        {
+          "img": "images/거실1.jpg",
+          "alt": "안채침실",
+          "caption": "고즈넉한 한옥 넓은 거실에서 다양한 즐거움을...."
+        },
+        {
+          "img": "images/한옥1.jpg",
+          "alt": "한옥",
+          "caption": "고즈넉한 전통한옥 체험의 즐거움을...."
+        },
+        {
+          "img": "images/봄4.jpg",
+          "alt": "안채침실",
+          "caption": "아름다운 차담의 봄"
+        }
+      ]
+    },
     "location": {
       "subtitle": "Location",
       "title": "오시는 길",
@@ -292,54 +344,48 @@
         }
       ]
     },
-    "gallery": {
-      "subtitle": "Gallery",
-      "title": "공간을 담다",
-      "photos": [
+    "info": {
+      "subtitle": "Info",
+      "title": "이용 안내",
+      "specs": [
+        { "label": "입실", "value": "오후 3시" },
+        { "label": "퇴실", "value": "오전 11시" },
+        { "label": "인원", "value": "기준 4명 · 최대 8명" },
+        { "label": "면적", "value": "115㎡" },
+        { "label": "객실유형", "value": "복층 독채 · 거실 + 침대방 2 + 온돌방 1 + 개별 야외 바비큐장 + 화장실 2", "wide": true }
+      ],
+      "notice": [
+        "예약된 인원 이외의 추가 인원은 입실을 금하며, 환불 또한 불가합니다.",
+        "기준 인원 초과 시 20,000원 추가 요금이 발생됩니다."
+      ],
+      "amenitiesHeading": "구비 물품",
+      "amenities": [
         {
-          "img": "images/room_main.png",
-          "alt": "안채 침실",
-          "caption": "햇살이 머무는 안채 침실"
+          "title": "타올류",
+          "items": ["페이스타올"]
         },
         {
-          "img": "images/open_plan.png",
-          "alt": "오픈 플랜 구조",
-          "caption": "공간의 유연한 흐름"
+          "title": "전자제품",
+          "items": ["75인치 TV", "에어컨 2대", "인덕션", "밥솥", "버너"]
         },
         {
-          "img": "images/hero_main.png",
-          "alt": "한옥 외관",
-          "caption": "고즈넉한 한옥의 정취"
+          "title": "주방용품",
+          "items": [
+            "크기별 접시, 밥그릇, 국그릇",
+            "와인잔, 맥주잔, 유리컵, 소주잔",
+            "국자, 수저, 젓가락, 주걱, 집게, 포크, 티스푼",
+            "와인오프너, 가위, 주방용 칼, 도마",
+            "스테인리스 볼, 크기별 냄비, 쟁반, 냄비받침대",
+            "주방용 수세미, 주방 세제 등"
+          ]
         },
         {
-          "img": "images/hero_interior.png",
-          "alt": "내부 공간",
-          "caption": "프라이빗한 휴식의 마침표"
+          "title": "욕실용품",
+          "items": ["샴푸", "컨디셔너", "바디워시", "일회용 비누", "일회용 치약 등"]
         },
         {
-          "img": "images/special_cafe.jpg",
-          "alt": "카페테리아",
-          "caption": "나만의 홈카페 시간"
-        },
-        {
-          "img": "images/주방1.jpg",
-          "alt": "안채침실",
-          "caption": "가정식 넓은 주방이 요리를 즐겁게 합니다."
-        },
-        {
-          "img": "images/거실1.jpg",
-          "alt": "안채침실",
-          "caption": "고즈넉한 한옥 넓은 거실에서 다양한 즐거움을...."
-        },
-        {
-          "img": "images/한옥1.jpg",
-          "alt": "한옥",
-          "caption": "고즈넉한 전통한옥 체험의 즐거움을...."
-        },
-        {
-          "img": "images/봄4.jpg",
-          "alt": "안채침실",
-          "caption": "아름다운 차담의 봄"
+          "title": "비치물품",
+          "items": ["휴지", "탈취제", "드라이기", "파리채", "살충제 등"]
         }
       ]
     }
