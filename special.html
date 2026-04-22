@@ -22,10 +22,25 @@
         </div>
 
         <div class="special-grid" id="special-items">
-          <!-- data.json special.items 배열에서 동적 생성 -->
+          <!-- data.json special.items 배열에서 동적 생성 (제목별 그룹) -->
         </div>
       </section>
     </main>
+
+    <!-- 이미지 라이트박스 갤러리 -->
+    <div class="special-lightbox" id="special-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+      <button class="lightbox-close" id="lightbox-close" aria-label="창 닫기">창 닫기</button>
+      <button class="lightbox-prev" id="lightbox-prev" aria-label="이전 이미지">&lsaquo;</button>
+      <button class="lightbox-next" id="lightbox-next" aria-label="다음 이미지">&rsaquo;</button>
+      <div class="lightbox-stage" id="lightbox-stage">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+        <div class="lightbox-info">
+          <h3 class="lightbox-title" id="lightbox-title"></h3>
+          <p class="lightbox-desc" id="lightbox-desc"></p>
+          <span class="lightbox-counter" id="lightbox-counter"></span>
+        </div>
+      </div>
+    </div>
 
     <div id="footer-placeholder"></div>
     <script src="js/data-loader.js"></script>
@@ -37,28 +52,116 @@
         const items = window.siteData?.special?.items || [];
         const grid = document.getElementById('special-items');
 
-        items.forEach((item, i) => {
+        // 제목 기준 그룹핑 (공백 제거 + 소문자화로 정규화, 입력 순서 유지)
+        const normalizeTitle = (t) => (t || '').replace(/\s+/g, '').toLowerCase();
+        const groupMap = new Map();
+        items.forEach((item) => {
+          const key = normalizeTitle(item.title);
+          if (!groupMap.has(key)) groupMap.set(key, []);
+          groupMap.get(key).push(item);
+        });
+        const groups = Array.from(groupMap.values());
+
+        // 그룹별로 첫 항목을 카드로 렌더링
+        groups.forEach((group, i) => {
+          const first = group[0];
           const el = document.createElement('div');
           el.className = 'special-item fade-up';
+          el.setAttribute('role', 'button');
+          el.setAttribute('tabindex', '0');
+          el.setAttribute('aria-label', `${first.title || ''} 이미지 크게 보기`);
           el.innerHTML = `
-            <img
-              src="${item.img || ''}"
-              alt="${item.title || ''}"
-              loading="${i === 0 ? 'eager' : 'lazy'}"
-              decoding="async"
-            />
-            <h3>${item.title || ''}</h3>
-            <p class="copy-body">${item.desc || ''}</p>
+            <div class="special-item-img">
+              <img
+                src="${first.img || ''}"
+                alt="${first.title || ''}"
+                loading="${i === 0 ? 'eager' : 'lazy'}"
+                decoding="async"
+              />
+              ${group.length > 1 ? `<span class="special-item-count" aria-hidden="true">+${group.length - 1}</span>` : ''}
+            </div>
+            <h3>${first.title || ''}</h3>
+            <p class="copy-body">${first.desc || ''}</p>
           `;
+          const open = () => openLightbox(group, 0);
+          el.addEventListener('click', open);
+          el.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              open();
+            }
+          });
           grid.appendChild(el);
         });
 
-        // fade-up 옵저버가 동적 요소도 감지하도록 재등록
         if (typeof window.observeFadeUps === 'function') {
           window.observeFadeUps();
         } else {
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
+
+        // 라이트박스
+        const lightbox = document.getElementById('special-lightbox');
+        const imgEl = document.getElementById('lightbox-img');
+        const titleEl = document.getElementById('lightbox-title');
+        const descEl = document.getElementById('lightbox-desc');
+        const counterEl = document.getElementById('lightbox-counter');
+        const btnPrev = document.getElementById('lightbox-prev');
+        const btnNext = document.getElementById('lightbox-next');
+        const btnClose = document.getElementById('lightbox-close');
+
+        let currentGroup = [];
+        let currentIdx = 0;
+
+        function render() {
+          const item = currentGroup[currentIdx] || {};
+          imgEl.src = item.img || '';
+          imgEl.alt = item.title || '';
+          titleEl.textContent = item.title || '';
+          descEl.innerHTML = item.desc || '';
+          counterEl.textContent = currentGroup.length > 1
+            ? `${currentIdx + 1} / ${currentGroup.length}`
+            : '';
+          const multi = currentGroup.length > 1;
+          btnPrev.style.display = multi ? '' : 'none';
+          btnNext.style.display = multi ? '' : 'none';
+        }
+        function openLightbox(group, idx) {
+          currentGroup = group;
+          currentIdx = idx;
+          render();
+          lightbox.classList.add('is-open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+          lightbox.classList.remove('is-open');
+          lightbox.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+        function prev() {
+          if (currentGroup.length < 2) return;
+          currentIdx = (currentIdx - 1 + currentGroup.length) % currentGroup.length;
+          render();
+        }
+        function next() {
+          if (currentGroup.length < 2) return;
+          currentIdx = (currentIdx + 1) % currentGroup.length;
+          render();
+        }
+
+        btnClose.addEventListener('click', closeLightbox);
+        btnPrev.addEventListener('click', prev);
+        btnNext.addEventListener('click', next);
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('is-open')) return;
+          if (e.key === 'Escape') closeLightbox();
+          else if (e.key === 'ArrowLeft') prev();
+          else if (e.key === 'ArrowRight') next();
+        });
       });
     </script>
   </body>

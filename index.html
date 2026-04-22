@@ -96,6 +96,29 @@
         </div>
       </section>
 
+      <section class="special container fade-up">
+        <div class="text-center">
+          <span class="section-subtitle" data-text="special.subtitle"
+            >Experience</span
+          >
+          <h2 class="section-title" data-text="special.mainTitle">
+            특별한 경험
+          </h2>
+          <p class="copy-lead copy-medium copy-center" data-text="special.intro">
+            차담옥의 한옥스테이는 머무름을 넘어 경험으로 확장됩니다.<br />
+            하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.
+          </p>
+        </div>
+
+        <div class="special-grid special-preview" id="index-special-items">
+          <!-- data.json special.items 배열에서 동적 생성 (4개 프리뷰) -->
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem">
+          <a href="special.html" class="btn-outline">특별한 경험 전체보기</a>
+        </div>
+      </section>
+
       <section class="location container fade-up">
         <div class="text-center">
           <span class="section-subtitle" data-text="index.location.subtitle"
@@ -216,6 +239,33 @@
             navigation: { nextEl: ".index-rooms-slider .swiper-button-next", prevEl: ".index-rooms-slider .swiper-button-prev" },
             pagination: { el: ".index-rooms-slider .swiper-pagination", clickable: true }
           });
+        }
+
+        // Special Items Rendering (메인 페이지 프리뷰: 대표 4개)
+        const specialItems = (window.siteData?.special?.items || []).slice(0, 4);
+        const specialGrid = document.getElementById('index-special-items');
+        if (specialGrid && specialItems.length > 0) {
+          specialItems.forEach((item) => {
+            const el = document.createElement('div');
+            el.className = 'special-item fade-up';
+            el.innerHTML = `
+              <img
+                src="${item.img || ''}"
+                alt="${item.title || ''}"
+                loading="lazy"
+                decoding="async"
+              />
+              <h3>${item.title || ''}</h3>
+              <p class="copy-body">${item.desc || ''}</p>
+            `;
+            specialGrid.appendChild(el);
+          });
+
+          if (typeof window.observeFadeUps === 'function') {
+            window.observeFadeUps();
+          } else {
+            document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+          }
         }
       });
     </script>

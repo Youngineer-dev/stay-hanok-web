@@ -4,13 +4,13 @@
     "ogImage": "images/hero_main.jpg",
     "logo": "차담한옥(차담옥)",
     "nav": {
-      "home": "Home",
-      "about": "About",
-      "rooms": "Rooms",
-      "special": "Special",
-      "attractions": "Attractions",
-      "location": "Location",
-      "reservation": "Reservation"
+      "home": "홈",
+      "about": "차담한옥은?",
+      "rooms": "객실",
+      "special": "특별한 경험",
+      "attractions": "주변 볼거리",
+      "location": "위치",
+      "reservation": "예약 및 문의"
     },
     "footer": {
       "title": "차담한옥",
@@ -27,14 +27,14 @@
     "title": "차담한옥(차담옥) | 쉼이 머무는 차담한옥",
     "hero": [
       {
-        "img": "images/hero_main.jpg",
+        "img": "images/hero_main.png",
         "title": "쉼이 머무는 차담한옥",
         "desc": "한옥스테이, 홈카페, 다도체험, 영화, 노래",
         "btnText": "객실 둘러보기",
         "btnLink": "rooms.html"
       },
       {
-        "img": "images/hero_interior.jpg",
+        "img": "images/hero_interior.png",
         "title": "온전한 쉼을 위한<br />프라이빗 공간",
         "desc": "한 팀만을 위한 프라이빗 스테이, 조용한 밤을 위한 준비",
         "btnText": "예약하기",
@@ -164,7 +164,7 @@
       "title": "머무름의 미학",
       "list": [
         {
-          "img": "images/open_plan.png",
+          "img": "images/침실5.jpg",
           "roomTitle": "안채 (Main Room)",
           "roomDesc": "차담한옥의 중심이 되는 안채는 햇살이 오래 머무는 침실과 넓은 대청마루가 여유롭게 이어집니다.<br />전통 한옥의 고즈넉한 균형과 현대적인 편안함을 단독으로 누려보세요.",
           "specs": [
@@ -176,7 +176,7 @@
           "btnLink": "rooms.html"
         },
         {
-          "img": "images/room_main.png",
+          "img": "images/거실8.jpg",
           "roomTitle": "사랑채 (Private Room)",
           "roomDesc": "메인 공간과 분리되어 더욱 아늑하고 사적인 휴식이 가능한 특별한 침실입니다.<br />은은하게 스며드는 자연광과 조용한 정원을 조망하며 깊은 수면에 빠져보세요.",
           "specs": [
@@ -218,22 +218,52 @@
     "intro2": "머무는 동선마다 잔잔한 온기가 이어집니다.",
     "roomList": [
       {
-        "img": "images/room_main.png",
-        "title": "안채 (An-chae)",
+        "img": "images/거실8.jpg",
+        "title": "거실(living Room)",
         "desc": "넓고 높은 천장의 대청마루와 아늑한 침실이 막힘없이 이어지는 독채의 메인 공간입니다.<br />창문을 열면 한옥 특유의 아름다운 지붕선과 바람이 느껴지며, 부드러운 전구색 조명 아래 고품격 휴식을 완성합니다.",
         "specs": [
-          "퀸 사이즈 프리미엄 침구세트",
-          "빔프로젝터 및 홈시네마 시설",
-          "쾌적한 개별 욕실 및 어메니티"
+          "넓은 거실, 탁트인 통창의 시원한 시야를 자랑합니다.",
+          "쉬폰커튼의 아름답고 프라이빗한 공간 제공",
+          "개별 욕실 및 어메니티"
         ]
       },
       {
-        "img": "images/주방1.jpg",
-        "title": "사랑채 (Sarang-chae)",
+        "img": "images/주방3.jpg",
+        "title": "주방/KITCHEN",
+        "desc": "가정식 넓은 주방공간 입니다.<br />요리하시는데 불편함 없도록 준비 했습니다.",
+        "specs": [
+          "요리가 즐거운공간",
+          "마음이 편안해지는 전용 정원 조망",
+          "개별 냉난방 시스템 완비"
+        ]
+      },
+      {
+        "img": "images/침실5.jpg",
+        "title": "침실 (Bed Room)",
         "desc": "일행 중 조용하고 분리된 수면과 휴식을 원하시는 분들께 가장 완벽한 침실입니다.<br />차분하게 가라앉는 분위기 속에서 창밖의 자연 채광을 온전히 독차지해 보세요.",
         "specs": [
           "독립된 퀸 사이즈 침대",
           "마음이 편안해지는 전용 정원 조망",
+          "개별 냉난방 시스템 완비"
+        ]
+      },
+      {
+        "img": "images/침실2.jpg",
+        "title": "침실 (Bed Room)",
+        "desc": "일행 중 조용하고 분리된 수면과 휴식을 원하시는 분들께 가장 완벽한 침실입니다.<br />차분하게 가라앉는 분위기 속에서 창밖의 자연 채광을 온전히 독차지해 보세요.",
+        "specs": [
+          "독립된 퀸 사이즈 침대",
+          "마음이 편안해지는 전용 정원 조망",
+          "개별 냉난방 시스템 완비"
+        ]
+      },
+      {
+        "img": "images/거실1.jpg",
+        "title": "침실 (Bed Room)",
+        "desc": "차분하게 가라앉는 분위기 속에서 창밖의 자연 채광을 온전히 독차지해 보세요.",
+        "specs": [
+          "개방감 있는 넓은거실",
+          "차담지기가 디자인한 한국화 블라인드",
           "개별 냉난방 시스템 완비"
         ]
       }
@@ -277,12 +307,12 @@
           "caption": "공간의 유연한 흐름"
         },
         {
-          "img": "images/hero_main.jpg",
+          "img": "images/hero_main.png",
           "alt": "한옥 외관",
           "caption": "고즈넉한 한옥의 정취"
         },
         {
-          "img": "images/hero_interior.jpg",
+          "img": "images/hero_interior.png",
           "alt": "내부 공간",
           "caption": "프라이빗한 휴식의 마침표"
         },
@@ -300,6 +330,16 @@
           "img": "images/거실1.jpg",
           "alt": "안채침실",
           "caption": "고즈넉한 한옥 넓은 거실에서 다양한 즐거움을...."
+        },
+        {
+          "img": "images/한옥1.jpg",
+          "alt": "한옥",
+          "caption": "고즈넉한 전통한옥 체험의 즐거움을...."
+        },
+        {
+          "img": "images/봄4.jpg",
+          "alt": "안채침실",
+          "caption": "아름다운 차담의 봄"
         }
       ]
     }
@@ -336,7 +376,7 @@
         "desc": "아늑하고 여름이면 에어컨 있는 바베큐장에서 식도락을 즐겨보세요<br />"
       },
       {
-        "img": "images/다도6.jpg",
+        "img": "images/다도1.jpg",
         "title": "다도체험",
         "desc": "엄선한 잎차와 다기 세트를 준비해 두었습니다.<br />차를 우려내는 짧은 의식만으로도 하루의 결이 차분해집니다.<br />"
       },
@@ -354,6 +394,21 @@
         "img": "images/텃밭3.jpg",
         "title": "텃밭",
         "desc": "차담지기가 유기농으로 농사지은 각종 과채소를 즐겨보세요.<br />"
+      },
+      {
+        "img": "images/바베큐1.jpg",
+        "title": "bbq",
+        "desc": "아늑하고 여름이면 에어컨 있는 바베큐장에서 식도락을 즐겨보세요<br />"
+      },
+      {
+        "img": "images/바베큐2.jpg",
+        "title": "bbq",
+        "desc": "아늑하고 여름이면 에어컨 있는 바베큐장에서 식도락을 즐겨보세요<br />"
+      },
+      {
+        "img": "images/바베큐3.jpg",
+        "title": "bbq",
+        "desc": "아늑하고 여름이면 에어컨 있는 바베큐장에서 식도락을 즐겨보세요<br />"
       }
     ]
   },
@@ -364,43 +419,43 @@
     "intro": "차담한옥 인근의 아름다운 명소들을 소개합니다.<br />머무시는 동안 여유로운 발걸음으로 주변을 둘러보세요.",
     "items": [
       {
-        "img": "images/dinovill.png",
+        "img": "images/덕평.jpg",
         "title": "덕평공룡수목원 (6.4km)",
         "desc": "울창한 숲과 실감 나는 공룡 모형이 어우러진 자연 속 테마수목원에서<br />아이들과 함께 상상력을 자극하는 특별한 볼거리를 즐겨보세요.",
         "link": "http://www.dinovill.com/"
       },
       {
-        "img": "images/hwadam.png",
+        "img": "images/곤지암화담숲.jpg",
         "title": "곤지암 화담숲 (11km)",
         "desc": "4천여 종의 식물과 아름다운 테마 정원이 펼쳐진 생태 수목원입니다.<br />은은하게 물든 자연 속에서 다채로운 식물을 감상하며 산책을 경험하세요.",
         "link": "https://www.hwadamsup.com/"
       },
       {
-        "img": "images/yespark.png",
+        "img": "images/예스파크.jpg",
         "title": "이천도자기마을 예스파크 (9.5km)",
         "desc": "예술가들의 개성이 담긴 갤러리와 공방이 모여있는 국내 최대 도자 예술 마을입니다.<br />거대한 갤러리 같은 거리를 걸으며 다채로운 예술 작품을 감상해 보세요.",
         "link": "https://2000yespark.or.kr/"
       },
       {
-        "img": "images/seolbong.png",
+        "img": "images/이천설봉공원.jpg",
         "title": "이천 설봉공원 (16km)",
         "desc": "잔잔한 설봉호수 둘레길과 조각공원이 어우러진 평화로운 휴식 공간입니다.<br />아름다운 호숫가를 둘러보며 자연과 낭만을 동시에 만끽할 수 있습니다.",
         "link": "https://m.place.naver.com/attraction/13179963?entry=plt"
       },
       {
-        "img": "images/jisan.png",
+        "img": "images/지산포레스트.jpg",
         "title": "지산 포레스트 리조트 (14km)",
         "desc": "자연 경관을 살린 쾌적한 시설의 스키장과 골프장을 갖춘 사계절 종합 레저타운입니다.<br />차담한옥에서의 휴식과 함께 쾌적한 액티비티를 즐길 수 있습니다.",
         "link": "https://www.jisanresort.co.kr/"
       },
       {
-        "img": "images/miranda.png",
+        "img": "images/미란다호텔.jpg",
         "title": "이천 미란다호텔 스파 (16km)",
         "desc": "천연 온천수로 몸과 마음의 피로를 풀어내는 이천의 대표 온천 명소입니다.<br />따뜻하고 아늑한 스파에서 일상의 묵은 피로를 말끔히 씻어내세요.",
         "link": "https://m.place.naver.com/accommodation/1626609619?entry=plt"
       },
       {
-        "img": "images/thermeden.png",
+        "img": "images/테르메덴.jpg",
         "title": "이천 테르메덴 (18km)",
         "desc": "울창한 숲속 맑은 공기와 함께 100% 천연 온천수를 즐기는 독일식 프리미엄 스파 리조트입니다.<br />사계절 내내 온천의 지상낙원에서 머리부터 발끝까지 완벽한 힐링을 경험하세요.",
         "link": "https://m.place.naver.com/attraction/11701945?entry=plt"
@@ -431,11 +486,11 @@
     "reserveTitle": "실시간 예약",
     "reserveDesc": "원하시는 날짜와 인원을 선택한 뒤, 네이버 예약 페이지에서 결제를 완료해 주세요.",
     "naverBtn": "네이버 예약 바로가기",
-    "naverLink": "https://booking.naver.com",
+    "naverLink": "https://naver.me/Gjy3T4nj",
     "contactTitle": "문의하기",
     "contactDesc": "운영 시간 내 순차적으로 신속하게 안내드립니다.",
     "phoneBtn": "전화 문의",
-    "phoneLink": "tel:01012345678",
+    "phoneLink": "tel:01038928494",
     "kakaoBtn": "카카오톡 상담",
     "kakaoLink": "https://pf.kakao.com/_xxxxxx"
   }
