@@ -556,9 +556,9 @@ header.active .nav-menu a::after {
     width: 100%;
     height: 100vh;
     height: 100dvh;
-    background: rgba(28, 20, 14, 0.2);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: rgba(15, 12, 10, 0.32);
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
     z-index: 2600;
     flex-direction: row;
     justify-content: flex-end;
@@ -585,10 +585,18 @@ header.active .nav-menu a::after {
     width: clamp(210px, 56vw, 250px);
     height: 100dvh;
     padding: calc(var(--header-height) + 0.95rem) 0.85rem 1.2rem;
-    background: linear-gradient(135deg, #fffdf9, #f4eade 34%, #dcc4ad 100%);
-    border-left: none;
+    /* 프로스티드 글래스: 반투명 그라디언트 + backdrop-filter로 뒤 컨텐츠가 은은히 비침 */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 253, 249, 0.78),
+      rgba(244, 234, 222, 0.72) 34%,
+      rgba(220, 196, 173, 0.7) 100%
+    );
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    border-left: 1px solid rgba(255, 255, 255, 0.32);
     border-radius: 0;
-    box-shadow: -8px 0 22px rgba(0, 0, 0, 0.14);
+    box-shadow: -12px 0 32px -8px rgba(26, 20, 17, 0.22);
     transform: translateX(104%);
     transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -3537,5 +3545,32 @@ html {
     gap: 2rem;
   }
 }
+
+/* --- Room sliders: pagination bullets match hero style ------------------- */
+/* Hero는 흰색(22x2 → active 46x2), 객실 슬라이더는 같은 모양에 먹색 */
+.index-rooms-slider .swiper-pagination-bullet,
+.rooms-page-slider .swiper-pagination-bullet {
+  width: 22px;
+  height: 2px;
+  border-radius: 0;
+  background: rgba(36, 28, 23, 0.22);
+  opacity: 1;
+  margin: 0 4px !important;
+  transition:
+    background 0.4s ease,
+    width 0.4s var(--ease-out-expo);
+}
+
+.index-rooms-slider .swiper-pagination-bullet-active,
+.rooms-page-slider .swiper-pagination-bullet-active {
+  background: var(--color-ink);
+  width: 46px;
+}
+
+.index-rooms-slider .swiper-pagination,
+.rooms-page-slider .swiper-pagination {
+  bottom: 1.2rem;
+}
+
 
 
