@@ -2419,6 +2419,9 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   font-size: 1.05em;
   line-height: 1;
+  /* → 글리프가 기준선 쪽으로 낮게 앉아서 텍스트 시각 중심과 틀어지는 걸 보정 */
+  position: relative;
+  top: -0.08em;
   transform: translateX(0);
   transition: transform 0.45s var(--ease-out-expo);
 }
