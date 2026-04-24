@@ -710,6 +710,122 @@ header.active .nav-menu a::after {
   color: #0b6b36;
 }
 
+.btn-kakao {
+  background-color: #ffe812;
+  border-color: #ffe812;
+  color: #3c1e1e;
+}
+
+.btn-kakao::before {
+  background-color: #fff7b3;
+}
+
+.btn-kakao:hover {
+  color: #3c1e1e;
+}
+
+/* 페이지 상단 섹션 오프셋 (히어로가 없는 내부 페이지용) */
+.page-top-offset {
+  padding-top: 150px;
+}
+
+/* 일반 유틸리티 */
+.mt-3 { margin-top: 3rem; }
+.mt-4 { margin-top: 4rem; }
+
+/* 예약/카드 스타일 박스 */
+.content-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: 3rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.content-card-divider {
+  background: var(--color-border);
+  height: 1px;
+  border: none;
+  margin: 2rem 0;
+}
+
+/* 버튼 가로 배치 (center, 간격) */
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* About 페이지 이미지 + 캡션 스택 */
+.about-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.about-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-copy {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Access 페이지 지도 오버레이 버튼 래퍼 */
+.map-overlay-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Access 페이지 주소/주차 2열 */
+.location-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* 스와이퍼 슬라이드 안의 room-card-large는 마진 리셋 */
+.swiper-slide .room-card-large {
+  margin: 0;
+  width: 100%;
+  flex: 1;
+}
+
+/* 큰 CTA 버튼 변형 */
+.btn-lg {
+  font-size: 1.1rem;
+  padding: 1.3rem 4rem;
+}
+
+/* 링크 화살표 아이콘 (Attractions) */
+.link-arrow {
+  font-size: 0.9em;
+  margin-left: 6px;
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  .location-info {
+    grid-template-columns: 1fr;
+  }
+  .about-img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .content-card {
+    padding: 2rem 1.4rem;
+  }
+}
+
 .btn-outline {
   display: inline-flex;
   align-items: center;
@@ -1377,13 +1493,13 @@ header.active .nav-menu a::after {
 }
 
 .lightbox-img {
+  width: 100%;
   max-width: 100%;
+  height: 62vh;
   max-height: 62vh;
-  width: auto;
-  height: auto;
   object-fit: contain;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  flex-shrink: 1;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+  flex-shrink: 0;
 }
 
 .lightbox-info {
@@ -1475,7 +1591,7 @@ header.active .nav-menu a::after {
 
 @media (max-width: 768px) {
   .special-lightbox { padding: 1rem; }
-  .lightbox-img { max-height: 52vh; }
+  .lightbox-img { height: 52vh; max-height: 52vh; }
   .lightbox-info { max-height: 34vh; }
   .lightbox-title { font-size: 1rem; }
   .lightbox-desc { font-size: 0.8rem; line-height: 1.65; }
@@ -1736,8 +1852,8 @@ header.active .nav-menu a::after {
     margin-bottom: 0.55rem;
   }
 
-  main > section.container[style*="padding-top: 150px"] {
-    padding-top: 112px !important;
+  .page-top-offset {
+    padding-top: 112px;
   }
 
   .hero {

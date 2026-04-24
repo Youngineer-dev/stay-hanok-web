@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>예약 및 문의 | 서촌별곡</title>
+    <title>예약 및 문의 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="reserve">
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 150px">
+      <section class="container fade-up page-top-offset">
         <div class="text-center">
           <span class="section-subtitle" data-text="reserve.subtitle">Reservation</span>
           <h2 class="section-title" data-text="reserve.mainTitle">예약 및 문의</h2>
@@ -21,17 +21,7 @@
           </p>
         </div>
 
-        <div
-          style="
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--color-white);
-            padding: 3rem;
-            border-radius: 4px;
-            box-shadow: var(--shadow-soft);
-          "
-        >
-          <!-- Updated container style for better visibility on white bg -->
+        <div class="content-card mt-3">
           <h3 class="copy-headline copy-center" data-text="reserve.reserveTitle">실시간 예약</h3>
           <p class="copy-body copy-medium copy-center" data-text="reserve.reserveDesc">
             원하시는 날짜와 인원을 선택한 뒤, 네이버 예약 페이지에서 결제를
@@ -48,39 +38,20 @@
             >
           </div>
 
-          <hr
-            style="
-              background: var(--color-border);
-              height: 1px;
-              border: none;
-              margin: 2rem 0;
-            "
-          />
+          <hr class="content-card-divider" />
 
           <h3 class="copy-headline copy-center" data-text="reserve.contactTitle">문의하기</h3>
           <p class="copy-body copy-center" data-text="reserve.contactDesc">
             운영 시간 내 순차적으로 신속하게 안내드립니다.
           </p>
-          <div
-            style="
-              display: flex;
-              justify-content: center;
-              gap: 1rem;
-              flex-wrap: wrap;
-            "
-          >
+          <div class="btn-row">
             <a href="tel:01012345678" class="btn-outline" data-text="reserve.phoneBtn" data-link="reserve.phoneLink">전화 문의</a>
             <a
               href="#"
-              class="btn-outline"
+              class="btn-outline btn-kakao"
               data-text="reserve.kakaoBtn"
               data-link="reserve.kakaoLink"
               target="_blank"
-              style="
-                background-color: #fae100;
-                border-color: #fae100;
-                color: #3c1e1e;
-              "
               >카카오톡 상담</a
             >
           </div>

@@ -48,7 +48,7 @@
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 150px">
+      <section class="container fade-up page-top-offset">
         <div class="text-center">
           <span class="section-subtitle" data-text="attractions.subtitle">Attractions</span>
           <h2 class="section-title" data-text="attractions.mainTitle">주변 가볼만한 곳</h2>
@@ -94,7 +94,7 @@
                 decoding="async"
               />
             </div>
-            <h3>${item.title || ''}<span style="font-size: 0.9em; margin-left: 6px; opacity: 0.6; font-weight: 300;">↗</span></h3>
+            <h3>${item.title || ''}<span class="link-arrow">↗</span></h3>
             <p class="copy-body">${item.desc || ''}</p>
           `;
           grid.appendChild(el);

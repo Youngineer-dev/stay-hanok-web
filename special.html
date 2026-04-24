@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Special | 서촌별곡</title>
+    <title>Special | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="special">
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 150px">
+      <section class="container fade-up page-top-offset">
         <div class="text-center">
           <span class="section-subtitle" data-text="special.subtitle">Experience</span>
           <h2 class="section-title" data-text="special.mainTitle">특별한 경험</h2>
           <p class="copy-lead copy-medium copy-center" data-text="special.intro">
-            서촌별곡의 스테이는 머무름을 넘어 경험으로 확장됩니다.<br />
+            차담한옥의 스테이는 머무름을 넘어 경험으로 확장됩니다.<br />
             하루의 속도를
             낮추고, 취향에 맞는 순간을 천천히 채워보세요.
           </p>
@@ -29,15 +29,15 @@
 
     <!-- 이미지 라이트박스 갤러리 -->
     <div class="special-lightbox" id="special-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-      <button class="lightbox-close" id="lightbox-close" aria-label="창 닫기">창 닫기</button>
-      <button class="lightbox-prev" id="lightbox-prev" aria-label="이전 이미지">&lsaquo;</button>
-      <button class="lightbox-next" id="lightbox-next" aria-label="다음 이미지">&rsaquo;</button>
-      <div class="lightbox-stage" id="lightbox-stage">
-        <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+      <button class="lightbox-close" data-lb-close aria-label="창 닫기">창 닫기</button>
+      <button class="lightbox-prev" data-lb-prev aria-label="이전 이미지">&lsaquo;</button>
+      <button class="lightbox-next" data-lb-next aria-label="다음 이미지">&rsaquo;</button>
+      <div class="lightbox-stage">
+        <img class="lightbox-img" data-lb-img src="" alt="" />
         <div class="lightbox-info">
-          <h3 class="lightbox-title" id="lightbox-title"></h3>
-          <p class="lightbox-desc" id="lightbox-desc"></p>
-          <span class="lightbox-counter" id="lightbox-counter"></span>
+          <h3 class="lightbox-title" data-lb-title></h3>
+          <p class="lightbox-desc" data-lb-desc></p>
+          <span class="lightbox-counter" data-lb-counter></span>
         </div>
       </div>
     </div>
@@ -47,10 +47,12 @@
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>
+    <script src="js/lightbox.js"></script>
     <script>
       window.dataLoadPromise.then(() => {
         const items = window.siteData?.special?.items || [];
         const grid = document.getElementById('special-items');
+        const lightbox = window.createLightbox(document.getElementById('special-lightbox'));
 
         // 제목 기준 그룹핑 (공백 제거 + 소문자화로 정규화, 입력 순서 유지)
         const normalizeTitle = (t) => (t || '').replace(/\s+/g, '').toLowerCase();
@@ -83,7 +85,7 @@
             <h3>${first.title || ''}</h3>
             <p class="copy-body">${first.desc || ''}</p>
           `;
-          const open = () => openLightbox(group, 0);
+          const open = () => lightbox && lightbox.open(group, 0);
           el.addEventListener('click', open);
           el.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -99,69 +101,6 @@
         } else {
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
-
-        // 라이트박스
-        const lightbox = document.getElementById('special-lightbox');
-        const imgEl = document.getElementById('lightbox-img');
-        const titleEl = document.getElementById('lightbox-title');
-        const descEl = document.getElementById('lightbox-desc');
-        const counterEl = document.getElementById('lightbox-counter');
-        const btnPrev = document.getElementById('lightbox-prev');
-        const btnNext = document.getElementById('lightbox-next');
-        const btnClose = document.getElementById('lightbox-close');
-
-        let currentGroup = [];
-        let currentIdx = 0;
-
-        function render() {
-          const item = currentGroup[currentIdx] || {};
-          imgEl.src = item.img || '';
-          imgEl.alt = item.title || '';
-          titleEl.textContent = item.title || '';
-          descEl.innerHTML = item.desc || '';
-          counterEl.textContent = currentGroup.length > 1
-            ? `${currentIdx + 1} / ${currentGroup.length}`
-            : '';
-          const multi = currentGroup.length > 1;
-          btnPrev.style.display = multi ? '' : 'none';
-          btnNext.style.display = multi ? '' : 'none';
-        }
-        function openLightbox(group, idx) {
-          currentGroup = group;
-          currentIdx = idx;
-          render();
-          lightbox.classList.add('is-open');
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-          lightbox.classList.remove('is-open');
-          lightbox.setAttribute('aria-hidden', 'true');
-          document.body.style.overflow = '';
-        }
-        function prev() {
-          if (currentGroup.length < 2) return;
-          currentIdx = (currentIdx - 1 + currentGroup.length) % currentGroup.length;
-          render();
-        }
-        function next() {
-          if (currentGroup.length < 2) return;
-          currentIdx = (currentIdx + 1) % currentGroup.length;
-          render();
-        }
-
-        btnClose.addEventListener('click', closeLightbox);
-        btnPrev.addEventListener('click', prev);
-        btnNext.addEventListener('click', next);
-        lightbox.addEventListener('click', (e) => {
-          if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener('keydown', (e) => {
-          if (!lightbox.classList.contains('is-open')) return;
-          if (e.key === 'Escape') closeLightbox();
-          else if (e.key === 'ArrowLeft') prev();
-          else if (e.key === 'ArrowRight') next();
-        });
       });
     </script>
   </body>

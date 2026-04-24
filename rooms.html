@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>객실 안내 | 서촌별곡</title>
+    <title>객실 안내 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="roomsPage">
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 150px">
+      <section class="container fade-up page-top-offset">
         <div class="text-center">
           <span class="section-subtitle" data-text="roomsPage.subtitle"
             >Rooms</span
@@ -163,7 +163,7 @@
 
       <!-- CTA Button at the end of the journey -->
       <div class="container text-center fade-up" style="padding: 4rem 0 6rem;">
-        <a href="reserve.html" class="btn" style="font-size: 1.1rem; padding: 1.3rem 4rem;">프라이빗 독채 전체 예약하기</a>
+        <a href="reserve.html" class="btn btn-lg">프라이빗 독채 전체 예약하기</a>
       </div>
     </main>
 
@@ -189,7 +189,7 @@
             const slide = document.createElement("div");
             slide.className = "swiper-slide";
             slide.innerHTML = `
-              <div class="room-card-large" style="margin: 0; width: 100%; flex: 1;">
+              <div class="room-card-large">
                 <div class="room-img-wrapper">
                   <img src="${room.img || ''}" alt="${room.title || ''}" loading="lazy" decoding="async" />
                 </div>

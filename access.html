@@ -10,7 +10,7 @@
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 150px">
+      <section class="container fade-up page-top-offset">
         <div class="text-center">
           <span class="section-subtitle" data-text="access.subtitle"
             >Location</span
@@ -29,10 +29,7 @@
         </div>
 
         <!-- Use map illustration -->
-        <div
-          class="map-container custom-cursor fade-up"
-          style="margin-top: 3rem"
-        >
+        <div class="map-container custom-cursor fade-up mt-3">
           <img
             src="images/map_illustration.jpg"
             alt="차담한옥(차담옥) 약도"
@@ -42,7 +39,7 @@
             data-img="access.mapImg"
           />
           <div class="map-overlay">
-            <div style="display: flex; gap: 1rem">
+            <div class="map-overlay-actions">
               <a
                 href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
                 target="_blank"
@@ -54,29 +51,16 @@
               <a
                 href="https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101"
                 target="_blank"
-                class="btn"
+                class="btn btn-kakao"
                 data-text="access.kakaoText"
                 data-link="access.kakaoLink"
-                style="
-                  background-color: #ffe812;
-                  color: #3c1e1e;
-                  border-color: #ffe812;
-                "
                 >카카오맵</a
               >
             </div>
           </div>
         </div>
 
-        <div
-          class="location-info fade-up"
-          style="
-            margin-top: 3rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-          "
-        >
+        <div class="location-info fade-up mt-3">
           <div>
             <h3 class="info-title" data-text="access.addressTitle">주소</h3>
             <p class="copy-body" data-text="access.addressDesc">
