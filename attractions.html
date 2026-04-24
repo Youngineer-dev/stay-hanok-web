@@ -78,7 +78,8 @@
           // 링크가 있으면 <a>로, 없으면 <div>로 생성
           const el = document.createElement(item.link ? 'a' : 'div');
           el.className = 'special-item attraction-card fade-up';
-          
+          el.id = `attr-${i}`;
+
           if (item.link) {
             el.href = item.link;
             el.target = '_blank';
@@ -104,6 +105,14 @@
           window.observeFadeUps();
         } else {
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+        }
+
+        // 하위 메뉴에서 진입(#attr-n) 시, 카드가 DOM에 생성된 뒤 스크롤
+        if (window.location.hash) {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+          }
         }
       });
     </script>

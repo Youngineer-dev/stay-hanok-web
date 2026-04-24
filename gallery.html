@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>갤러리 | 차담한옥(차담옥)</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="gallery">
+    <div id="header-placeholder"></div>
+
+    <main>
+      <section class="container fade-up page-top-offset">
+        <div class="text-center">
+          <span class="section-subtitle" data-text="gallery.subtitle"
+            >Gallery</span
+          >
+          <h2 class="section-title" data-text="gallery.mainTitle">
+            공간을 담다
+          </h2>
+          <p class="copy-lead copy-medium copy-center" data-text="gallery.intro">
+            빛이 머무는 대청, 계절이 스며드는 마당, 차담한옥의 하루를
+            담았습니다.<br />
+            이미지를 클릭하면 원본 크기로 감상할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="gallery-grid fade-up" id="gallery-items">
+          <!-- data.json gallery.photos 배열에서 동적 생성 (역순) -->
+        </div>
+
+        <div class="gallery-more-wrap" id="gallery-more-wrap">
+          <button
+            type="button"
+            id="gallery-more-btn"
+            class="gallery-more-btn"
+            style="display: none"
+          >
+            + 더보기
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 이미지 라이트박스 -->
+    <div
+      class="special-lightbox"
+      id="gallery-lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+    >
+      <button class="lightbox-close" data-lb-close aria-label="창 닫기">
+        창 닫기
+      </button>
+      <button class="lightbox-prev" data-lb-prev aria-label="이전 이미지">
+        &lsaquo;
+      </button>
+      <button class="lightbox-next" data-lb-next aria-label="다음 이미지">
+        &rsaquo;
+      </button>
+      <div class="lightbox-stage">
+        <img class="lightbox-img" data-lb-img src="" alt="" />
+        <div class="lightbox-info">
+          <h3 class="lightbox-title" data-lb-title></h3>
+          <p class="lightbox-desc" data-lb-desc></p>
+          <span class="lightbox-counter" data-lb-counter></span>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="js/data-loader.js"></script>
+    <script src="js/include.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/transitions.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script>
+      window.dataLoadPromise.then(() => {
+        // data.json에는 시간순(오래된→최신)으로 추가하고, 화면엔 최신이 위로 오도록 역순 렌더.
+        // 라이트박스도 동일한 역순 배열을 공유해서 인덱스 일관성 유지.
+        const photos = (window.siteData?.gallery?.photos || []).slice().reverse();
+        const grid = document.getElementById("gallery-items");
+        const moreBtn = document.getElementById("gallery-more-btn");
+        if (!grid || photos.length === 0) return;
+
+        // 라이트박스에 전달할 때는 alt → title, caption → desc 로 매핑
+        const lightboxItems = photos.map((p) => ({
+          img: p.img,
+          alt: p.alt || "",
+          title: p.alt || "",
+          desc: p.caption || "",
+        }));
+
+        const lightbox = window.createLightbox(
+          document.getElementById("gallery-lightbox"),
+        );
+
+        const INITIAL_COUNT = 9;
+        const INCREMENT = 9;
+        let visibleCount = Math.min(INITIAL_COUNT, photos.length);
+
+        // 모든 아이템을 미리 생성하되, INITIAL_COUNT 이후는 .is-hidden으로 숨김
+        photos.forEach((photo, i) => {
+          const item = document.createElement("div");
+          item.className = "gallery-item fade-up";
+          item.setAttribute("role", "button");
+          item.setAttribute("tabindex", "0");
+          item.setAttribute("aria-label", `${photo.alt || "사진"} 크게 보기`);
+          if (i >= INITIAL_COUNT) item.classList.add("is-hidden");
+
+          item.innerHTML = `
+            <img
+              src="${photo.img}"
+              alt="${photo.alt || ""}"
+              loading="${i < 3 ? "eager" : "lazy"}"
+              decoding="async"
+            />
+            <div class="gallery-item-overlay">
+              <h3 class="gallery-item-title">${photo.alt || ""}</h3>
+              ${photo.caption ? `<p class="gallery-item-desc">${photo.caption}</p>` : ""}
+            </div>
+          `;
+
+          const openAt = () => lightbox && lightbox.open(lightboxItems, i);
+          item.addEventListener("click", openAt);
+          item.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openAt();
+            }
+          });
+          grid.appendChild(item);
+        });
+
+        function updateMoreBtn() {
+          if (!moreBtn) return;
+          if (visibleCount >= photos.length) {
+            moreBtn.style.display = "none";
+          } else {
+            moreBtn.style.display = "";
+            const remaining = photos.length - visibleCount;
+            moreBtn.textContent = `+ 더보기 (${remaining})`;
+          }
+        }
+
+        if (moreBtn) {
+          updateMoreBtn();
+          moreBtn.addEventListener("click", () => {
+            const next = Math.min(visibleCount + INCREMENT, photos.length);
+            const items = grid.querySelectorAll(".gallery-item");
+            for (let j = visibleCount; j < next; j++) {
+              items[j]?.classList.remove("is-hidden");
+            }
+            visibleCount = next;
+            updateMoreBtn();
+            if (typeof window.observeFadeUps === "function") {
+              window.observeFadeUps();
+            }
+          });
+        }
+
+        if (typeof window.observeFadeUps === "function") {
+          window.observeFadeUps();
+        } else {
+          document
+            .querySelectorAll(".fade-up")
+            .forEach((el) => el.classList.add("visible"));
+        }
+      });
+    </script>
+  </body>
+</html>

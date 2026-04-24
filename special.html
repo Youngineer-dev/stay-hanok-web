@@ -69,6 +69,7 @@
           const first = group[0];
           const el = document.createElement('div');
           el.className = 'special-item fade-up';
+          el.id = `sp-${normalizeTitle(first.title)}`;
           el.setAttribute('role', 'button');
           el.setAttribute('tabindex', '0');
           el.setAttribute('aria-label', `${first.title || ''} 이미지 크게 보기`);
@@ -100,6 +101,14 @@
           window.observeFadeUps();
         } else {
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+        }
+
+        // 하위 메뉴에서 진입(#sp-xxx) 시, 카드가 DOM에 생성된 뒤 스크롤
+        if (window.location.hash) {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+          }
         }
       });
     </script>

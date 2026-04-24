@@ -158,47 +158,13 @@
         </div>
       </section>
 
-      <!-- Photo Gallery (공간을 담다) -->
-      <section class="room-gallery fade-up">
-        <div class="container text-center room-gallery-header">
-          <span class="section-subtitle" data-text="index.gallery.subtitle"
-            >Gallery</span
-          >
-          <h2 class="section-title" data-text="index.gallery.title">
-            공간을 담다
-          </h2>
-        </div>
-        <div class="swiper room-gallery-slider">
-          <div class="swiper-wrapper" id="gallery-slides">
-            <!-- data.json index.gallery.photos 배열에서 동적 생성 -->
-          </div>
-        </div>
-        <div class="room-gallery-hint" data-text="index.gallery.hint">
-          이미지를 드래그하여 스크롤 · 클릭하여 크게 보기
-        </div>
-      </section>
     </main>
-
-    <!-- 이미지 라이트박스 갤러리 -->
-    <div class="special-lightbox" id="gallery-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-      <button class="lightbox-close" data-lb-close aria-label="창 닫기">창 닫기</button>
-      <button class="lightbox-prev" data-lb-prev aria-label="이전 이미지">&lsaquo;</button>
-      <button class="lightbox-next" data-lb-next aria-label="다음 이미지">&rsaquo;</button>
-      <div class="lightbox-stage">
-        <img class="lightbox-img" data-lb-img src="" alt="" />
-        <div class="lightbox-info">
-          <h3 class="lightbox-title" data-lb-title></h3>
-          <span class="lightbox-counter" data-lb-counter></span>
-        </div>
-      </div>
-    </div>
 
     <div id="footer-placeholder"></div>
     <script src="js/data-loader.js"></script>
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>
-    <script src="js/lightbox.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       const prefersReducedMotion = window.matchMedia(
@@ -273,47 +239,6 @@
             spaceBetween: 30,
             navigation: { nextEl: ".index-rooms-slider .swiper-button-next", prevEl: ".index-rooms-slider .swiper-button-prev" },
             pagination: { el: ".index-rooms-slider .swiper-pagination", clickable: true }
-          });
-        }
-
-        // Gallery Rendering (공간을 담다 - 드래그 슬라이더 + 라이트박스)
-        const galleryPhotos = window.siteData?.index?.gallery?.photos || [];
-        const gallerySlidesWrap = document.getElementById('gallery-slides');
-        if (gallerySlidesWrap && galleryPhotos.length > 0) {
-          const galleryLightbox = window.createLightbox(document.getElementById('gallery-lightbox'));
-
-          galleryPhotos.forEach((photo, i) => {
-            const slide = document.createElement('div');
-            slide.className = 'swiper-slide room-gallery-slide fade-up';
-            slide.setAttribute('role', 'button');
-            slide.setAttribute('tabindex', '0');
-            slide.setAttribute('aria-label', `${photo.caption || photo.alt || '사진'} 크게 보기`);
-            const overlayHTML = photo.caption
-              ? `<div class="slide-overlay"><p>${photo.caption}</p></div>`
-              : '';
-            slide.innerHTML = `
-              <img src="${photo.img}" alt="${photo.alt || ''}" loading="${i < 2 ? 'eager' : 'lazy'}" decoding="async" />
-              ${overlayHTML}
-            `;
-            const openAt = () => galleryLightbox && galleryLightbox.open(galleryPhotos, i);
-            slide.addEventListener('click', openAt);
-            slide.addEventListener('keydown', (e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openAt();
-              }
-            });
-            gallerySlidesWrap.appendChild(slide);
-          });
-
-          new Swiper('.room-gallery-slider', {
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            freeMode: true,
-            grabCursor: true,
-            touchEventsTarget: 'container',
-            mousewheel: { forceToAxis: true },
-            breakpoints: { 768: { spaceBetween: 28 } },
           });
         }
 

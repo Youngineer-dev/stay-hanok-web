@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (file.includes("header")) {
           initMenu(); // Mobile Menu Toggle
           initHeaderScroll(); // Header scroll state
+          initMobileSubmenu(); // Mobile accordion for submenus
           highlightActiveLink(); // Highlight Current Page
         }
 
@@ -42,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.dataLoadPromise && window.applyDataToDOM) {
           window.dataLoadPromise.then(() => {
             window.applyDataToDOM(document.querySelector(selector));
+            if (file.includes("header")) {
+              populateDynamicSubmenus();
+            }
           });
         }
       })
@@ -58,13 +62,102 @@ document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll(".nav-menu a, .menu-items a");
 
     links.forEach((link) => {
-      const linkHref = link.getAttribute("href");
-
-      // Exact match check
-      if (linkHref === currentPath) {
+      const linkHref = link.getAttribute("href") || "";
+      // href에 #이나 ? 가 있으면 경로 부분만 비교 (submenu anchors 대응)
+      const linkPath = linkHref.split("#")[0].split("?")[0];
+      if (linkPath === currentPath) {
         link.classList.add("active");
       }
     });
+  }
+
+  // 5. Populate dynamic submenus (attractions, special) from data.json
+  function populateDynamicSubmenus() {
+    if (!window.siteData) return;
+
+    // Attractions — items[].title 그대로 사용
+    const attractions = window.siteData.attractions?.items || [];
+    const attrDesktop = document.getElementById("nav-attractions-sub");
+    const attrMobile = document.getElementById("mobile-attractions-sub");
+    if (attractions.length > 0) {
+      const html = attractions
+        .map((item, i) => {
+          const title = (item.title || "").replace(/\s*\(.*?\)\s*$/, "").trim();
+          return `<a href="attractions.html#attr-${i}" role="menuitem">${title}</a>`;
+        })
+        .join("");
+      if (attrDesktop) attrDesktop.innerHTML = html;
+      if (attrMobile) attrMobile.innerHTML = html;
+    }
+
+    // Special — 중복 제거 후 삽입 (data.json 순서 유지)
+    const specials = window.siteData.special?.items || [];
+    const seen = new Set();
+    const unique = specials.filter((item) => {
+      const key = (item.title || "").replace(/\s+/g, "").toLowerCase();
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    const spDesktop = document.getElementById("nav-special-sub");
+    const spMobile = document.getElementById("mobile-special-sub");
+    if (unique.length > 0) {
+      const html = unique
+        .map((item) => {
+          const slug = (item.title || "").replace(/\s+/g, "").toLowerCase();
+          return `<a href="special.html#sp-${slug}" role="menuitem">${item.title}</a>`;
+        })
+        .join("");
+      if (spDesktop) spDesktop.innerHTML = html;
+      if (spMobile) spMobile.innerHTML = html;
+    }
+
+    // 모바일에서 동적 서브메뉴 링크 클릭 시에도 메뉴를 닫도록 재바인딩
+    rebindMobileLinks();
+  }
+
+  // 6. Mobile submenu accordion
+  function initMobileSubmenu() {
+    const toggles = document.querySelectorAll(".menu-group-toggle");
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const group = toggle.closest(".menu-group");
+        if (!group) return;
+        const isOpen = group.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+    });
+  }
+
+  // Rebind link handlers after dynamic submenu insertion
+  function rebindMobileLinks() {
+    const overlay = document.querySelector(".menu-overlay");
+    if (!overlay) return;
+    const links = overlay.querySelectorAll("a");
+    links.forEach((link) => {
+      if (link.dataset.menuBound === "1") return;
+      link.dataset.menuBound = "1";
+      link.addEventListener("click", () => {
+        closeMobileMenu();
+      });
+    });
+  }
+
+  function closeMobileMenu() {
+    const menuBtn = document.querySelector(".menu-toggle");
+    const overlay = document.querySelector(".menu-overlay");
+    const header = document.querySelector("header");
+    const body = document.body;
+    if (!menuBtn || !overlay) return;
+    menuBtn.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-label", "Open menu");
+    overlay.classList.remove("active");
+    overlay.setAttribute("aria-hidden", "true");
+    body.classList.remove("menu-open");
+    body.style.overflow = "";
+    if (header) header.classList.remove("active");
   }
 
   // 3. Header Scroll State
@@ -86,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.querySelector(".menu-overlay");
     const header = document.querySelector("header");
     const body = document.body;
-    const menuLinks = document.querySelectorAll(".menu-items a");
 
     if (!menuBtn || !overlay) return;
 
@@ -110,12 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
       setMenuState(!overlay.classList.contains("active"));
     });
 
-    // Close menu when clicking a link
-    menuLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        setMenuState(false);
-      });
-    });
+    // Close menu on link click (static + dynamic — flag로 중복 방지)
+    rebindMobileLinks();
 
     // Close when tapping outside menu panel
     overlay.addEventListener("click", (event) => {

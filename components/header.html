@@ -5,13 +5,60 @@
 
     <!-- Desktop Navigation (Visible) -->
     <nav class="nav-menu">
-      <a href="index.html" data-text="common.nav.home">Home</a>
-      <a href="about.html" data-text="common.nav.about">About</a>
-      <a href="rooms.html" data-text="common.nav.rooms">Rooms</a>
-      <a href="special.html" data-text="common.nav.special">Special</a>
-      <a href="attractions.html" data-text="common.nav.attractions">Attractions</a>
-      <a href="access.html" data-text="common.nav.location">Location</a>
-      <a href="reserve.html" data-text="common.nav.reservation">Reservation</a>
+      <!-- 홈: 정적 하위 메뉴 -->
+      <div class="nav-item has-submenu">
+        <a href="index.html" class="nav-top-link" data-text="common.nav.home">홈</a>
+        <div class="nav-submenu" role="menu">
+          <a href="index.html" data-text="common.nav.home" role="menuitem">홈</a>
+          <a href="about.html" data-text="common.nav.about" role="menuitem">차담한옥은?</a>
+          <a href="gallery.html" data-text="common.nav.gallery" role="menuitem">갤러리</a>
+        </div>
+      </div>
+
+      <!-- 객실: 정적 하위 메뉴 (앵커 스크롤) -->
+      <div class="nav-item has-submenu">
+        <a href="rooms.html" class="nav-top-link" data-text="common.nav.rooms">객실</a>
+        <div class="nav-submenu" role="menu">
+          <a href="rooms.html" data-text="common.nav.roomsIntro" role="menuitem">객실 소개</a>
+          <a href="rooms.html#room-info" data-text="common.nav.roomsInfo" role="menuitem">객실 이용 안내</a>
+        </div>
+      </div>
+
+      <!-- 주변 볼거리: data.json attractions.items[].title에서 동적 생성 -->
+      <div class="nav-item has-submenu">
+        <a href="attractions.html" class="nav-top-link" data-text="common.nav.attractions">주변 볼거리</a>
+        <div class="nav-submenu" id="nav-attractions-sub" role="menu">
+          <!-- JS에서 data.json attractions.items[].title 로 동적 생성 -->
+        </div>
+      </div>
+
+      <!-- 특별한 경험: data.json special.items[].title 중복 제거 후 동적 생성 -->
+      <div class="nav-item has-submenu">
+        <a href="special.html" class="nav-top-link" data-text="common.nav.special">특별한 경험</a>
+        <div class="nav-submenu" id="nav-special-sub" role="menu">
+          <!-- JS에서 data.json special.items[].title 유니크하게 동적 생성 -->
+        </div>
+      </div>
+
+      <!-- 위치: 플립 텍스트 애니메이션 -->
+      <div class="nav-item nav-flip">
+        <a href="access.html" class="nav-top-link">
+          <span class="flip-inner">
+            <span class="flip-txt" data-text="common.nav.location">위치</span>
+            <span class="flip-txt flip-clone" data-text="common.nav.location" aria-hidden="true">위치</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- 예약 및 문의: 플립 텍스트 애니메이션 -->
+      <div class="nav-item nav-flip">
+        <a href="reserve.html" class="nav-top-link">
+          <span class="flip-inner">
+            <span class="flip-txt" data-text="common.nav.reservation">예약 및 문의</span>
+            <span class="flip-txt flip-clone" data-text="common.nav.reservation" aria-hidden="true">예약 및 문의</span>
+          </span>
+        </a>
+      </div>
     </nav>
 
     <!-- Hamburger (Mobile Only - Hidden by CSS on Desktop) -->
@@ -31,12 +78,57 @@
 <!-- Mobile Menu Overlay (Hidden by CSS on Desktop) -->
 <div class="menu-overlay" id="mobile-menu-overlay">
   <nav class="menu-items">
-    <a href="index.html" data-text="common.nav.home">Home</a>
-    <a href="about.html" data-text="common.nav.about">About</a>
-    <a href="rooms.html" data-text="common.nav.rooms">Rooms</a>
-    <a href="special.html" data-text="common.nav.special">Special</a>
-    <a href="attractions.html" data-text="common.nav.attractions">Attractions</a>
-    <a href="access.html" data-text="common.nav.location">Location</a>
-    <a href="reserve.html" data-text="common.nav.reservation">Reservation</a>
+    <!-- 홈 -->
+    <div class="menu-group">
+      <button type="button" class="menu-group-toggle" aria-expanded="false">
+        <span data-text="common.nav.home">홈</span>
+        <span class="menu-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="menu-sub">
+        <a href="index.html" data-text="common.nav.home">홈</a>
+        <a href="about.html" data-text="common.nav.about">차담한옥은?</a>
+        <a href="gallery.html" data-text="common.nav.gallery">갤러리</a>
+      </div>
+    </div>
+
+    <!-- 객실 -->
+    <div class="menu-group">
+      <button type="button" class="menu-group-toggle" aria-expanded="false">
+        <span data-text="common.nav.rooms">객실</span>
+        <span class="menu-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="menu-sub">
+        <a href="rooms.html" data-text="common.nav.roomsIntro">객실 소개</a>
+        <a href="rooms.html#room-info" data-text="common.nav.roomsInfo">객실 이용 안내</a>
+      </div>
+    </div>
+
+    <!-- 주변 볼거리 (동적) -->
+    <div class="menu-group">
+      <button type="button" class="menu-group-toggle" aria-expanded="false">
+        <span data-text="common.nav.attractions">주변 볼거리</span>
+        <span class="menu-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="menu-sub" id="mobile-attractions-sub">
+        <!-- JS에서 동적 생성 -->
+      </div>
+    </div>
+
+    <!-- 특별한 경험 (동적) -->
+    <div class="menu-group">
+      <button type="button" class="menu-group-toggle" aria-expanded="false">
+        <span data-text="common.nav.special">특별한 경험</span>
+        <span class="menu-chevron" aria-hidden="true">+</span>
+      </button>
+      <div class="menu-sub" id="mobile-special-sub">
+        <!-- JS에서 동적 생성 -->
+      </div>
+    </div>
+
+    <!-- 위치 (하위 없음) -->
+    <a href="access.html" class="menu-leaf" data-text="common.nav.location">위치</a>
+
+    <!-- 예약 및 문의 (하위 없음) -->
+    <a href="reserve.html" class="menu-leaf" data-text="common.nav.reservation">예약 및 문의</a>
   </nav>
 </div>

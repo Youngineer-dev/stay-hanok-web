@@ -7,6 +7,9 @@
       "home": "홈",
       "about": "차담한옥은?",
       "rooms": "객실",
+      "roomsIntro": "객실 소개",
+      "roomsInfo": "객실 이용 안내",
+      "gallery": "갤러리",
       "special": "특별한 경험",
       "attractions": "주변 볼거리",
       "location": "위치",
@@ -186,58 +189,6 @@
           ],
           "btnText": "전체 공간 둘러보기",
           "btnLink": "rooms.html"
-        }
-      ]
-    },
-    "gallery": {
-      "subtitle": "Gallery",
-      "title": "공간을 담다",
-      "hint": "이미지를 드래그하여 스크롤 · 클릭하여 크게 보기",
-      "photos": [
-        {
-          "img": "images/room_main.png",
-          "alt": "안채 침실",
-          "caption": "햇살이 머무는 안채 침실"
-        },
-        {
-          "img": "images/open_plan.png",
-          "alt": "오픈 플랜 구조",
-          "caption": "공간의 유연한 흐름"
-        },
-        {
-          "img": "images/hero_main.png",
-          "alt": "한옥 외관",
-          "caption": "고즈넉한 한옥의 정취"
-        },
-        {
-          "img": "images/hero_interior.png",
-          "alt": "내부 공간",
-          "caption": "프라이빗한 휴식의 마침표"
-        },
-        {
-          "img": "images/special_cafe.jpg",
-          "alt": "카페테리아",
-          "caption": "나만의 홈카페 시간"
-        },
-        {
-          "img": "images/주방1.jpg",
-          "alt": "안채침실",
-          "caption": "가정식 넓은 주방이 요리를 즐겁게 합니다."
-        },
-        {
-          "img": "images/거실1.jpg",
-          "alt": "안채침실",
-          "caption": "고즈넉한 한옥 넓은 거실에서 다양한 즐거움을...."
-        },
-        {
-          "img": "images/한옥1.jpg",
-          "alt": "한옥",
-          "caption": "고즈넉한 전통한옥 체험의 즐거움을...."
-        },
-        {
-          "img": "images/봄4.jpg",
-          "alt": "안채침실",
-          "caption": "아름다운 차담의 봄"
         }
       ]
     },
@@ -528,6 +479,59 @@
     "addressDesc": "이천의 조용한 골목 안쪽에 자리하고 있습니다.",
     "parkingTitle": "주차 안내",
     "parkingDesc": "한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다."
+  },
+  "gallery": {
+    "title": "갤러리 | 차담한옥",
+    "subtitle": "Gallery",
+    "mainTitle": "공간을 담다",
+    "intro": "빛이 머무는 대청, 계절이 스며드는 마당, 차담한옥의 하루를 담았습니다.<br />이미지를 클릭하면 원본 크기로 감상할 수 있습니다.",
+    "photos": [
+      {
+        "img": "images/room_main.png",
+        "alt": "안채 침실",
+        "caption": "햇살이 머무는 안채 침실"
+      },
+      {
+        "img": "images/open_plan.png",
+        "alt": "오픈 플랜 구조",
+        "caption": "공간의 유연한 흐름"
+      },
+      {
+        "img": "images/hero_main.png",
+        "alt": "한옥 외관",
+        "caption": "고즈넉한 한옥의 정취"
+      },
+      {
+        "img": "images/hero_interior.png",
+        "alt": "내부 공간",
+        "caption": "프라이빗한 휴식의 마침표"
+      },
+      {
+        "img": "images/special_cafe.jpg",
+        "alt": "카페테리아",
+        "caption": "나만의 홈카페 시간"
+      },
+      {
+        "img": "images/주방1.jpg",
+        "alt": "주방",
+        "caption": "가정식 넓은 주방이 요리를 즐겁게 합니다"
+      },
+      {
+        "img": "images/거실1.jpg",
+        "alt": "거실",
+        "caption": "고즈넉한 한옥 넓은 거실에서 누리는 즐거움"
+      },
+      {
+        "img": "images/한옥1.jpg",
+        "alt": "한옥 외관",
+        "caption": "고즈넉한 전통한옥 체험의 즐거움"
+      },
+      {
+        "img": "images/봄4.jpg",
+        "alt": "봄의 차담",
+        "caption": "아름다운 차담의 봄"
+      }
+    ]
   },
   "reserve": {
     "title": "예약 및 문의 | 차담한옥",
