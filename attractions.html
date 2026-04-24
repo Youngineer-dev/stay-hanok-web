@@ -107,9 +107,11 @@
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
 
-        // 하위 메뉴에서 진입(#attr-n) 시, 카드가 DOM에 생성된 뒤 스크롤
+        // 하위 메뉴에서 진입(#attr-n) 시, 카드가 DOM에 생성된 뒤 스크롤.
+        // special.html과 동일한 robust 경로 — 향후 유니코드 id에도 안전.
         if (window.location.hash) {
-          const target = document.querySelector(window.location.hash);
+          const id = decodeURIComponent(window.location.hash.slice(1));
+          const target = document.getElementById(id);
           if (target) {
             setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
           }

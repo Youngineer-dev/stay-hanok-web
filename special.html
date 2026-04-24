@@ -103,9 +103,12 @@
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
 
-        // 하위 메뉴에서 진입(#sp-xxx) 시, 카드가 DOM에 생성된 뒤 스크롤
+        // 하위 메뉴에서 진입(#sp-xxx) 시, 카드가 DOM에 생성된 뒤 스크롤.
+        // 한글 id는 브라우저가 URL 인코딩해서 전달하므로 decodeURIComponent 필요.
+        // querySelector 대신 getElementById로 조회해야 CSS 셀렉터 파싱을 우회 가능.
         if (window.location.hash) {
-          const target = document.querySelector(window.location.hash);
+          const id = decodeURIComponent(window.location.hash.slice(1));
+          const target = document.getElementById(id);
           if (target) {
             setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
           }
