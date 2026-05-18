@@ -2677,6 +2677,12 @@ footer {
     border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
+    text-align: center;
+  }
+
+  .feature-card::before {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .features-grid {
@@ -3504,6 +3510,16 @@ html {
 .amenities-grid {
   gap: clamp(2.4rem, 4vw, 3.2rem) clamp(2rem, 3.5vw, 3rem);
   max-width: 1040px;
+}
+
+.amenity-category {
+  text-align: center;
+}
+
+.amenity-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .amenity-category h4 {
