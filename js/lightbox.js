@@ -76,6 +76,30 @@
     if (btnPrev) btnPrev.addEventListener('click', prev);
     if (btnNext) btnNext.addEventListener('click', next);
 
+    if (imgEl) {
+      imgEl.addEventListener('click', (e) => {
+        if (items.length < 2) return;
+        const rect = imgEl.getBoundingClientRect();
+        if (e.clientX - rect.left < rect.width / 2) {
+          prev();
+        } else {
+          next();
+        }
+      });
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+      imgEl.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      imgEl.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 40) next();
+        if (touchEndX > touchStartX + 40) prev();
+      }, { passive: true });
+    }
+
     root.addEventListener('click', (e) => {
       if (e.target === root) close();
     });
