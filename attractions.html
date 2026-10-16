@@ -9,14 +9,64 @@
   <body data-page="attractions">
     <div id="header-placeholder"></div>
 
+    <!-- Sub-Hero Banner -->
+    <div class="sub-hero">
+      <img
+        src="images/봄3.jpg"
+        alt="차담옥 주변 정경"
+        class="sub-hero-bg"
+      />
+      <div class="sub-hero-overlay"></div>
+      <div class="sub-hero-content">
+        <span class="sub-hero-subtitle" data-text="attractions.subtitle">LOCAL GUIDE & DESTINATIONS</span>
+        <h1 class="sub-hero-title" data-text="attractions.mainTitle">주변 볼거리</h1>
+        <p class="sub-hero-desc" data-text="attractions.intro">
+          이천의 청정한 자연과 문화가 어우러진 차담옥 인근의 명소들을 소개합니다.<br />
+          머무시는 여정 속에서 천천히 둘러보며 소중한 추억을 더해보세요.
+        </p>
+      </div>
+    </div>
+
     <main>
-      <section class="container fade-up page-top-offset">
-        <div class="text-center">
-          <span class="section-subtitle" data-text="attractions.subtitle">Attractions</span>
-          <h2 class="section-title" data-text="attractions.mainTitle">주변 가볼만한 곳</h2>
-          <p class="copy-lead copy-medium copy-center" data-text="attractions.intro">
-            차담한옥 인근의 아름다운 명소들을 소개합니다.<br />
-            머무시는 동안 여유로운 발걸음으로 주변을 둘러보세요.
+      <section class="container fade-up" style="padding-top: 4rem; padding-bottom: 6rem;">
+        <!-- Curated 1N2D Healing Course -->
+        <div class="attractions-itinerary fade-up">
+          <div class="itinerary-heading">
+            <span class="section-subtitle">RECOMMENDED ITINERARY</span>
+            <h3>차담지기 추천 1박 2일 힐링 코스</h3>
+            <p>이천의 맑은 숲과 한옥의 정취를 온전히 누리는 완벽한 힐링 여정</p>
+          </div>
+
+          <div class="itinerary-timeline">
+            <div class="itinerary-step">
+              <span class="itinerary-time">DAY 1 · 13:30</span>
+              <h4>자연 수목원 산책</h4>
+              <p>화담숲 또는 덕평공룡수목원에서 싱그러운 숲길과 계절 꽃을 감상하며 여행을 시작합니다.</p>
+            </div>
+            <div class="itinerary-step">
+              <span class="itinerary-time">DAY 1 · 15:00</span>
+              <h4>체크인 & 웰컴 다도</h4>
+              <p>차담옥 입실 후 대청마루에서 정갈한 다기 세트로 따뜻한 전통 잎차를 우리며 여독을 풉니다.</p>
+            </div>
+            <div class="itinerary-step">
+              <span class="itinerary-time">DAY 1 · 18:30</span>
+              <h4>바베큐 & 빔 시네마</h4>
+              <p>실내외 전용 바베큐장에서 프라이빗 만찬을 즐기고, 150인치 대형 빔으로 영화를 감상합니다.</p>
+            </div>
+            <div class="itinerary-step">
+              <span class="itinerary-time">DAY 2 · 12:00</span>
+              <h4>정오 퇴실 & 미식 탐방</h4>
+              <p>여유로운 12시 체크아웃 후 이천 도예마을을 산책하고 이천 쌀밥 명가에서 든든한 점심을 즐깁니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attractions Grid Section -->
+        <div class="text-center fade-up" style="margin-top: 4.5rem; margin-bottom: 2rem;">
+          <span class="section-subtitle">NEARBY SPOTS</span>
+          <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">차담옥 인근 추천 명소</h3>
+          <p class="copy-lead copy-medium copy-center" style="font-size: 0.95rem;">
+            차량으로 10분 내외 거리에 위치한 엄선된 여행지를 만나보세요.
           </p>
         </div>
 
@@ -37,13 +87,11 @@
         const grid = document.getElementById('attractions-items');
 
         items.forEach((item, i) => {
-          // 거리 추출: e.g. "덕평공룡수목원 (6.4km)" -> cleanTitle: "덕평공룡수목원", distanceStr: "6.4km"
           const rawTitle = item.title || '';
           const distMatch = rawTitle.match(/\(([^)]+)\)/);
           const cleanTitle = rawTitle.replace(/\s*\([^)]+\)/, '').trim();
           const distanceStr = distMatch ? distMatch[1] : '';
 
-          // 링크가 있으면 <a>로, 없으면 <div>로 생성
           const el = document.createElement(item.link ? 'a' : 'div');
           el.className = 'special-item attraction-card fade-up';
           el.id = `attr-${i}`;
@@ -80,8 +128,6 @@
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
 
-        // 하위 메뉴에서 진입(#attr-n) 시, 카드가 DOM에 생성된 뒤 스크롤.
-        // special.html과 동일한 robust 경로 — 향후 유니코드 id에도 안전.
         if (window.location.hash) {
           const id = decodeURIComponent(window.location.hash.slice(1));
           const target = document.getElementById(id);

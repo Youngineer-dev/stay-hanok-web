@@ -453,49 +453,64 @@
     "intro": "빛이 머무는 대청, 계절이 스며드는 마당, 차담한옥의 하루를 담았습니다.<br />이미지를 클릭하면 원본 크기로 감상할 수 있습니다.",
     "photos": [
       {
-        "img": "images/room_main.png",
-        "alt": "안채 침실",
-        "caption": "햇살이 머무는 안채 침실"
-      },
-      {
-        "img": "images/open_plan.png",
-        "alt": "오픈 플랜 구조",
-        "caption": "공간의 유연한 흐름"
-      },
-      {
-        "img": "images/hero_main.png",
-        "alt": "한옥 외관",
-        "caption": "고즈넉한 한옥의 정취"
-      },
-      {
-        "img": "images/hero_interior.png",
-        "alt": "마당 공간",
-        "caption": "프라이빗한 휴식의 마침표"
-      },
-      {
-        "img": "images/special_cafe.jpg",
-        "alt": "카페테리아",
-        "caption": "나만의 홈카페 시간"
-      },
-      {
-        "img": "images/주방1.jpg",
-        "alt": "주방",
-        "caption": "가정식 넓은 주방이 요리를 즐겁게 합니다"
-      },
-      {
-        "img": "images/거실1.jpg",
-        "alt": "거실",
-        "caption": "고즈넉한 한옥 넓은 거실에서 누리는 즐거움"
-      },
-      {
         "img": "images/한옥1.jpg",
-        "alt": "한옥 외관",
-        "caption": "고즈넉한 전통한옥 체험의 즐거움"
+        "alt": "고즈넉한 한옥 외관",
+        "caption": "자연과 어우러진 전통 한옥의 고아한 선"
+      },
+      {
+        "img": "images/마당1.jpg",
+        "alt": "넓은 한옥 마당",
+        "caption": "사계절의 볕이 온전히 스며드는 전용 마당"
       },
       {
         "img": "images/봄4.jpg",
-        "alt": "봄의 차담",
-        "caption": "아름다운 차담의 봄"
+        "alt": "봄날의 창밖 풍경",
+        "caption": "목련꽃이 활짝 피어나는 한옥의 봄"
+      },
+      {
+        "img": "images/거실8.jpg",
+        "alt": "대청마루 거실",
+        "caption": "높은 서까래와 넓은 통창이 만드는 개방감"
+      },
+      {
+        "img": "images/침실2.jpg",
+        "alt": "아늑한 침실",
+        "caption": "차분한 쉼과 숙면을 선사하는 독립 침실"
+      },
+      {
+        "img": "images/다도1.jpg",
+        "alt": "정갈한 다도 공간",
+        "caption": "따뜻한 잎차를 우리며 일상을 정돈하는 시간"
+      },
+      {
+        "img": "images/주방1.jpg",
+        "alt": "가정식 주방 공간",
+        "caption": "정갈한 식기와 조리도구가 완비된 주방"
+      },
+      {
+        "img": "images/special_cafe.jpg",
+        "alt": "투숙객 전용 라운지",
+        "caption": "향긋한 커피와 음악이 흐르는 홈카페"
+      },
+      {
+        "img": "images/가을1.jpg",
+        "alt": "가을의 차담옥",
+        "caption": "단풍과 노을빛이 아름답게 물드는 가을 정취"
+      },
+      {
+        "img": "images/겨울아궁이.jpg",
+        "alt": "겨울날 아궁이와 불멍",
+        "caption": "타닥타닥 장작 타는 소리와 따스한 온기"
+      },
+      {
+        "img": "images/바베큐1.jpg",
+        "alt": "사계절 전용 바베큐장",
+        "caption": "날씨 걱정 없이 프라이빗하게 즐기는 만찬"
+      },
+      {
+        "img": "images/텃밭1.jpg",
+        "alt": "친환경 유기농 텃밭",
+        "caption": "차담지기가 정성으로 가꾼 신선한 제철 채소"
       }
     ]
   },

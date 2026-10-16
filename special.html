@@ -9,20 +9,28 @@
   <body data-page="special">
     <div id="header-placeholder"></div>
 
-    <main>
-      <section class="container fade-up page-top-offset">
-        <div class="text-center">
-          <span class="section-subtitle" data-text="special.subtitle">Experience</span>
-          <h2 class="section-title" data-text="special.mainTitle">특별한 경험</h2>
-          <p class="copy-lead copy-medium copy-center" data-text="special.intro">
-            차담한옥의 스테이는 머무름을 넘어 경험으로 확장됩니다.<br />
-            하루의 속도를
-            낮추고, 취향에 맞는 순간을 천천히 채워보세요.
-          </p>
-        </div>
+    <!-- Sub-Hero Banner -->
+    <div class="sub-hero">
+      <img
+        src="images/special_bbq.jpg"
+        alt="차담옥 특별한 경험"
+        class="sub-hero-bg"
+      />
+      <div class="sub-hero-overlay"></div>
+      <div class="sub-hero-content">
+        <span class="sub-hero-subtitle" data-text="special.subtitle">EXPERIENCE & MEMORIES</span>
+        <h1 class="sub-hero-title" data-text="special.mainTitle">특별한 경험</h1>
+        <p class="sub-hero-desc" data-text="special.intro">
+          차담옥의 스테이는 단순한 머무름을 넘어 취향과 감각의 경험으로 확장됩니다.<br />
+          하루의 속도를 늦추고, 온전히 나에게 집중하는 순간을 채워보세요.
+        </p>
+      </div>
+    </div>
 
-        <div class="special-grid" id="special-items">
-          <!-- data.json special.items 배열에서 동적 생성 (제목별 그룹) -->
+    <main>
+      <section class="container fade-up" style="padding-top: 4rem; padding-bottom: 6rem;">
+        <div class="editorial-special-list" id="special-editorial-list">
+          <!-- 동적 에디토리얼 Z-패턴 스토리텔링 블록 렌더링 -->
         </div>
       </section>
     </main>
@@ -51,10 +59,20 @@
     <script>
       window.dataLoadPromise.then(() => {
         const items = window.siteData?.special?.items || [];
-        const grid = document.getElementById('special-items');
+        const container = document.getElementById('special-editorial-list');
         const lightbox = window.createLightbox(document.getElementById('special-lightbox'));
 
-        // 제목 기준 그룹핑 (공백 제거 + 소문자화로 정규화, 입력 순서 유지)
+        // 경험별 큐레이션 태그 맵
+        const experienceTags = {
+          '다도체험': ['전통 잎차 무상 제공', '정갈한 백자 다기', '대청마루 명상'],
+          '카페테리아&라운지': ['스페셜티 원두 커피', '한옥 마당 정취', '투숙객 전용 라운지'],
+          '프라이빗빔시네마': ['150인치 대형 스크린', '고화질 빔프로젝터', '넷플릭스 & OTT 지원'],
+          '어쿠스틱&엔터테인먼트': ['통기타 & 마이크 완비', '방음 프라이빗 공간', '추억의 음악 여행'],
+          '사계절전용바베큐장': ['사계절 냉·난방 완비', '프라이빗 다이닝', '우천 시 정상 이용'],
+          '유기농텃밭힐링': ['친환경 제철 채소', '자연 수확의 기쁨', '소박한 흙의 온기']
+        };
+
+        // 제목 기준 그룹핑
         const normalizeTitle = (t) => (t || '').replace(/\s+/g, '').toLowerCase();
         const groupMap = new Map();
         items.forEach((item) => {
@@ -64,47 +82,56 @@
         });
         const groups = Array.from(groupMap.values());
 
-        // 그룹별로 첫 항목을 카드로 렌더링
+        // 매거진 에디토리얼 Z-패턴 렌더링
         groups.forEach((group, i) => {
           const first = group[0];
-          const el = document.createElement('div');
-          el.className = 'special-item fade-up';
-          el.id = `sp-${normalizeTitle(first.title)}`;
-          el.setAttribute('role', 'button');
-          el.setAttribute('tabindex', '0');
-          el.setAttribute('aria-label', `${first.title || ''} 이미지 크게 보기`);
-          el.innerHTML = `
-            <div class="special-item-img">
+          const normKey = normalizeTitle(first.title);
+          const isReverse = i % 2 === 1;
+          const tags = experienceTags[normKey] || ['프라이빗 독채', '한옥 스테이', '감성 힐링'];
+
+          const row = document.createElement('div');
+          row.className = `editorial-special-row ${isReverse ? 'reverse' : ''} fade-up`;
+          row.id = `sp-${normKey}`;
+
+          row.innerHTML = `
+            <div class="editorial-media" role="button" tabindex="0" aria-label="${first.title || ''} 사진 크게 보기">
               <img
                 src="${first.img || ''}"
                 alt="${first.title || ''}"
                 loading="${i === 0 ? 'eager' : 'lazy'}"
                 decoding="async"
               />
-              ${group.length > 1 ? `<span class="special-item-count" aria-hidden="true">+${group.length - 1}장</span>` : ''}
-              <div class="special-zoom-hint" aria-hidden="true">
-                <span>클릭하여 사진 감상</span>
-                <span class="zoom-arrow">↗</span>
+              ${group.length > 1 ? `<span class="editorial-media-badge">+${group.length - 1}장의 사진</span>` : ''}
+              <div class="editorial-zoom-bar">
+                <span>클릭하여 갤러리 감상</span>
+                <span>↗</span>
               </div>
             </div>
-            <div class="special-item-content">
-              <div class="special-item-meta">
-                <span class="special-item-chip">EXPERIENCE 0${i + 1}</span>
-                <span class="special-photo-total">총 ${group.length}장의 사진</span>
-              </div>
+            <div class="editorial-text">
+              <span class="editorial-num">EXPERIENCE 0${i + 1}</span>
               <h3>${first.title || ''}</h3>
-              <p class="copy-body">${first.desc || ''}</p>
+              <p class="editorial-desc">${first.desc || ''}</p>
+              <div class="editorial-tags">
+                ${tags.map(tag => `<span class="editorial-tag-item"># ${tag}</span>`).join('')}
+              </div>
+              <button type="button" class="editorial-btn-view" aria-label="${first.title || ''} 갤러리 감상">
+                <span>포토 갤러리 감상 (총 ${group.length}장)</span>
+                <span>↗</span>
+              </button>
             </div>
           `;
-          const open = () => lightbox && lightbox.open(group, 0);
-          el.addEventListener('click', open);
-          el.addEventListener('keydown', (e) => {
+
+          const openLightbox = () => lightbox && lightbox.open(group, 0);
+          row.querySelector('.editorial-media').addEventListener('click', openLightbox);
+          row.querySelector('.editorial-media').addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              open();
+              openLightbox();
             }
           });
-          grid.appendChild(el);
+          row.querySelector('.editorial-btn-view').addEventListener('click', openLightbox);
+
+          container.appendChild(row);
         });
 
         if (typeof window.observeFadeUps === 'function') {
@@ -113,9 +140,7 @@
           document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
 
-        // 하위 메뉴에서 진입(#sp-xxx) 시, 카드가 DOM에 생성된 뒤 스크롤.
-        // 한글 id는 브라우저가 URL 인코딩해서 전달하므로 decodeURIComponent 필요.
-        // querySelector 대신 getElementById로 조회해야 CSS 셀렉터 파싱을 우회 가능.
+        // 앵커 이동
         if (window.location.hash) {
           const id = decodeURIComponent(window.location.hash.slice(1));
           const target = document.getElementById(id);
