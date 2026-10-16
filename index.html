@@ -26,49 +26,34 @@
           <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
+          <div class="hero-scroll-guide">
+            <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+            <span class="scroll-label">SCROLL DOWN</span>
+          </div>
         </div>
       </section>
 
       <section class="intro">
         <div class="container text-center fade-up">
           <span class="section-subtitle" data-text="index.intro.subtitle"
-            >About Us</span
+            >STAY PHILOSOPHY</span
           >
           <h2 class="section-title" data-text="index.intro.title">
-            도심 속 여유를<br />선물합니다
+            시간의 결이 머무는 곳,<br />오직 한 팀을 위한 독채 한옥
           </h2>
           <p class="copy-lead copy-medium copy-wide copy-center">
             <span class="copy-line" data-text="index.intro.desc1"
-              >차담한옥(차담옥)은 한옥스테이뿐만 아니라 홈카페와 다도체험을 즐길
-              수 있는 공간입니다.</span
+              >차담옥은 도심의 번잡함을 벗어나 자연과 한옥이 빚어내는 온전한 휴식을 경험하는 프라이빗 독채 스테이입니다.</span
             >
             <span class="copy-line" data-text="index.intro.desc2"
-              >그 외에도 영화감상, 노래 등 다양한 즐길 거리를 제공하여 풍성한
-              머무름을 선사합니다.</span
+              >아늑한 대청마루와 정갈한 침실, 향긋한 차 향이 피어오르는 다도 공간과 프라이빗 시네마까지 당신만의 온전한 하루를 완성합니다.</span
             >
           </p>
         </div>
 
         <div class="container">
-          <div class="features-grid">
-            <div class="feature-card fade-up">
-              <h3 data-text="index.intro.features[0].title">Private</h3>
-              <p data-text="index.intro.features[0].desc">
-                오직 한 팀만을 위한<br />프라이빗 독채 스테이
-              </p>
-            </div>
-            <div class="feature-card fade-up">
-              <h3 data-text="index.intro.features[1].title">Cafe</h3>
-              <p data-text="index.intro.features[1].desc">
-                향긋한 커피와 함께하는<br />여유로운 아침의 시작
-              </p>
-            </div>
-            <div class="feature-card fade-up">
-              <h3 data-text="index.intro.features[2].title">Experience</h3>
-              <p data-text="index.intro.features[2].desc">
-                다도 세트와 함께하는<br />차 한잔의 여유
-              </p>
-            </div>
+          <div class="features-grid" id="index-features-grid">
+            <!-- data.json index.intro.features 배열에서 동적 생성 -->
           </div>
         </div>
       </section>
@@ -77,11 +62,15 @@
         <div class="container">
           <div class="text-center fade-up">
             <span class="section-subtitle" data-text="index.rooms.subtitle"
-              >Rooms</span
+              >EXCLUSIVE ROOMS</span
             >
             <h2 class="section-title" data-text="index.rooms.title">
               머무름의 미학
             </h2>
+            <p class="copy-lead copy-medium copy-center">
+              전통 한옥의 서까래와 현대적 안락함이 공존하는 공간입니다.<br />
+              오직 한 팀만을 위해 준비된 독채의 품격을 경험하세요.
+            </p>
           </div>
 
           <div class="swiper index-rooms-slider fade-up">
@@ -99,13 +88,13 @@
       <section class="special container fade-up">
         <div class="text-center">
           <span class="section-subtitle" data-text="special.subtitle"
-            >Experience</span
+            >CURATED EXPERIENCE</span
           >
           <h2 class="section-title" data-text="special.mainTitle">
             특별한 경험
           </h2>
           <p class="copy-lead copy-medium copy-center" data-text="special.intro">
-            차담옥의 한옥스테이는 머무름을 넘어 경험으로 확장됩니다.<br />
+            차담옥의 한옥스테이는 머무름을 넘어 깊은 경험으로 확장됩니다.<br />
             하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.
           </p>
         </div>
@@ -114,47 +103,75 @@
           <!-- data.json special.items 배열에서 동적 생성 (4개 프리뷰) -->
         </div>
 
-        <div class="text-center" style="margin-top: 3rem">
+        <div class="text-center" style="margin-top: 3.5rem">
           <a href="special.html" class="btn-outline" data-text="index.specialCta.btnText">특별한 경험 전체보기</a>
         </div>
       </section>
 
-      <section class="location container fade-up">
-        <div class="text-center">
-          <span class="section-subtitle" data-text="index.location.subtitle"
-            >Location</span
-          >
-          <h2 class="section-title" data-text="index.location.title">
-            오시는 길
-          </h2>
-        </div>
-        <div class="map-container custom-cursor">
-          <img
-            src="images/map_illustration.jpg"
-            alt="차담한옥 약도"
-            class="static-map-img"
-            loading="lazy"
-            decoding="async"
-            data-img="index.location.img"
-          />
-          <div class="map-overlay">
-            <a
-              href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
-              target="_blank"
-              class="btn"
-              data-text="index.location.naverMapBtn"
-              data-link="index.location.naverMapLink"
-              >네이버 지도로 보기</a
+      <section class="location-section fade-up">
+        <div class="container">
+          <div class="text-center">
+            <span class="section-subtitle" data-text="index.location.subtitle"
+              >LOCATION & ACCESS</span
             >
+            <h2 class="section-title" data-text="index.location.title">
+              오시는 길
+            </h2>
+            <p class="copy-lead copy-medium copy-center">
+              수도권에서 1시간, 이천의 고요한 숲자락 아래 자리 잡은 차담옥으로 초대합니다.
+            </p>
           </div>
-        </div>
-        <div class="location-details text-center">
-          <p class="copy-body copy-center">
-            <strong data-text="index.location.addressLabel">주소:</strong>
-            <span data-text="index.location.addressValue"
-              >경기 이천시 마장면 마도로248번길 32-101</span
-            >
-          </p>
+
+          <div class="location-card-wrapper fade-up">
+            <div class="location-map-box">
+              <img
+                src="images/map_illustration.jpg"
+                alt="차담한옥 약도"
+                class="location-map-img"
+                loading="lazy"
+                decoding="async"
+                data-img="index.location.img"
+              />
+              <span class="map-badge">전용 단독 주차장 완비</span>
+            </div>
+            <div class="location-info-box">
+              <h3 class="location-info-title">차담옥 (CHADAM HANOK)</h3>
+              <p class="location-info-desc">
+                경기도 이천시 마장면의 맑은 공기와 조용한 골목 안쪽에 위치하여 온전한 프라이빗 휴식을 보장합니다.
+              </p>
+              
+              <div class="location-meta-list">
+                <div class="meta-row">
+                  <span class="meta-label">주소</span>
+                  <span class="meta-val" data-text="index.location.addressValue">경기 이천시 마장면 마도로248번길 32-101</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">주차</span>
+                  <span class="meta-val">한옥 마당 내 무료 전용 주차 (최대 3대 가능)</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">교통</span>
+                  <span class="meta-val">서이천 IC / 덕평 IC 차량 10분, 판교/강남 기준 45분</span>
+                </div>
+              </div>
+
+              <div class="location-btn-row">
+                <a
+                  href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
+                  target="_blank"
+                  class="btn btn-naver-map"
+                  data-link="index.location.naverMapLink"
+                  >네이버 지도 길찾기 ↗</a
+                >
+                <a
+                  href="https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101"
+                  target="_blank"
+                  class="btn-outline btn-kakao-map"
+                  >카카오맵 길찾기 ↗</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -189,9 +206,13 @@
               decoding="async"
             />
             <div class="hero-content">
+              <span class="hero-pretitle">BOUTIQUE HANOK STAY</span>
               <h2>${item.title || ''}</h2>
               <p>${item.desc || ''}</p>
-              <a href="${item.btnLink || '#'}" class="btn">${item.btnText || ''}</a>
+              <div class="hero-btn-wrap">
+                <a href="${item.btnLink || '#'}" class="btn hero-cta-btn">${item.btnText || '둘러보기'}</a>
+                <a href="reserve.html" class="btn-outline hero-reserve-btn">실시간 예약</a>
+              </div>
             </div>
           `;
           wrapper.appendChild(slide);
@@ -200,11 +221,11 @@
         new Swiper(".hero-slider", {
           loop: heroItems.length > 1,
           effect: "fade",
-          speed: prefersReducedMotion ? 0 : 1500,
+          speed: prefersReducedMotion ? 0 : 1600,
           fadeEffect: { crossFade: true },
           autoplay: prefersReducedMotion
             ? false
-            : { delay: 6000, disableOnInteraction: false },
+            : { delay: 6500, disableOnInteraction: false },
           pagination: { 
             el: ".swiper-pagination", 
             type: "fraction",
@@ -215,7 +236,28 @@
           navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
         });
 
-        // Rooms Slider Rendering
+        // 2. Features Visual Grid Rendering
+        const features = window.siteData?.index?.intro?.features || [];
+        const featuresGrid = document.getElementById('index-features-grid');
+        if (featuresGrid && features.length > 0) {
+          features.forEach((feat, idx) => {
+            const card = document.createElement('div');
+            card.className = 'feature-card-visual fade-up';
+            card.innerHTML = `
+              <div class="feature-card-img-wrap">
+                <img src="${feat.img || 'images/hero_interior.png'}" alt="${feat.title || ''}" loading="lazy" decoding="async" />
+                <span class="feature-tag">${feat.tag || `0${idx + 1} / EXPERIENCE`}</span>
+              </div>
+              <div class="feature-card-body">
+                <h3>${feat.title || ''}</h3>
+                <p>${feat.desc || ''}</p>
+              </div>
+            `;
+            featuresGrid.appendChild(card);
+          });
+        }
+
+        // 3. Rooms Slider Rendering
         const roomItems = window.siteData?.index?.rooms?.list || [];
         const roomsWrapper = document.getElementById('index-rooms-wrapper');
         if (roomsWrapper && roomItems.length > 0) {
@@ -226,9 +268,11 @@
             slide.innerHTML = `
               <div class="room-card-large">
                 <div class="room-img-wrapper">
+                  <span class="room-badge">PRIVATE DETACHED STAY</span>
                   <img src="${room.img || ''}" alt="${room.roomTitle || ''}" loading="lazy" decoding="async" />
                 </div>
                 <div class="room-info">
+                  <div class="room-type-tag">EXCLUSIVE SPACE</div>
                   <h3>${room.roomTitle || ''}</h3>
                   <p class="copy-body copy-medium">${room.roomDesc || ''}</p>
                   <ul class="room-specs">${specsHtml}</ul>
@@ -248,31 +292,53 @@
           });
         }
 
-        // Special Items Rendering (메인 페이지 프리뷰: 대표 4개)
-        const specialItems = (window.siteData?.special?.items || []).slice(0, 4);
+        // 4. Special Items Rendering (메인 페이지 프리뷰: 고유한 경험 4가지 추출)
+        const allSpecials = window.siteData?.special?.items || [];
+        const seenTitles = new Set();
+        const uniqueSpecials = [];
+        for (const item of allSpecials) {
+          const key = (item.title || '').replace(/\s+/g, '').toLowerCase();
+          if (!seenTitles.has(key)) {
+            seenTitles.add(key);
+            uniqueSpecials.push(item);
+          }
+          if (uniqueSpecials.length >= 4) break;
+        }
+
         const specialGrid = document.getElementById('index-special-items');
-        if (specialGrid && specialItems.length > 0) {
-          specialItems.forEach((item) => {
-            const el = document.createElement('div');
-            el.className = 'special-item fade-up';
+        if (specialGrid && uniqueSpecials.length > 0) {
+          uniqueSpecials.forEach((item, i) => {
+            const slug = (item.title || '').replace(/\s+/g, '').toLowerCase();
+            const el = document.createElement('a');
+            el.href = `special.html#sp-${slug}`;
+            el.className = 'special-item special-preview-card fade-up';
             el.innerHTML = `
-              <img
-                src="${item.img || ''}"
-                alt="${item.title || ''}"
-                loading="lazy"
-                decoding="async"
-              />
-              <h3>${item.title || ''}</h3>
-              <p class="copy-body">${item.desc || ''}</p>
+              <div class="special-img-frame">
+                <img
+                  src="${item.img || ''}"
+                  alt="${item.title || ''}"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span class="special-tag-chip">EXPERIENCE 0${i + 1}</span>
+              </div>
+              <div class="special-text-frame">
+                <h3>${item.title || ''}</h3>
+                <p class="copy-body">${item.desc || ''}</p>
+                <div class="special-card-cta">
+                  <span>자세히 보기</span>
+                  <span class="cta-arrow">↗</span>
+                </div>
+              </div>
             `;
             specialGrid.appendChild(el);
           });
+        }
 
-          if (typeof window.observeFadeUps === 'function') {
-            window.observeFadeUps();
-          } else {
-            document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-          }
+        if (typeof window.observeFadeUps === 'function') {
+          window.observeFadeUps();
+        } else {
+          document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
       });
     </script>

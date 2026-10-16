@@ -81,10 +81,20 @@
                 loading="${i === 0 ? 'eager' : 'lazy'}"
                 decoding="async"
               />
-              ${group.length > 1 ? `<span class="special-item-count" aria-hidden="true">+${group.length - 1}</span>` : ''}
+              ${group.length > 1 ? `<span class="special-item-count" aria-hidden="true">+${group.length - 1}장</span>` : ''}
+              <div class="special-zoom-hint" aria-hidden="true">
+                <span>클릭하여 사진 감상</span>
+                <span class="zoom-arrow">↗</span>
+              </div>
             </div>
-            <h3>${first.title || ''}</h3>
-            <p class="copy-body">${first.desc || ''}</p>
+            <div class="special-item-content">
+              <div class="special-item-meta">
+                <span class="special-item-chip">EXPERIENCE 0${i + 1}</span>
+                <span class="special-photo-total">총 ${group.length}장의 사진</span>
+              </div>
+              <h3>${first.title || ''}</h3>
+              <p class="copy-body">${first.desc || ''}</p>
+            </div>
           `;
           const open = () => lightbox && lightbox.open(group, 0);
           el.addEventListener('click', open);

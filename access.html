@@ -28,54 +28,58 @@
           </p>
         </div>
 
-        <!-- Use map illustration -->
-        <div class="map-container custom-cursor fade-up mt-3">
-          <img
-            src="images/map_illustration.jpg"
-            alt="차담한옥(차담옥) 약도"
-            class="static-map-img"
-            loading="lazy"
-            decoding="async"
-            data-img="access.mapImg"
-          />
-          <div class="map-overlay">
-            <div class="map-overlay-actions">
+        <div class="location-card-wrapper fade-up">
+          <div class="location-map-box">
+            <img
+              src="images/map_illustration.jpg"
+              alt="차담한옥(차담옥) 약도"
+              class="location-map-img"
+              loading="lazy"
+              decoding="async"
+              data-img="access.mapImg"
+            />
+            <span class="map-badge">전용 단독 주차장 완비</span>
+          </div>
+
+          <div class="location-info-box">
+            <h3 class="location-info-title">차담옥 오시는 길 안내</h3>
+            <p class="location-info-desc">
+              경기도 이천의 고즈넉한 골목 안쪽에 자리하여, 복잡한 일상을 벗어나 조용하고 프라이빗한 쉼을 경험하실 수 있습니다.
+            </p>
+
+            <div class="location-meta-list">
+              <div class="meta-row">
+                <span class="meta-label">주소</span>
+                <span class="meta-val">경기 이천시 마장면 마도로248번길 32-101(관리802-6)</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">주차</span>
+                <span class="meta-val">한옥 마당 안쪽에 무료 전용 주차 공간이 완비되어 있습니다. (차량 최대 3대)</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">교통</span>
+                <span class="meta-val">중부고속도로 서이천IC / 영동고속도로 덕평IC에서 차량으로 약 10분 소요됩니다.</span>
+              </div>
+            </div>
+
+            <div class="location-btn-row">
               <a
                 href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
                 target="_blank"
-                class="btn"
+                class="btn btn-naver-map"
                 data-text="access.naverText"
                 data-link="access.naverLink"
-                >네이버 지도</a
+                >네이버 지도 길찾기 ↗</a
               >
               <a
                 href="https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101"
                 target="_blank"
-                class="btn btn-kakao"
+                class="btn-outline btn-kakao-map"
                 data-text="access.kakaoText"
                 data-link="access.kakaoLink"
-                >카카오맵</a
+                >카카오맵 길찾기 ↗</a
               >
             </div>
-          </div>
-        </div>
-
-        <div class="location-info fade-up mt-3">
-          <div>
-            <h3 class="info-title" data-text="access.addressTitle">주소</h3>
-            <p class="copy-body" data-text="access.addressDesc">
-              경기도 이천의 조용한 골목 안쪽에 자리하고 있습니다.
-            </p>
-          </div>
-          <div>
-            <h3 class="info-title" data-text="access.parkingTitle">
-              주차 안내
-            </h3>
-            <p class="copy-body" data-text="access.parkingDesc">
-              <span class="copy-line"
-                >한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다.</span
-              >
-            </p>
           </div>
         </div>
       </section>

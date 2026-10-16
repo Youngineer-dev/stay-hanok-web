@@ -26,12 +26,13 @@
             <span class="copy-line" data-text="roomsPage.intro2"
               >머무는 동선마다 잔잔한 온기가 이어집니다.</span
             >
-            <br />
-            <span class="copy-line" style="color: var(--color-primary); font-weight: 600; margin-top: 1.5rem;" data-text="roomsPage.introNotice">
-              ※ 차담한옥은 오직 한 팀만을 위한 프라이빗 독채 풀빌라입니다.<br />
-              예약 시 안내된 모든 공간을 단독으로 자유롭게 이용하실 수 있습니다.
-            </span>
           </p>
+          <div class="stay-exclusive-badge-banner fade-up">
+            <span class="badge-icon">✦</span>
+            <span class="badge-text" data-text="roomsPage.introNotice">
+              차담옥은 오직 하루 한 팀만을 위한 프라이빗 독채 한옥입니다. 안내된 모든 실내외 공간을 단독으로 이용하실 수 있습니다.
+            </span>
+          </div>
         </div>
 
         <!-- 1. Main Rooms Detail (Slider) -->
@@ -46,6 +47,7 @@
 
         <!-- 2. Space Layout (Open Plan Flow) -->
         <div class="text-center fade-up open-plan-heading">
+          <span class="section-subtitle">ARCHITECTURAL FLOW</span>
           <h3
             class="section-title open-plan-section-title"
             data-text="roomsPage.openPlan.title"
@@ -62,7 +64,7 @@
         <div class="room-card-large fade-up room-card-vertical">
           <div class="room-img-wrapper">
             <img
-              src="images/open_plan.jpg"
+              src="images/open_plan.png"
               alt="Open Plan Structure: Kitchen to Bedroom"
               loading="lazy"
               decoding="async"
@@ -211,32 +213,120 @@
           });
         }
 
-        // Room Info Rendering
+        // Room Info Rendering (Boutique Concierge Card System)
         const info = window.siteData?.roomsPage?.info;
         if (info) {
           const specsWrap = document.getElementById("room-info-specs");
           if (specsWrap && Array.isArray(info.specs)) {
-            specsWrap.innerHTML = info.specs.map((s) => `
-              <div class="spec-item${s.wide ? " is-wide" : ""}">
-                <span class="spec-label">${s.label || ""}</span>
-                <span class="spec-value">${s.value || ""}</span>
-              </div>
-            `).join("");
+            const topSpecs = info.specs.filter(s => !s.wide);
+            const wideSpec = info.specs.find(s => s.wide);
+
+            const specMeta = [
+              { eng: "CHECK-IN", icon: "🕒", hint: "비대면 스마트 체크인" },
+              { eng: "CHECK-OUT", icon: "🕚", hint: "여유로운 정오 퇴실", isHighlight: true },
+              { eng: "CAPACITY", icon: "👥", hint: "영유아 포함 인원" },
+              { eng: "PRIVATE AREA", icon: "📐", hint: "약 15.5평 단독 대관" }
+            ];
+
+            const cardsHtml = topSpecs.map((s, idx) => {
+              const meta = specMeta[idx] || { eng: "INFO", icon: "✦", hint: "" };
+              return `
+                <div class="spec-card${meta.isHighlight ? " is-highlight" : ""}">
+                  <div class="spec-card-header">
+                    <span class="spec-icon">${meta.icon}</span>
+                    <span class="spec-eng-label">${meta.eng}</span>
+                  </div>
+                  <div class="spec-card-body">
+                    <span class="spec-label">${s.label || ""}</span>
+                    <span class="spec-value">${s.value || ""}</span>
+                  </div>
+                  ${meta.hint ? `<span class="spec-card-hint">${meta.hint}</span>` : ""}
+                </div>
+              `;
+            }).join("");
+
+            let wideHtml = "";
+            if (wideSpec) {
+              wideHtml = `
+                <div class="spec-type-banner">
+                  <div class="spec-type-label-box">
+                    <span class="spec-eng-tag">SPATIAL COMPOSITION</span>
+                    <h4 class="spec-type-title">객실 공간 구성</h4>
+                  </div>
+                  <div class="spec-type-content">
+                    <div class="spec-type-main-name">독채 한옥 (전체 공간 단독 이용)</div>
+                    <div class="spec-type-pills">
+                      <span class="type-pill">🛋️ 넓은 거실 (대청마루)</span>
+                      <span class="type-pill">🛏️ 독립 침대방 1 (퀸베드)</span>
+                      <span class="type-pill">🥩 개별 야외 바베큐장</span>
+                      <span class="type-pill">🚿 쾌적한 화장실 1</span>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }
+
+            specsWrap.innerHTML = `
+              <div class="spec-cards-grid">${cardsHtml}</div>
+              ${wideHtml}
+            `;
           }
 
           const noticeWrap = document.getElementById("room-info-notice");
           if (noticeWrap && Array.isArray(info.notice) && info.notice.length > 0) {
-            noticeWrap.innerHTML = info.notice.map((n) => `<p>${n}</p>`).join("");
+            noticeWrap.innerHTML = `
+              <div class="concierge-notice-box">
+                <div class="notice-icon-box">
+                  <span class="notice-badge-icon">✦</span>
+                </div>
+                <div class="notice-content-box">
+                  <h4 class="notice-header-title">인원 규정 및 예약 유의사항</h4>
+                  <ul class="notice-list">
+                    ${info.notice.map(n => `
+                      <li>
+                        <span class="notice-bullet">·</span>
+                        <span class="notice-text">${n}</span>
+                      </li>
+                    `).join("")}
+                  </ul>
+                </div>
+              </div>
+            `;
           }
 
           const amenitiesWrap = document.getElementById("room-info-amenities");
           if (amenitiesWrap && Array.isArray(info.amenities)) {
+            const catMeta = {
+              "타올류": { eng: "LINEN & TOWELS", icon: "🧺" },
+              "전자제품": { eng: "APPLIANCES", icon: "⚡" },
+              "주방용품": { eng: "KITCHEN & DINING", icon: "🍳" },
+              "욕실용품": { eng: "BATH & CARE", icon: "🌿" },
+              "비치물품": { eng: "LIVING ESSENTIALS", icon: "🕯️" }
+            };
+
             amenitiesWrap.innerHTML = info.amenities.map((cat) => {
-              const items = (cat.items || []).map((it) => `<li>${it}</li>`).join("");
+              const meta = catMeta[cat.title] || { eng: "AMENITIES", icon: "✦" };
+              const items = (cat.items || []).map((it) => `
+                <li class="amenity-list-item">
+                  <span class="amenity-check">✓</span>
+                  <span class="amenity-text">${it}</span>
+                </li>
+              `).join("");
               return `
-                <div class="amenity-category">
-                  <h4>${cat.title || ""}</h4>
-                  <ul>${items}</ul>
+                <div class="amenity-card">
+                  <div class="amenity-card-header">
+                    <div class="amenity-icon-wrapper">
+                      <span class="amenity-cat-icon">${meta.icon}</span>
+                    </div>
+                    <div class="amenity-cat-titles">
+                      <span class="amenity-eng-tag">${meta.eng}</span>
+                      <h4 class="amenity-cat-name">${cat.title || ""}</h4>
+                    </div>
+                    <span class="amenity-count-badge">${(cat.items || []).length}개 품목</span>
+                  </div>
+                  <div class="amenity-card-body">
+                    <ul class="amenity-items-list">${items}</ul>
+                  </div>
                 </div>
               `;
             }).join("");

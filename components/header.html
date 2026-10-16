@@ -1,9 +1,12 @@
 <header>
-  <div class="container">
-    <!-- Logo -->
-    <a href="index.html" class="logo" data-text="common.logo">차담한옥(차담옥)</a>
+  <div class="container header-container">
+    <!-- Logo with Luxury Hanok Branding -->
+    <a href="index.html" class="logo">
+      <span class="logo-title">차담옥</span>
+      <span class="logo-sub">CHADAM HANOK</span>
+    </a>
 
-    <!-- Desktop Navigation (Visible) -->
+    <!-- Desktop Navigation -->
     <nav class="nav-menu">
       <!-- 홈: 정적 하위 메뉴 -->
       <div class="nav-item has-submenu">
@@ -27,51 +30,43 @@
       <!-- 주변 볼거리: data.json attractions.items[].title에서 동적 생성 -->
       <div class="nav-item has-submenu">
         <a href="attractions.html" class="nav-top-link" data-text="common.nav.attractions">주변 볼거리</a>
-        <div class="nav-submenu" id="nav-attractions-sub" role="menu">
-          <!-- JS에서 data.json attractions.items[].title 로 동적 생성 -->
-        </div>
+        <div class="nav-submenu" id="nav-attractions-sub" role="menu"></div>
       </div>
 
       <!-- 특별한 경험: data.json special.items[].title 중복 제거 후 동적 생성 -->
       <div class="nav-item has-submenu">
         <a href="special.html" class="nav-top-link" data-text="common.nav.special">특별한 경험</a>
-        <div class="nav-submenu" id="nav-special-sub" role="menu">
-          <!-- JS에서 data.json special.items[].title 유니크하게 동적 생성 -->
-        </div>
+        <div class="nav-submenu" id="nav-special-sub" role="menu"></div>
       </div>
 
-      <!-- 위치: 플립 텍스트 애니메이션 -->
-      <div class="nav-item nav-flip">
-        <a href="access.html" class="nav-top-link">
-          <span class="flip-inner">
-            <span class="flip-txt" data-text="common.nav.location">위치</span>
-            <span class="flip-txt flip-clone" data-text="common.nav.location" aria-hidden="true">위치</span>
-          </span>
-        </a>
+      <!-- 위치 -->
+      <div class="nav-item">
+        <a href="access.html" class="nav-top-link" data-text="common.nav.location">위치</a>
       </div>
 
-      <!-- 예약 및 문의: 플립 텍스트 애니메이션 -->
-      <div class="nav-item nav-flip">
-        <a href="reserve.html" class="nav-top-link">
-          <span class="flip-inner">
-            <span class="flip-txt" data-text="common.nav.reservation">예약 및 문의</span>
-            <span class="flip-txt flip-clone" data-text="common.nav.reservation" aria-hidden="true">예약 및 문의</span>
-          </span>
-        </a>
+      <!-- 예약 및 문의 -->
+      <div class="nav-item">
+        <a href="reserve.html" class="nav-top-link" data-text="common.nav.reservation">예약/문의</a>
       </div>
     </nav>
 
-    <!-- Hamburger (Mobile Only - Hidden by CSS on Desktop) -->
-    <button
-      class="menu-toggle"
-      aria-label="Toggle menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu-overlay"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- Header Actions (Quick Booking Button on Desktop) -->
+    <div class="header-actions">
+      <a href="reserve.html" class="btn-header-book">
+        <span>BOOKING</span>
+      </a>
+      <!-- Hamburger (Mobile Only) -->
+      <button
+        class="menu-toggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu-overlay"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
 

@@ -12,48 +12,115 @@
     <main>
       <section class="container fade-up page-top-offset">
         <div class="text-center">
-          <span class="section-subtitle" data-text="reserve.subtitle">Reservation</span>
+          <span class="section-subtitle" data-text="reserve.subtitle">RESERVATION & CONCIERGE</span>
           <h2 class="section-title" data-text="reserve.mainTitle">예약 및 문의</h2>
           <p class="copy-lead copy-medium copy-center" data-text="reserve.intro">
-            예약은 네이버 예약으로 간편하게 진행됩니다.<br />
-            숙박 전 문의가 필요한
-            경우 전화 또는 카카오톡으로 편하게 연락해 주세요.
+            차담옥은 오직 한 팀만을 위한 프라이빗 독채 스테이입니다.<br />
+            원하시는 날짜의 예약 가능 여부를 실시간으로 확인하고 편안하게 문의해 주세요.
           </p>
         </div>
 
-        <div class="content-card mt-3">
-          <h3 class="copy-headline copy-center" data-text="reserve.reserveTitle">실시간 예약</h3>
-          <p class="copy-body copy-medium copy-center" data-text="reserve.reserveDesc">
-            원하시는 날짜와 인원을 선택한 뒤, 네이버 예약 페이지에서 결제를
-            완료해 주세요.
-          </p>
-          <div class="text-center" style="margin-bottom: 3rem">
-            <a
-              href="#"
-              class="btn btn-naver"
-              data-text="reserve.naverBtn"
-              data-link="reserve.naverLink"
-              target="_blank"
-              >네이버 예약 바로가기</a
-            >
+        <!-- Quick Stay Overview Bar -->
+        <div class="stay-quick-bar fade-up">
+          <div class="quick-bar-item">
+            <span class="qb-label">STAY TYPE</span>
+            <span class="qb-value">독채 풀 프라이빗 (한 팀 단독)</span>
+          </div>
+          <div class="quick-bar-item">
+            <span class="qb-label">CHECK-IN / OUT</span>
+            <span class="qb-value">입실 15:00 · 퇴실 12:00</span>
+          </div>
+          <div class="quick-bar-item">
+            <span class="qb-label">CAPACITY</span>
+            <span class="qb-value">기준 2인 / 최대 6인</span>
+          </div>
+          <div class="quick-bar-item">
+            <span class="qb-label">SPECIAL SERVICE</span>
+            <span class="qb-value">다도 체험 세트 · 홈카페 무상 제공</span>
+          </div>
+        </div>
+
+        <!-- 2-Column Booking Concierge Grid -->
+        <div class="reserve-grid fade-up">
+          <!-- Card 1: Online Booking -->
+          <div class="reserve-card reserve-card-main">
+            <div class="reserve-card-header">
+              <span class="card-badge">REAL-TIME BOOKING</span>
+              <h3>네이버 실시간 예약</h3>
+              <p>실시간 잔여 일정 확인 및 안전한 네이버페이 결제가 즉시 지원됩니다.</p>
+            </div>
+            <ul class="reserve-perks">
+              <li>실시간 객실 캘린더 및 요금 즉시 확인</li>
+              <li>네이버페이 포인트 적립 혜택</li>
+              <li>예약 즉시 안내 문자 및 확정 알림 발송</li>
+            </ul>
+            <div class="reserve-btn-wrap">
+              <a
+                href="https://naver.me/Gjy3T4nj"
+                class="btn btn-reserve-primary"
+                data-text="reserve.naverBtn"
+                data-link="reserve.naverLink"
+                target="_blank"
+                >네이버 실시간 예약하기 ↗</a
+              >
+            </div>
           </div>
 
-          <hr class="content-card-divider" />
+          <!-- Card 2: Concierge Inquiry -->
+          <div class="reserve-card reserve-card-sub">
+            <div class="reserve-card-header">
+              <span class="card-badge">CUSTOMER CONCIERGE</span>
+              <h3>맞춤 상담 및 전화 문의</h3>
+              <p>연박 할인, 단체 워크숍 및 기타 이용 관련 문의를 친절히 안내드립니다.</p>
+            </div>
+            <div class="concierge-hours">
+              <div class="hours-row">
+                <span class="h-label">상담 운영 시간</span>
+                <span class="h-val">09:00 ~ 21:00 (연중무휴)</span>
+              </div>
+              <div class="hours-row">
+                <span class="h-label">대표 연락처</span>
+                <span class="h-val">010-3892-8494</span>
+              </div>
+            </div>
+            <div class="reserve-btn-wrap dual-btns">
+              <a href="tel:01038928494" class="btn-outline btn-concierge-phone" data-text="reserve.phoneBtn" data-link="reserve.phoneLink">
+                전화 문의하기
+              </a>
+              <a
+                href="https://pf.kakao.com/_xxxxxx"
+                class="btn-outline btn-concierge-kakao"
+                data-text="reserve.kakaoBtn"
+                data-link="reserve.kakaoLink"
+                target="_blank"
+                >카카오톡 1:1 상담 ↗</a
+              >
+            </div>
+          </div>
+        </div>
 
-          <h3 class="copy-headline copy-center" data-text="reserve.contactTitle">문의하기</h3>
-          <p class="copy-body copy-center" data-text="reserve.contactDesc">
-            운영 시간 내 순차적으로 신속하게 안내드립니다.
-          </p>
-          <div class="btn-row">
-            <a href="tel:01012345678" class="btn-outline" data-text="reserve.phoneBtn" data-link="reserve.phoneLink">전화 문의</a>
-            <a
-              href="#"
-              class="btn-outline btn-kakao"
-              data-text="reserve.kakaoBtn"
-              data-link="reserve.kakaoLink"
-              target="_blank"
-              >카카오톡 상담</a
-            >
+        <!-- Reservation Guidelines & Policies -->
+        <div class="policy-section fade-up">
+          <h3 class="policy-heading">예약 전 유의사항 & 환불 규정</h3>
+          <div class="policy-grid">
+            <div class="policy-col">
+              <h4>이용 유의사항</h4>
+              <ul>
+                <li>기준 인원(2인) 초과 시 1인당 20,000원의 추가 요금이 발생합니다.</li>
+                <li>예약된 인원 외 외부인 출입 및 추가 인원 무단 입실은 불가합니다.</li>
+                <li>목조 한옥 특성상 숙소 내부 전체는 절대 금연 구역입니다.</li>
+                <li>밤 10시 이후에는 인근 주민과 자연의 평온을 위해 마당 내 고성방가를 삼가주시기 바랍니다.</li>
+              </ul>
+            </div>
+            <div class="policy-col">
+              <h4>환불 규정</h4>
+              <ul>
+                <li>이용일 10일 전 취소: 100% 전액 환불</li>
+                <li>이용일 7~9일 전 취소: 총 결제금액의 70% 환불</li>
+                <li>이용일 4~6일 전 취소: 총 결제금액의 50% 환불</li>
+                <li>이용일 3일 전 ~ 당일 취소: 취소 및 환불 불가</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
