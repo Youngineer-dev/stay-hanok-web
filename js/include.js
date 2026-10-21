@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 1. Function to Load External HTML Files
   const loadComponent = (selector, file) => {
-    fetch(file)
+    fetch(file, { cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error(`Failed to load ${file}`);
         return response.text();

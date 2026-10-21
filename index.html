@@ -124,14 +124,7 @@
 
           <div class="location-card-wrapper fade-up">
             <div class="location-map-box">
-              <img
-                src="images/map_illustration.jpg"
-                alt="차담한옥 약도"
-                class="location-map-img"
-                loading="lazy"
-                decoding="async"
-                data-img="index.location.img"
-              />
+              <div id="index-naver-map" class="naver-map-container" role="region" aria-label="차담옥 네이버 지도"></div>
               <span class="map-badge">전용 단독 주차장 완비</span>
             </div>
             <div class="location-info-box">
@@ -183,6 +176,9 @@
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Naver Maps v3 API & Script -->
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=na17uzsn58"></script>
+    <script src="js/naver-map.js"></script>
     <script>
       const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",

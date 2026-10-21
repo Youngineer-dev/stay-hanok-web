@@ -12,7 +12,7 @@
     <!-- Sub-Hero Banner -->
     <div class="sub-hero">
       <img
-        src="images/거실8.jpg"
+        src="images/room_hero_luxury.jpg"
         alt="차담옥 독채 객실 전경"
         class="sub-hero-bg"
       />
@@ -63,12 +63,11 @@
           </p>
         </div>
 
-        <!-- Use the new 'room-card-vertical' class without inline styles -->
         <div class="room-card-large fade-up room-card-vertical">
           <div class="room-img-wrapper">
             <img
-              src="images/open_plan.png"
-              alt="Open Plan Structure: Kitchen to Bedroom"
+              src="images/open_plan_flow.jpg"
+              alt="차담옥 오픈 플랜 공간 구조 (다이닝부터 침실까지)"
               loading="lazy"
               decoding="async"
               data-img="roomsPage.openPlan.img"
@@ -225,18 +224,17 @@
             const wideSpec = info.specs.find(s => s.wide);
 
             const specMeta = [
-              { eng: "CHECK-IN", icon: "🕒", hint: "비대면 스마트 체크인" },
-              { eng: "CHECK-OUT", icon: "🕚", hint: "여유로운 정오 퇴실", isHighlight: true },
-              { eng: "CAPACITY", icon: "👥", hint: "영유아 포함 인원" },
-              { eng: "PRIVATE AREA", icon: "📐", hint: "약 15.5평 단독 대관" }
+              { eng: "CHECK-IN", hint: "비대면 스마트 체크인" },
+              { eng: "CHECK-OUT", hint: "여유로운 정오 퇴실", isHighlight: true },
+              { eng: "CAPACITY", hint: "기준 2인 / 최대 6인" },
+              { eng: "PRIVATE AREA", hint: "약 15.5평 단독 대관" }
             ];
 
             const cardsHtml = topSpecs.map((s, idx) => {
-              const meta = specMeta[idx] || { eng: "INFO", icon: "✦", hint: "" };
+              const meta = specMeta[idx] || { eng: "INFO", hint: "" };
               return `
                 <div class="spec-card${meta.isHighlight ? " is-highlight" : ""}">
                   <div class="spec-card-header">
-                    <span class="spec-icon">${meta.icon}</span>
                     <span class="spec-eng-label">${meta.eng}</span>
                   </div>
                   <div class="spec-card-body">
@@ -259,10 +257,10 @@
                   <div class="spec-type-content">
                     <div class="spec-type-main-name">독채 한옥 (전체 공간 단독 이용)</div>
                     <div class="spec-type-pills">
-                      <span class="type-pill">🛋️ 넓은 거실 (대청마루)</span>
-                      <span class="type-pill">🛏️ 독립 침대방 1 (퀸베드)</span>
-                      <span class="type-pill">🥩 개별 야외 바베큐장</span>
-                      <span class="type-pill">🚿 쾌적한 화장실 1</span>
+                      <span class="type-pill">넓은 거실 (대청마루)</span>
+                      <span class="type-pill">독립 침대방 (퀸베드)</span>
+                      <span class="type-pill">개별 야외 바베큐장</span>
+                      <span class="type-pill">화장실</span>
                     </div>
                   </div>
                 </div>
@@ -300,26 +298,26 @@
           const amenitiesWrap = document.getElementById("room-info-amenities");
           if (amenitiesWrap && Array.isArray(info.amenities)) {
             const catMeta = {
-              "타올류": { eng: "LINEN & TOWELS", icon: "🧺" },
-              "전자제품": { eng: "APPLIANCES", icon: "⚡" },
-              "주방용품": { eng: "KITCHEN & DINING", icon: "🍳" },
-              "욕실용품": { eng: "BATH & CARE", icon: "🌿" },
-              "비치물품": { eng: "LIVING ESSENTIALS", icon: "🕯️" }
+              "타올류": { eng: "LINEN & TOWELS", no: "01" },
+              "전자제품": { eng: "APPLIANCES", no: "02" },
+              "주방용품": { eng: "KITCHEN & DINING", no: "03" },
+              "욕실용품": { eng: "BATH & CARE", no: "04" },
+              "비치물품": { eng: "LIVING ESSENTIALS", no: "05" }
             };
 
-            amenitiesWrap.innerHTML = info.amenities.map((cat) => {
-              const meta = catMeta[cat.title] || { eng: "AMENITIES", icon: "✦" };
+            amenitiesWrap.innerHTML = info.amenities.map((cat, idx) => {
+              const meta = catMeta[cat.title] || { eng: "AMENITIES", no: `0${idx + 1}` };
               const items = (cat.items || []).map((it) => `
                 <li class="amenity-list-item">
-                  <span class="amenity-check">✓</span>
+                  <span class="amenity-bullet">·</span>
                   <span class="amenity-text">${it}</span>
                 </li>
               `).join("");
               return `
                 <div class="amenity-card">
                   <div class="amenity-card-header">
-                    <div class="amenity-icon-wrapper">
-                      <span class="amenity-cat-icon">${meta.icon}</span>
+                    <div class="amenity-no-badge">
+                      <span>${meta.no}</span>
                     </div>
                     <div class="amenity-cat-titles">
                       <span class="amenity-eng-tag">${meta.eng}</span>

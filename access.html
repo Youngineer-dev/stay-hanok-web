@@ -31,14 +31,7 @@
       <section class="container fade-up" style="padding-top: 4rem; padding-bottom: 6rem;">
         <div class="location-card-wrapper fade-up">
           <div class="location-map-box">
-            <img
-              src="images/map_illustration.jpg"
-              alt="차담한옥(차담옥) 약도"
-              class="location-map-img"
-              loading="lazy"
-              decoding="async"
-              data-img="access.mapImg"
-            />
+            <div id="naver-map" class="naver-map-container" role="region" aria-label="차담옥 네이버 지도"></div>
             <span class="map-badge">전용 단독 주차장 완비</span>
           </div>
 
@@ -118,5 +111,8 @@
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>
+    <!-- Naver Maps v3 API & Script -->
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=na17uzsn58"></script>
+    <script src="js/naver-map.js"></script>
   </body>
 </html>
