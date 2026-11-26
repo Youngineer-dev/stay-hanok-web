@@ -9,47 +9,50 @@
   <body data-page="gallery">
     <div id="header-placeholder"></div>
 
-    <!-- Sub-Hero Banner -->
-    <div class="sub-hero">
-      <img
-        src="images/마당1.jpg"
-        alt="차담옥 공간 갤러리"
-        class="sub-hero-bg"
-      />
-      <div class="sub-hero-overlay"></div>
-      <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="gallery.subtitle">PHOTO ARCHIVE</span>
-        <h1 class="sub-hero-title" data-text="gallery.mainTitle">공간을 담다</h1>
-        <p class="sub-hero-desc" data-text="gallery.intro">
-          빛이 머무는 대청, 계절이 스며드는 마당, 차담옥의 온기 어린 순간들을 담았습니다.<br />
-          이미지를 클릭하시면 고화질 원본으로 감상하실 수 있습니다.
-        </p>
+    <!-- Bright Hanji Editorial Masthead -->
+    <section class="page-masthead">
+      <div class="container masthead-inner">
+        <div class="masthead-main">
+          <span class="masthead-kicker">
+            <span class="logo-seal is-small" aria-hidden="true">茶談</span>
+            <span data-text="gallery.subtitle">공간 사진첩</span>
+          </span>
+          <h1 class="masthead-title" data-text="gallery.mainTitle">빛과 계절이 머무는 풍경</h1>
+          <p class="masthead-desc" data-text="gallery.intro">
+            대청의 햇살과 마당의 사계절, 차담옥의 하루를 담았습니다. 사진을 누르면 원본 크기로 감상하실 수 있습니다.
+          </p>
+        </div>
+        <span class="masthead-vertical-note" aria-hidden="true">사계절 · 마당 · 대청</span>
       </div>
-    </div>
+    </section>
 
     <main>
-      <section class="container fade-up">
-        <!-- Underline Filter Navigation -->
-        <div class="gallery-filter-nav" role="tablist" aria-label="갤러리 분류">
-          <button type="button" class="gallery-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">전체 보기</button>
-          <button type="button" class="gallery-filter-btn" data-filter="exterior" role="tab" aria-selected="false">외관과 마당</button>
-          <button type="button" class="gallery-filter-btn" data-filter="interior" role="tab" aria-selected="false">대청과 침실</button>
-          <button type="button" class="gallery-filter-btn" data-filter="seasons" role="tab" aria-selected="false">다도와 사계절</button>
-        </div>
+      <section class="section-band" style="padding-top: 1.5rem;">
+        <div class="container">
+          <!-- Sticky Horizontal Filter Tabs -->
+          <div class="gallery-sticky-bar">
+            <div class="scroll-tabs" role="tablist" aria-label="갤러리 분류">
+              <button type="button" class="scroll-tab-btn gallery-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">전체 보기</button>
+              <button type="button" class="scroll-tab-btn gallery-filter-btn" data-filter="exterior" role="tab" aria-selected="false">외관과 마당</button>
+              <button type="button" class="scroll-tab-btn gallery-filter-btn" data-filter="interior" role="tab" aria-selected="false">대청과 침실</button>
+              <button type="button" class="scroll-tab-btn gallery-filter-btn" data-filter="seasons" role="tab" aria-selected="false">다도와 사계절</button>
+            </div>
+          </div>
 
-        <div class="gallery-archive-grid" id="gallery-items">
-          <!-- data.json gallery.photos 배열에서 동적 생성 -->
-        </div>
+          <div class="gallery-archive-grid" id="gallery-items">
+            <!-- data.json gallery.photos 배열에서 동적 생성 -->
+          </div>
 
-        <div class="gallery-more-wrap" id="gallery-more-wrap">
-          <button
-            type="button"
-            id="gallery-more-btn"
-            class="btn-outline"
-            style="display: none"
-          >
-            더 많은 사진 보기 +
-          </button>
+          <div class="gallery-more-wrap" id="gallery-more-wrap">
+            <button
+              type="button"
+              id="gallery-more-btn"
+              class="btn-outline"
+              style="display: none"
+            >
+              사진 더 보기
+            </button>
+          </div>
         </div>
       </section>
     </main>
@@ -104,7 +107,6 @@
           category: categorizePhoto(p, i),
         }));
 
-        // 각 분류별 개수 표기
         const counts = {
           all: categorizedPhotos.length,
           exterior: categorizedPhotos.filter((p) => p.category === "exterior").length,
@@ -126,13 +128,11 @@
 
         let activeFilter = "all";
         let currentFilteredPhotos = categorizedPhotos;
-        const INITIAL_COUNT = 9;
-        const INCREMENT = 9;
+        const INITIAL_COUNT = 12;
+        const INCREMENT = 12;
         let visibleCount = INITIAL_COUNT;
 
-        const lightbox = window.createLightbox(
-          document.getElementById("gallery-lightbox")
-        );
+        const lightbox = window.createLightbox(document.getElementById("gallery-lightbox"));
 
         function renderGallery() {
           grid.innerHTML = "";
@@ -163,7 +163,7 @@
                 <img
                   src="${photo.img}"
                   alt="${photo.alt || ""}"
-                  loading="${i < 9 ? "eager" : "lazy"}"
+                  loading="${i < 8 ? "eager" : "lazy"}"
                   decoding="async"
                 />
               </div>
@@ -194,7 +194,7 @@
           } else {
             moreBtn.style.display = "";
             const remaining = currentFilteredPhotos.length - visibleCount;
-            moreBtn.textContent = `더 많은 사진 보기 (+${remaining})`;
+            moreBtn.textContent = `사진 더 보기 (${remaining}장)`;
           }
         }
 

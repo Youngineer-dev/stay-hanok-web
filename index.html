@@ -3,87 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>차담한옥(차담옥) | 쉼이 머무는 차담옥</title>
+    <title>차담옥(차담한옥) | 쉼이 머무는 이천 독채 한옥</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <meta property="og:title" content="차담한옥(차담옥) - 쉼이 머무는 차담옥" />
+    <meta property="og:title" content="차담옥(차담한옥) - 쉼이 머무는 이천 독채 한옥" />
     <meta property="og:image" content="images/hero_main.png" />
   </head>
-  <body data-page="index">
+  <body data-page="index" class="has-hero-banner">
     <div id="header-placeholder"></div>
 
     <main>
-      <!-- 1. Full-Bleed Architectural Hero -->
+      <!-- 1. Fullscreen Serene Hanok Hero -->
       <section class="hero">
         <div class="swiper hero-slider">
           <div class="swiper-wrapper" id="hero-slides">
             <!-- data.json index.hero 배열에서 동적 생성 -->
           </div>
+          <div class="hero-vertical-stamp" aria-hidden="true">茶談屋 · 이천 마장면 독채 한옥</div>
           <div class="hero-controls">
-            <div class="swiper-button-prev" aria-label="이전 슬라이드"></div>
+            <div class="swiper-button-prev" aria-label="이전 사진"></div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-next" aria-label="다음 슬라이드"></div>
+            <div class="swiper-button-next" aria-label="다음 사진"></div>
           </div>
         </div>
       </section>
 
-      <!-- Docked Stay Summary Bar -->
-      <div class="hero-dock-bar">
-        <div class="container hero-dock-grid">
-          <div class="dock-cell">
-            <span class="dock-cell-label">STAY TYPE</span>
-            <span class="dock-cell-val">독채 한옥 · 하루 한 팀 단독</span>
-          </div>
-          <div class="dock-cell">
-            <span class="dock-cell-label">CHECK-IN / OUT</span>
-            <span class="dock-cell-val">입실 15:00 · 퇴실 12:00</span>
-          </div>
-          <div class="dock-cell">
-            <span class="dock-cell-label">CAPACITY &amp; AREA</span>
-            <span class="dock-cell-val">기준 2인 · 최대 6인 (51㎡)</span>
-          </div>
-          <div class="dock-cta-cell">
-            <a href="reserve.html" class="dock-reserve-btn">실시간 예약 바로가기 →</a>
+      <!-- 2. Compact Stay Information Strip (Desktop 4-col / Mobile 2x2) -->
+      <section class="quick-info-strip" aria-label="스테이 기본 정보">
+        <div class="container">
+          <div class="quick-info-grid">
+            <div class="quick-info-cell">
+              <span class="quick-info-label">객실 형태</span>
+              <span class="quick-info-val">하루 한 팀 독채 대관</span>
+            </div>
+            <div class="quick-info-cell">
+              <span class="quick-info-label">입·퇴실</span>
+              <span class="quick-info-val">입실 15:00 · 퇴실 12:00</span>
+            </div>
+            <div class="quick-info-cell">
+              <span class="quick-info-label">수용 인원</span>
+              <span class="quick-info-val">기준 2인 · 최대 6인</span>
+            </div>
+            <div class="quick-info-cell">
+              <span class="quick-info-label">위치</span>
+              <span class="quick-info-val">경기 이천시 마장면</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- 2. Philosophy & Editorial Visual Intro -->
-      <section class="intro-editorial">
+      <!-- 3. Hanok Story & Visual Prologue -->
+      <section class="section-band">
         <div class="container">
-          <div class="intro-header-block fade-up">
-            <span class="section-subtitle" data-text="index.intro.subtitle">STAY PHILOSOPHY</span>
-            <h2 class="section-title" data-text="index.intro.title">
-              시간의 결이 머무는 곳,<br />오직 한 팀을 위한 독채 한옥
-            </h2>
-            <p class="copy-lead">
-              <span class="copy-line" data-text="index.intro.desc1"
-                >차담옥은 도심의 번잡함을 벗어나 자연과 한옥이 빚어내는 온전한 휴식을 경험하는 프라이빗 독채 스테이입니다.</span
-              >
-              <span class="copy-line" data-text="index.intro.desc2"
-                >아늑한 대청마루와 정갈한 침실, 향긋한 차 향이 피어오르는 다도 공간과 프라이빗 시네마까지 당신만의 온전한 하루를 완성합니다.</span
-              >
-            </p>
+          <div class="intro-story-head fade-up">
+            <div>
+              <div class="intro-story-seal-row">
+                <span class="logo-seal" aria-hidden="true">茶談</span>
+                <span class="section-kicker" style="margin-bottom: 0" data-text="index.intro.subtitle">차담옥의 하루</span>
+              </div>
+              <h2 class="section-title" data-text="index.intro.title">
+                차를 우리고 마주 앉는 사이,<br />하루의 속도는 자연스레 느려집니다
+              </h2>
+            </div>
+            <div class="intro-story-copy">
+              <p data-text="index.intro.desc1">
+                차담옥은 경기 이천 마장면의 고요한 골목 안쪽에 자리한 하루 한 팀 전용 독채 한옥입니다.
+              </p>
+              <p data-text="index.intro.desc2">
+                세월을 품은 서까래와 아늑한 대청마루, 향긋한 찻자리와 사계절 개별 바비큐장까지 온전한 쉼에 필요한 결만 정갈하게 담아냈습니다.
+              </p>
+            </div>
           </div>
 
-          <div class="intro-visual-composition fade-up">
-            <div class="intro-photo-main">
-              <figure>
-                <img
-                  src="images/한옥1.jpg"
-                  alt="처마와 마당이 어우러진 차담옥 전경"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <figcaption class="editorial-caption">
-                  경기도 이천시 마장면, 오랜 시간의 결을 품은 프라이빗 독채 한옥
-                </figcaption>
-              </figure>
-            </div>
-            <div class="intro-photo-sub">
+          <div class="intro-visual-pair fade-up">
+            <figure class="intro-photo-main">
+              <img
+                src="images/한옥1.jpg"
+                alt="처마와 마당이 어우러진 차담옥 전경"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption class="editorial-caption">
+                오랜 시간의 결을 품은 기와 처마와 고요한 앞마당
+              </figcaption>
+            </figure>
+
+            <div class="intro-photo-side">
               <figure>
                 <img
                   src="images/다도4.jpg"
@@ -92,123 +100,164 @@
                   decoding="async"
                 />
               </figure>
-              <div class="intro-quote-box">
-                <p class="intro-quote-text">
-                  “차를 우리고 마주 앉는 동안,<br />하루의 속도는 자연스레 느려집니다.”
+              <div class="intro-side-note">
+                <p class="intro-side-quote">
+                  “바쁜 일상을 잠시 내려놓고,<br />오래된 나무와 차 향에 기대어 쉬는 하루.”
                 </p>
-                <a href="about.html" class="intro-quote-link">공간의 이야기 자세히 보기 →</a>
+                <a href="about.html" class="text-link-quiet">차담옥 이야기 더 보기</a>
               </div>
             </div>
           </div>
 
-          <div class="philosophy-pillars" id="index-features-grid">
+          <div class="hanok-pillars" id="index-features-grid">
             <!-- data.json index.intro.features 배열에서 동적 생성 -->
           </div>
         </div>
       </section>
 
-      <!-- 3. Exclusive Rooms Preview -->
-      <section class="room-preview">
+      <!-- 4. Four Seasons at Chadamok (Mobile Horizontal Snap Carousel) -->
+      <section class="section-band section-band-warm">
         <div class="container">
-          <div class="section-header-split fade-up">
+          <div class="section-head-row fade-up">
             <div>
-              <span class="section-subtitle" data-text="index.rooms.subtitle">EXCLUSIVE SPACES</span>
-              <h2 class="section-title" data-text="index.rooms.title">머무름의 미학</h2>
+              <span class="section-kicker">사계절의 차담옥</span>
+              <h2 class="section-title">계절마다 다른 얼굴을 마주하는 마당</h2>
             </div>
-            <a href="rooms.html" class="section-more-link">객실 전체 안내 보기 →</a>
+            <a href="gallery.html" class="text-link-quiet">사진첩 전체 보기</a>
+          </div>
+
+          <div class="seasons-grid" id="index-seasons-grid">
+            <!-- data.json index.seasons 배열에서 동적 생성 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Open Editorial Room Preview -->
+      <section class="section-band">
+        <div class="container">
+          <div class="section-head-row has-rule fade-up">
+            <div>
+              <span class="section-kicker" data-text="index.rooms.subtitle">독채 공간 안내</span>
+              <h2 class="section-title" data-text="index.rooms.title">한옥의 결을 따라 이어지는 쉼터</h2>
+            </div>
+            <a href="rooms.html" class="text-link-quiet">객실 전체 둘러보기</a>
           </div>
 
           <div class="swiper index-rooms-slider fade-up">
             <div class="swiper-wrapper" id="index-rooms-wrapper">
               <!-- data.json index.rooms.list 배열에서 동적 생성 -->
             </div>
-            <div class="slider-nav-footer">
+            <div class="slider-controls-bar">
               <div class="swiper-pagination"></div>
               <div class="slider-arrow-group">
-                <div class="swiper-button-prev slider-arrow-btn" aria-label="이전 객실"></div>
-                <div class="swiper-button-next slider-arrow-btn" aria-label="다음 객실"></div>
+                <div class="swiper-button-prev slider-arrow-btn" aria-label="이전 공간"></div>
+                <div class="swiper-button-next slider-arrow-btn" aria-label="다음 공간"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 4. Curated Experience Photo Journal -->
-      <section class="experience-journal">
+      <!-- 6. Curated Stay Experiences -->
+      <section class="section-band section-band-paper">
         <div class="container">
-          <div class="section-header-split fade-up">
+          <div class="section-head-row has-rule fade-up">
             <div>
-              <span class="section-subtitle" data-text="special.subtitle">CURATED EXPERIENCE</span>
-              <h2 class="section-title" data-text="special.mainTitle">특별한 경험</h2>
+              <span class="section-kicker" data-text="special.subtitle">머무는 즐거움</span>
+              <h2 class="section-title" data-text="special.mainTitle">차담옥의 특별한 경험</h2>
             </div>
-            <a href="special.html" class="section-more-link"><span data-text="index.specialCta.btnText">특별한 경험 전체보기</span> →</a>
+            <a href="special.html" class="text-link-quiet" data-text="index.specialCta.btnText">머무는 즐거움 모두 보기</a>
           </div>
 
-          <div class="journal-grid" id="index-special-items">
-            <!-- data.json special.items 배열에서 동적 생성 (고유 경험 4개) -->
+          <div class="experience-spread-grid" id="index-special-items">
+            <!-- data.json special.items에서 고유 경험 4개 동적 생성 -->
           </div>
         </div>
       </section>
 
-      <!-- 5. Location & Access -->
-      <section class="location-section">
+      <!-- 7. Location & Access Preview -->
+      <section class="section-band">
         <div class="container">
-          <div class="section-header-split fade-up">
+          <div class="section-head-row has-rule fade-up">
             <div>
-              <span class="section-subtitle" data-text="index.location.subtitle">LOCATION &amp; ACCESS</span>
-              <h2 class="section-title" data-text="index.location.title">오시는 길</h2>
+              <span class="section-kicker" data-text="index.location.subtitle">오시는 길</span>
+              <h2 class="section-title" data-text="index.location.title">이천 마장면의 고요한 골목 끝</h2>
             </div>
-            <a href="access.html" class="section-more-link">상세 교통 안내 보기 →</a>
+            <a href="access.html" class="text-link-quiet">교통 및 주차 안내 보기</a>
           </div>
 
-          <div class="location-architectural fade-up">
-            <div class="location-map-box">
+          <div class="location-split fade-up">
+            <div class="location-map-frame">
               <div id="index-naver-map" class="naver-map-container" role="region" aria-label="차담옥 네이버 지도"></div>
-              <span class="map-caption-bar">한옥 마당 내 전용 단독 주차 완비 (최대 3대)</span>
+              <span class="map-caption-bar">한옥 마당 안쪽 무료 단독 주차 가능 (최대 3대)</span>
             </div>
-            <div class="location-info-box">
-              <h3 class="location-info-title">차담옥 (CHADAM HANOK)</h3>
-              <p class="location-info-desc">
-                경기도 이천시 마장면의 맑은 공기와 조용한 골목 안쪽에 자리하여 온전한 프라이빗 휴식을 보장합니다.
-              </p>
 
-              <div class="location-meta-list">
-                <div class="meta-row">
-                  <span class="meta-label">주소</span>
-                  <span class="meta-val" data-text="index.location.addressValue">경기 이천시 마장면 마도로248번길 32-101</span>
-                </div>
-                <div class="meta-row">
-                  <span class="meta-label">주차</span>
-                  <span class="meta-val">한옥 마당 내 무료 전용 주차 (최대 3대 가능)</span>
-                </div>
-                <div class="meta-row">
-                  <span class="meta-label">교통</span>
-                  <span class="meta-val">서이천 IC / 덕평 IC 차량 10분, 판교·강남 기준 45분</span>
+            <div class="location-details-col">
+              <div>
+                <h3 class="location-info-title">차담옥 위치 안내</h3>
+                <p class="location-info-desc">
+                  서이천 IC·덕평 IC에서 차량 약 10분 거리로, 수도권에서 부담 없이 닿을 수 있는 고요한 한옥 독채입니다.
+                </p>
+
+                <div class="location-ledger">
+                  <div class="location-ledger-row">
+                    <span class="location-ledger-key" data-text="index.location.addressLabel">주소</span>
+                    <span class="location-ledger-val" data-text="index.location.addressValue">경기 이천시 마장면 마도로248번길 32-101</span>
+                  </div>
+                  <div class="location-ledger-row">
+                    <span class="location-ledger-key">문의 전화</span>
+                    <span class="location-ledger-val">010-3892-8494 (09:00–21:00)</span>
+                  </div>
+                  <div class="location-ledger-row">
+                    <span class="location-ledger-key">자가용</span>
+                    <span class="location-ledger-val">서이천 IC · 덕평 IC에서 약 10분</span>
+                  </div>
                 </div>
               </div>
 
-              <div class="location-btn-row">
+              <div class="location-actions">
                 <a
                   href="https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn"
                   data-link="index.location.naverMapLink"
-                  >네이버 지도 길찾기 ↗</a
+                  data-text="index.location.naverMapBtn"
                 >
-                <a
-                  href="https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-outline"
-                  >카카오맵 길찾기 ↗</a
-                >
+                  네이버 지도로 길찾기
+                </a>
+                <button type="button" class="btn-outline" id="index-copy-addr-btn">주소 복사</button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- 8. Closing Reservation Invitation -->
+      <section class="closing-stay-band fade-up">
+        <img
+          src="images/마당5.jpg"
+          alt=""
+          class="closing-stay-bg"
+          loading="lazy"
+          decoding="async"
+          aria-hidden="true"
+        />
+        <div class="container closing-stay-inner">
+          <h2>당신만을 위해 비워 둔<br />고요한 하루를 예약하세요</h2>
+          <p>
+            주중 300,000원 · 주말 400,000원 (기준 2인 / 최대 6인 · 독채 전체 대관)<br />
+            네이버 실시간 예약으로 원하시는 일정을 간편하게 확인하실 수 있습니다.
+          </p>
+          <div class="closing-stay-actions">
+            <a href="reserve.html" class="btn-on-dark">예약 및 요금 안내</a>
+            <a href="tel:01038928494" class="btn-on-dark-outline">전화 문의 010-3892-8494</a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <div class="copy-toast" id="copy-toast" role="status" aria-live="polite">주소가 복사되었습니다.</div>
 
     <div id="footer-placeholder"></div>
     <script src="js/data-loader.js"></script>
@@ -219,121 +268,126 @@
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=na17uzsn58"></script>
     <script src="js/naver-map.js"></script>
     <script>
-      const prefersReducedMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
       window.dataLoadPromise.then(() => {
-        // 1. Hero Slides
-        const heroItems = window.siteData?.index?.hero || [];
-        const wrapper = document.getElementById("hero-slides");
+        const data = window.siteData || {};
 
-        if (wrapper && heroItems.length > 0) {
-          heroItems.forEach((item, i) => {
-            const slide = document.createElement("div");
-            slide.className = "swiper-slide";
-            slide.innerHTML = `
-              <div class="hero-overlay"></div>
-              <img
-                src="${item.img || ""}"
-                alt="차담옥 대표 전경 ${i + 1}"
-                class="hero-img"
-                loading="${i === 0 ? "eager" : "lazy"}"
-                ${i === 0 ? 'fetchpriority="high"' : ""}
-                decoding="async"
-              />
-              <div class="hero-content-wrap">
-                <div class="container">
-                  <div class="hero-content">
-                    <span class="hero-eyebrow">${item.eyebrow || "PRIVATE HANOK STAY"}</span>
-                    <h2>${item.title || ""}</h2>
-                    <p>${item.desc || ""}</p>
-                    <div class="hero-btn-row">
-                      <a href="${item.btnLink || "rooms.html"}" class="hero-link-btn">${item.btnText || "둘러보기"} →</a>
-                      <a href="reserve.html" class="hero-text-link">실시간 예약</a>
-                    </div>
+        // 1. Hero Slides
+        const heroList = data.index?.hero || [];
+        const heroWrap = document.getElementById("hero-slides");
+        if (heroWrap && heroList.length > 0) {
+          heroList.forEach((slide, idx) => {
+            const el = document.createElement("div");
+            el.className = "swiper-slide";
+            el.innerHTML = `
+              <div class="hero-slide-inner">
+                <img
+                  src="${slide.img || ""}"
+                  alt="${(slide.title || "차담옥").replace(/<[^>]*>/g, " ")}"
+                  class="hero-slide-img"
+                  loading="${idx === 0 ? "eager" : "lazy"}"
+                  decoding="async"
+                />
+                <div class="hero-slide-scrim"></div>
+                <div class="container hero-content">
+                  <span class="hero-eyebrow">${slide.eyebrow || "이천 마장면 · 독채 한옥"}</span>
+                  <h1 class="hero-title">${slide.title || ""}</h1>
+                  <p class="hero-desc">${slide.desc || ""}</p>
+                  <div class="hero-actions">
+                    <a href="${slide.btnLink || "rooms.html"}" class="hero-cta-primary">${slide.btnText || "공간 둘러보기"}</a>
+                    <a href="reserve.html" class="hero-cta-link">실시간 예약</a>
                   </div>
                 </div>
               </div>
             `;
-            wrapper.appendChild(slide);
+            heroWrap.appendChild(el);
           });
 
           new Swiper(".hero-slider", {
-            loop: heroItems.length > 1,
+            loop: heroList.length > 1,
             effect: "fade",
-            speed: prefersReducedMotion ? 0 : 1200,
             fadeEffect: { crossFade: true },
-            autoplay: prefersReducedMotion
-              ? false
-              : { delay: 6200, disableOnInteraction: false },
-            pagination: {
-              el: ".hero-controls .swiper-pagination",
-              type: "fraction",
-              formatFractionCurrent: (n) => String(n).padStart(2, "0"),
-              formatFractionTotal: (n) => String(n).padStart(2, "0"),
-              renderFraction: (currentClass, totalClass) =>
-                `<span class="${currentClass}"></span><span class="fraction-separator">—</span><span class="${totalClass}"></span>`,
-            },
+            speed: 950,
+            autoplay: { delay: 5600, disableOnInteraction: false },
             navigation: {
-              nextEl: ".hero-controls .swiper-button-next",
-              prevEl: ".hero-controls .swiper-button-prev",
+              nextEl: ".hero-slider .swiper-button-next",
+              prevEl: ".hero-slider .swiper-button-prev",
+            },
+            pagination: {
+              el: ".hero-slider .swiper-pagination",
+              type: "fraction",
+              formatFractionCurrent: (n) => (n < 10 ? `0${n}` : String(n)),
+              formatFractionTotal: (n) => (n < 10 ? `0${n}` : String(n)),
+              renderFraction: (curr, total) =>
+                `<span class="${curr}"></span> / <span class="${total}"></span>`,
             },
           });
         }
 
-        // 2. Philosophy 3 Pillars (Hairline Editorial Grid)
-        const features = window.siteData?.index?.intro?.features || [];
-        const featuresGrid = document.getElementById("index-features-grid");
-        if (featuresGrid && features.length > 0) {
-          features.forEach((feat, idx) => {
-            const item = document.createElement("article");
-            item.className = "pillar-item fade-up";
-            item.innerHTML = `
-              <div class="pillar-head">
-                <span class="pillar-no">${feat.no || `0${idx + 1}`}</span>
-                <span class="pillar-kicker">${feat.tag || ""}</span>
-              </div>
-              <h3>${feat.title || ""}</h3>
-              <p>${feat.desc || ""}</p>
-            `;
-            featuresGrid.appendChild(item);
-          });
+        // 2. Philosophy Pillars
+        const features = data.index?.intro?.features || [];
+        const featuresWrap = document.getElementById("index-features-grid");
+        if (featuresWrap && features.length > 0) {
+          featuresWrap.innerHTML = features
+            .map(
+              (f, i) => `
+                <article class="hanok-pillar">
+                  <span class="pillar-hanja">${f.no || `0${i + 1}`} · ${f.tag || ""}</span>
+                  <h3>${f.title || ""}</h3>
+                  <p>${f.desc || ""}</p>
+                </article>
+              `
+            )
+            .join("");
         }
 
-        // 3. Rooms Slider Rendering
-        const roomItems = window.siteData?.index?.rooms?.list || [];
-        const roomsWrapper = document.getElementById("index-rooms-wrapper");
-        if (roomsWrapper && roomItems.length > 0) {
-          roomItems.forEach((room) => {
-            const specsHtml = room.specs
-              ? room.specs.map((spec) => `<li>${spec}</li>`).join("")
-              : "";
+        // 3. Four Seasons Panorama
+        const seasons = data.index?.seasons || [];
+        const seasonsWrap = document.getElementById("index-seasons-grid");
+        if (seasonsWrap && seasons.length > 0) {
+          seasonsWrap.innerHTML = seasons
+            .map(
+              (s) => `
+                <a href="gallery.html" class="season-card">
+                  <div class="season-img-wrap">
+                    <img src="${s.img || ""}" alt="${s.title || ""}" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="season-tag">${s.season || ""}</span>
+                  <h3 class="season-title">${s.title || ""}</h3>
+                  <p class="season-desc">${s.desc || ""}</p>
+                </a>
+              `
+            )
+            .join("");
+        }
+
+        // 4. Open Editorial Rooms Preview Slider
+        const rooms = data.index?.rooms?.list || [];
+        const roomsWrap = document.getElementById("index-rooms-wrapper");
+        if (roomsWrap && rooms.length > 0) {
+          rooms.forEach((room) => {
+            const specsHtml = (room.specs || []).map((s) => `<li>${s}</li>`).join("");
             const slide = document.createElement("div");
             slide.className = "swiper-slide";
             slide.innerHTML = `
-              <div class="room-card-large">
-                <div class="room-img-wrapper">
+              <div class="room-showcase-slide">
+                <div class="room-showcase-media">
                   <img src="${room.img || ""}" alt="${room.roomTitle || ""}" loading="lazy" decoding="async" />
                 </div>
-                <div class="room-info">
-                  <span class="room-type-tag">${room.category || "PRIVATE DETACHED STAY"}</span>
+                <div class="room-showcase-body">
+                  <span class="room-category-label">${room.category || "독채 공간"}</span>
                   <h3>${room.roomTitle || ""}</h3>
-                  <p class="copy-body">${room.roomDesc || ""}</p>
-                  <ul class="room-specs">${specsHtml}</ul>
-                  <div>
-                    <a href="${room.btnLink || "rooms.html"}" class="btn-outline">${room.btnText || "자세히 보기"}</a>
-                  </div>
+                  <p class="room-showcase-desc">${room.roomDesc || ""}</p>
+                  <ul class="room-specs-clean">${specsHtml}</ul>
+                  <a href="${room.btnLink || "rooms.html"}" class="btn-outline">${room.btnText || "객실 자세히 보기"}</a>
                 </div>
               </div>
             `;
-            roomsWrapper.appendChild(slide);
+            roomsWrap.appendChild(slide);
           });
 
           new Swiper(".index-rooms-slider", {
-            loop: roomItems.length > 1,
-            speed: prefersReducedMotion ? 0 : 750,
-            spaceBetween: 24,
+            loop: rooms.length > 1,
+            spaceBetween: 28,
             navigation: {
               nextEl: ".index-rooms-slider .swiper-button-next",
               prevEl: ".index-rooms-slider .swiper-button-prev",
@@ -345,50 +399,53 @@
           });
         }
 
-        // 4. Special Items Photo Journal (고유 경험 4개)
-        const allSpecials = window.siteData?.special?.items || [];
-        const seenTitles = new Set();
-        const uniqueSpecials = [];
-        for (const item of allSpecials) {
+        // 5. Curated Experience Spread (Unique 4 items)
+        const rawSpecials = data.special?.items || [];
+        const seen = new Set();
+        const uniqueSpecials = rawSpecials.filter((item) => {
           const key = (item.title || "").replace(/\s+/g, "").toLowerCase();
-          if (!seenTitles.has(key)) {
-            seenTitles.add(key);
-            uniqueSpecials.push(item);
-          }
-          if (uniqueSpecials.length >= 4) break;
+          if (!key || seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+
+        const specialWrap = document.getElementById("index-special-items");
+        if (specialWrap && uniqueSpecials.length > 0) {
+          specialWrap.innerHTML = uniqueSpecials
+            .slice(0, 4)
+            .map((item) => {
+              const slug = (item.title || "").replace(/\s+/g, "").toLowerCase();
+              return `
+                <a href="special.html#sp-${slug}" class="experience-spread-card">
+                  <div class="experience-spread-media">
+                    <img src="${item.img || ""}" alt="${item.title || ""}" loading="lazy" decoding="async" />
+                  </div>
+                  <h3 class="experience-spread-title">${item.title || ""}</h3>
+                  <p class="experience-spread-desc">${item.desc || ""}</p>
+                </a>
+              `;
+            })
+            .join("");
         }
 
-        const specialGrid = document.getElementById("index-special-items");
-        if (specialGrid && uniqueSpecials.length > 0) {
-          uniqueSpecials.forEach((item, i) => {
-            const slug = (item.title || "").replace(/\s+/g, "").toLowerCase();
-            const el = document.createElement("a");
-            el.href = `special.html#sp-${slug}`;
-            el.className = "journal-card fade-up";
-            el.innerHTML = `
-              <div class="journal-img-wrap">
-                <img
-                  src="${item.img || ""}"
-                  alt="${item.title || ""}"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="journal-meta">
-                <span class="journal-no">0${i + 1}</span>
-              </div>
-              <h3>${item.title || ""}</h3>
-              <p>${item.desc || ""}</p>
-              <span class="journal-more">자세히 보기 →</span>
-            `;
-            specialGrid.appendChild(el);
+        // 6. Address Copy Button
+        const copyBtn = document.getElementById("index-copy-addr-btn");
+        const toast = document.getElementById("copy-toast");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", () => {
+            const addr = data.index?.location?.addressValue || "경기 이천시 마장면 마도로248번길 32-101";
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(addr).catch(() => {});
+            }
+            if (toast) {
+              toast.classList.add("is-visible");
+              setTimeout(() => toast.classList.remove("is-visible"), 2200);
+            }
           });
         }
 
         if (typeof window.observeFadeUps === "function") {
           window.observeFadeUps();
-        } else {
-          document.querySelectorAll(".fade-up").forEach((el) => el.classList.add("visible"));
         }
       });
     </script>

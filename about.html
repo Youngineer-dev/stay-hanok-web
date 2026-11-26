@@ -3,106 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>차담한옥은? | 차담한옥(차담옥)</title>
+    <title>차담옥 이야기 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="about">
     <div id="header-placeholder"></div>
 
-    <!-- Sub-Hero Banner -->
-    <div class="sub-hero">
-      <img
-        src="images/한옥1.jpg"
-        alt="차담옥 고즈넉한 한옥 처마와 마당"
-        class="sub-hero-bg"
-      />
-      <div class="sub-hero-overlay"></div>
-      <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="about.subtitle">PHILOSOPHY &amp; SPACE</span>
-        <h1 class="sub-hero-title" data-text="about.mainTitle">공간의 이야기</h1>
-        <p class="sub-hero-desc">
-          오랜 세월을 견뎌온 고재 서까래와 흙벽의 숨결,<br />
-          차담옥이 지향하는 머무름과 비움의 미학을 전합니다.
-        </p>
-      </div>
-    </div>
-
-    <main>
-      <section class="container fade-up">
-        <!-- Prologue Epigraph -->
-        <div class="about-prologue">
-          <span class="about-hanja-mark">茶 談</span>
-          <p class="about-epigraph">
-            차를 우리고 나누는 고요한 담소 속에서,<br />
-            오래된 한옥이 건네는 계절의 온기를 마주합니다.
+    <!-- Bright Hanji Editorial Masthead -->
+    <section class="page-masthead">
+      <div class="container masthead-inner">
+        <div class="masthead-main">
+          <span class="masthead-kicker">
+            <span class="logo-seal is-small" aria-hidden="true">茶談</span>
+            <span data-text="about.subtitle">차담옥 이야기</span>
+          </span>
+          <h1 class="masthead-title" data-text="about.mainTitle">오래된 나무의 숨결, 비움의 공간</h1>
+          <p class="masthead-desc">
+            오랜 세월을 견뎌온 고재 서까래와 흙벽의 온기,<br />
+            차담옥이 지향하는 고요한 머무름과 비움의 미학을 전합니다.
           </p>
         </div>
+        <span class="masthead-vertical-note" aria-hidden="true">茶談屋 · 머묾과 비움</span>
+      </div>
+    </section>
 
-        <!-- Asymmetric Photo Essay -->
-        <div class="about-essay-grid">
-          <div class="about-sticky-media fade-up">
+    <main>
+      <section class="section-band">
+        <div class="container">
+          <!-- Wide Lead Hanok Photograph -->
+          <figure class="about-lead-frame fade-up">
             <img
-              src="images/about_detail.jpg"
-              alt="차담한옥 서까래와 목재 디테일"
-              class="about-img"
-              loading="lazy"
+              src="images/한옥1.jpg"
+              alt="차담옥 고즈넉한 한옥 처마와 마당"
+              loading="eager"
               decoding="async"
-              data-img="about.img"
             />
+            <figcaption class="editorial-caption">
+              경기도 이천시 마장면, 하루 오직 한 팀을 위해 문을 여는 독채 한옥 차담옥
+            </figcaption>
+          </figure>
+
+          <!-- Prologue Epigraph -->
+          <div class="about-prologue-block fade-up">
+            <span class="logo-seal is-large" aria-hidden="true">茶談</span>
+            <p class="about-epigraph">
+              차를 우리고 나누는 고요한 담소 속에서,<br />
+              오래된 한옥이 건네는 계절의 온기를 마주합니다.
+            </p>
           </div>
 
-          <div class="about-copy fade-up">
-            <h2 class="copy-headline" data-text="about.headline">오랜 시간을 견뎌온 나무의 숨결</h2>
-            <p class="copy-line" data-text="about.desc1">
-              차담한옥은 한옥이 지닌 시간의 결을 존중하며, 현대의 휴식 방식에 맞게 재해석한 공간입니다.
-            </p>
-            <p class="copy-line" data-text="about.desc2">
-              오래된 목재와 흙, 그리고 절제된 편의가 균형을 이루어 머무는 내내 마음의 속도를 낮춰줍니다.
-            </p>
-            <p class="copy-line" data-text="about.desc3">
-              아침에는 처마 끝으로 스며드는 빛을, 밤에는 마당 위로 내려앉는 정적을 느껴보세요.
-            </p>
-            <p class="copy-line" data-text="about.desc4">
-              이곳에서의 하루는 여행보다 깊은 쉼에 가깝습니다.
-            </p>
-
-            <figure class="about-secondary-photo">
+          <!-- Asymmetric Photo Essay -->
+          <div class="about-essay-grid">
+            <div class="about-sticky-media fade-up">
               <img
-                src="images/마당4.jpg"
-                alt="사계절의 빛이 머무는 차담옥 마당"
+                src="images/about_detail.jpg"
+                alt="차담한옥 서까래와 목재 디테일"
                 loading="lazy"
                 decoding="async"
+                data-img="about.img"
               />
-              <figcaption class="editorial-caption">
-                하루 오직 한 팀에게만 허락되는 고요한 마당과 툇마루
-              </figcaption>
-            </figure>
+            </div>
+
+            <div class="about-copy fade-up">
+              <h2 data-text="about.headline">오랜 시간을 견뎌온 서까래와 흙벽의 온기</h2>
+              <p data-text="about.desc1">
+                차담옥(茶談屋)은 한옥이 지닌 시간의 결을 해치지 않으면서, 오늘의 휴식에 어울리는 편안함을 정갈하게 담아낸 독채 스테이입니다.
+              </p>
+              <p data-text="about.desc2">
+                세월을 품은 목재와 흙벽, 절제된 편의가 균형을 이루어 문을 열고 들어서는 순간부터 마음의 속도를 자연스레 낮춰줍니다.
+              </p>
+              <p data-text="about.desc3">
+                아침에는 처마 끝으로 스며드는 맑은 볕을, 밤에는 마당 위로 내려앉는 고요한 정적을 오롯이 마주해 보세요.
+              </p>
+              <p data-text="about.desc4">
+                차담옥에서의 하루는 바쁜 여행보다 깊은 쉼에 가깝습니다.
+              </p>
+
+              <figure class="about-secondary-photo">
+                <img
+                  src="images/마당4.jpg"
+                  alt="사계절의 빛이 머무는 차담옥 마당"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="editorial-caption">
+                  타인의 시선 없이 오롯이 거닐 수 있는 차담옥 단독 마당
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Three Hanok Values -->
+          <div class="hanok-pillars fade-up">
+            <article class="hanok-pillar">
+              <span class="pillar-hanja">一 · 전통의 온기</span>
+              <h3>고재와 황토의 숨결</h3>
+              <p>
+                세월을 견뎌온 고재 서까래와 흙벽이 자연의 숨결을 그대로 머금고 있어, 계절마다 쾌적하고 깊은 안락함을 전합니다.
+              </p>
+            </article>
+            <article class="hanok-pillar">
+              <span class="pillar-hanja">二 · 사색의 여백</span>
+              <h3>비움과 다도의 시간</h3>
+              <p>
+                정성껏 비치한 다기 세트와 잎차, 잔잔한 빛이 스며드는 창호 너머로 일상의 번잡함을 잠시 내려놓습니다.
+              </p>
+            </article>
+            <article class="hanok-pillar">
+              <span class="pillar-hanja">三 · 온전한 독채</span>
+              <h3>하루 한 팀을 위한 공간</h3>
+              <p>
+                대청마루부터 침실, 주방, 야외 마당과 바비큐장까지 타인의 시선 없는 온전한 하루를 누리실 수 있습니다.
+              </p>
+            </article>
           </div>
         </div>
+      </section>
 
-        <!-- 3 Core Philosophy Pillars -->
-        <div class="about-pillars-grid fade-up">
-          <article class="about-pillar-item">
-            <span class="pillar-hanja-num">一 · 전통의 온기</span>
-            <h4>고재와 황토의 숨결</h4>
-            <p>
-              세월을 견뎌온 고재 서까래와 흙벽이 자연의 숨결을 그대로 머금고 있어, 계절마다 쾌적하고 깊은 안락함을 전합니다.
-            </p>
-          </article>
-          <article class="about-pillar-item">
-            <span class="pillar-hanja-num">二 · 사색의 여백</span>
-            <h4>비움과 다도의 시간</h4>
-            <p>
-              정성껏 비치한 다기 세트와 잎차, 잔잔한 빛이 스며드는 창호 너머로 일상의 번잡함을 잠시 내려놓습니다.
-            </p>
-          </article>
-          <article class="about-pillar-item">
-            <span class="pillar-hanja-num">三 · 온전한 독채</span>
-            <h4>하루 한 팀을 위한 공간</h4>
-            <p>
-              대청마루부터 침실, 주방, 야외 마당과 바비큐장까지 타인의 시선 없는 온전한 하루를 누리실 수 있습니다.
-            </p>
-          </article>
+      <!-- Closing Link to Rooms -->
+      <section class="section-band section-band-warm">
+        <div class="container" style="text-align: center;">
+          <span class="section-kicker">공간 둘러보기</span>
+          <h2 class="section-title" style="margin-bottom: 1.4rem;">대청과 안채, 사랑채의 구성을 살펴보세요</h2>
+          <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+            <a href="rooms.html" class="btn">객실 안내 보기</a>
+            <a href="reserve.html" class="btn-outline">예약 및 요금 안내</a>
+          </div>
         </div>
       </section>
     </main>

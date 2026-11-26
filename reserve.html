@@ -9,57 +9,60 @@
   <body data-page="reserve">
     <div id="header-placeholder"></div>
 
-    <!-- Sub-Hero Banner -->
-    <div class="sub-hero">
-      <img
-        src="images/다도1.jpg"
-        alt="차담옥 다도실 전경"
-        class="sub-hero-bg"
-      />
-      <div class="sub-hero-overlay"></div>
-      <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="reserve.subtitle">RESERVATION &amp; CONCIERGE</span>
-        <h1 class="sub-hero-title" data-text="reserve.mainTitle">예약 및 문의</h1>
-        <p class="sub-hero-desc" data-text="reserve.intro">
-          차담옥은 오직 한 팀만을 위해 온전히 비워진 프라이빗 독채 스테이입니다.<br />
-          원하시는 날짜의 예약 가능 여부를 실시간으로 확인하고 편안하게 문의해 주세요.
-        </p>
+    <!-- Bright Hanji Editorial Masthead -->
+    <section class="page-masthead">
+      <div class="container masthead-inner">
+        <div class="masthead-main">
+          <span class="masthead-kicker">
+            <span class="logo-seal is-small" aria-hidden="true">茶談</span>
+            <span data-text="reserve.subtitle">예약 안내</span>
+          </span>
+          <h1 class="masthead-title" data-text="reserve.mainTitle">숙박 요금 및 실시간 예약</h1>
+          <p class="masthead-desc" data-text="reserve.intro">
+            네이버 실시간 예약으로 간편하게 일정을 확인하고 확정하실 수 있습니다. 연박이나 맞춤 문의는 전화 또는 카카오톡으로 편하게 연락해 주세요.
+          </p>
+        </div>
+        <span class="masthead-vertical-note" aria-hidden="true">하루 한 팀 독채 예약</span>
       </div>
-    </div>
+    </section>
 
     <main>
-      <section class="container fade-up">
-        <!-- Quick Stay Summary Strip -->
-        <div class="stay-summary-strip fade-up">
-          <div class="stay-summary-cell">
-            <span class="stay-summary-label">STAY TYPE</span>
-            <span class="stay-summary-val">하루 한 팀 독채 단독 대관</span>
-          </div>
-          <div class="stay-summary-cell">
-            <span class="stay-summary-label">CHECK-IN / OUT</span>
-            <span class="stay-summary-val">입실 15:00 · 퇴실 12:00</span>
-          </div>
-          <div class="stay-summary-cell">
-            <span class="stay-summary-label">CAPACITY</span>
-            <span class="stay-summary-val">기준 2인 · 최대 6인</span>
-          </div>
-          <div class="stay-summary-cell">
-            <span class="stay-summary-label">FACILITY</span>
-            <span class="stay-summary-val">개별 야외 바비큐장 · 독채 완비</span>
-          </div>
-        </div>
-
-        <!-- Authentic Korean Hanok Stay Rate Table -->
-        <div class="rate-ledger-section fade-up">
-          <div class="ledger-section-head">
-            <div>
-              <span class="section-subtitle">ROOM RATE</span>
-              <h3>차담옥 숙박 요금 안내</h3>
+      <section class="section-band" style="padding-top: clamp(2rem, 4vw, 3rem);">
+        <div class="container">
+          <!-- Compact Stay Summary Strip (2x2 on Mobile!) -->
+          <div class="quick-info-strip is-framed fade-up">
+            <div class="quick-info-grid">
+              <div class="quick-info-cell">
+                <span class="quick-info-label">객실 형태</span>
+                <span class="quick-info-val">하루 한 팀 독채 대관</span>
+              </div>
+              <div class="quick-info-cell">
+                <span class="quick-info-label">입·퇴실</span>
+                <span class="quick-info-val">입실 15:00 · 퇴실 12:00</span>
+              </div>
+              <div class="quick-info-cell">
+                <span class="quick-info-label">수용 인원</span>
+                <span class="quick-info-val">기준 2인 · 최대 6인</span>
+              </div>
+              <div class="quick-info-cell">
+                <span class="quick-info-label">포함 시설</span>
+                <span class="quick-info-val">개별 바비큐 · 다도 · 시네마</span>
+              </div>
             </div>
-            <p class="ledger-section-note">기준 인원 2인 / 1박 요금 (부가세 포함 · 독채 전체 대관)</p>
           </div>
 
-          <div class="hanok-table-wrap">
+          <!-- 1. Responsive Room Rate Ledger (Desktop Table / Mobile Card!) -->
+          <div class="rate-ledger-section fade-up">
+            <div class="section-head-row" style="margin-bottom: 1.4rem;">
+              <div>
+                <span class="section-kicker">숙박 요금</span>
+                <h2 class="section-title">차담옥 1박 이용 요금</h2>
+              </div>
+              <p class="editorial-caption" style="margin-top: 0">
+                기준 인원 2인 / 1박 기준 (부가세 포함 · 독채 전체 대관)
+              </p>
+            </div>
+
             <table class="hanok-table">
               <thead>
                 <tr>
@@ -73,178 +76,177 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>차담옥 독채 전체</strong></td>
-                  <td>기준 2인 / 최대 6인</td>
-                  <td class="price-cell">300,000원</td>
-                  <td class="price-cell">400,000원</td>
-                  <td class="price-cell">450,000원</td>
-                  <td>20,000원</td>
+                  <td data-label="객실 구분"><strong>차담옥 독채 전체</strong></td>
+                  <td data-label="기준 / 최대 인원">기준 2인 / 최대 6인</td>
+                  <td data-label="주중 (일 ~ 목)" class="price-cell">300,000원</td>
+                  <td data-label="주말 (금 · 토)" class="price-cell">400,000원</td>
+                  <td data-label="성수기 및 공휴일" class="price-cell">450,000원</td>
+                  <td data-label="추가 인원 (1인)">20,000원</td>
                 </tr>
               </tbody>
             </table>
+
+            <div class="rate-included-list">
+              <div class="rate-included-item">개별 야외 프라이빗 바비큐장 완비</div>
+              <div class="rate-included-item">주방 가전 완비 (인덕션 · 밥솥 · 전자레인지 · 수저소독기)</div>
+              <div class="rate-included-item">대청 거실 · 침대방 · 다도 공간 독채 전체 단독 이용</div>
+              <div class="rate-included-item">욕실 어메니티 (샴푸 · 컨디셔너 · 바디워시 · 치약) 및 타올 구비</div>
+            </div>
           </div>
 
-          <div class="rate-included-grid">
-            <div class="rate-included-item">개별 야외 프라이빗 바비큐장 완비</div>
-            <div class="rate-included-item">주방 가전 완비 (인덕션 · 밥솥 · 전자레인지 · 수저소독기)</div>
-            <div class="rate-included-item">45인치 TV 및 침대방 · 대청 거실 독채 전체 이용</div>
-            <div class="rate-included-item">욕실 어메니티 (샴푸 · 컨디셔너 · 바디워시 · 치약) 및 타올 완비</div>
-          </div>
-        </div>
+          <!-- 2. Real-Time Booking & Direct Concierge -->
+          <div class="reserve-channels-grid fade-up" id="booking-channels">
+            <div class="reserve-channel-box is-primary">
+              <div>
+                <span class="channel-kicker">실시간 예약</span>
+                <h3 data-text="reserve.reserveTitle">네이버 실시간 예약</h3>
+                <p data-text="reserve.reserveDesc">
+                  실시간 잔여 일정을 확인하시고 네이버페이 및 카드로 간편하게 예약을 확정하실 수 있습니다.
+                </p>
 
-        <!-- 2-Column Booking & Concierge -->
-        <div class="reserve-channels-grid fade-up">
-          <!-- Column 1: Naver Real-Time Booking -->
-          <div class="reserve-channel-box is-primary">
+                <ul class="channel-detail-list">
+                  <li>
+                    <span class="detail-key">예약 방식</span>
+                    <span class="detail-val">실시간 캘린더 조회 및 즉시 확정</span>
+                  </li>
+                  <li>
+                    <span class="detail-key">결제 수단</span>
+                    <span class="detail-val">네이버페이 · 신용카드 간편 결제</span>
+                  </li>
+                  <li>
+                    <span class="detail-key">예약 안내</span>
+                    <span class="detail-val">확정 즉시 알림톡 및 입실 안내 문자 발송</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="reserve-btn-stack">
+                <a
+                  href="https://naver.me/Gjy3T4nj"
+                  class="btn"
+                  data-link="reserve.naverLink"
+                  data-text="reserve.naverBtn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  네이버 실시간 예약하기
+                </a>
+              </div>
+            </div>
+
+            <div class="reserve-channel-box">
+              <div>
+                <span class="channel-kicker">맞춤 상담</span>
+                <h3 data-text="reserve.contactTitle">전화 및 카카오톡 상담</h3>
+                <p data-text="reserve.contactDesc">
+                  연박 할인, 소규모 모임 대관 및 기타 요청 사항은 전화 또는 카카오톡으로 편하게 문의해 주세요.
+                </p>
+
+                <ul class="channel-detail-list">
+                  <li>
+                    <span class="detail-key">상담 시간</span>
+                    <span class="detail-val">매일 09:00 ~ 21:00</span>
+                  </li>
+                  <li>
+                    <span class="detail-key">대표 전화</span>
+                    <span class="detail-val">010-3892-8494</span>
+                  </li>
+                  <li>
+                    <span class="detail-key">이메일</span>
+                    <span class="detail-val">lmw1027@hanmail.net</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dual-btns">
+                <a
+                  href="tel:01038928494"
+                  class="btn-outline"
+                  data-text="reserve.phoneBtn"
+                  data-link="reserve.phoneLink"
+                >
+                  전화 문의하기
+                </a>
+                <a
+                  href="https://pf.kakao.com/_xxxxxx"
+                  class="btn-outline"
+                  data-link="reserve.kakaoLink"
+                  data-text="reserve.kakaoBtn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  카카오톡 1:1 문의
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. 3-Step Booking Process -->
+          <div class="booking-steps-section fade-up">
             <div>
-              <span class="channel-kicker">01 · REAL-TIME BOOKING</span>
-              <h3 data-text="reserve.reserveTitle">네이버 실시간 예약</h3>
-              <p data-text="reserve.reserveDesc">
-                실시간 잔여 객실 캘린더를 확인하시고 네이버페이 및 카드로 간편하게 예약을 확정하실 수 있습니다.
-              </p>
+              <span class="section-kicker">예약 절차</span>
+              <h2 class="section-title">예약부터 비대면 입실까지</h2>
+            </div>
 
-              <ul class="channel-detail-list">
-                <li>
-                  <span class="detail-key">예약 방식</span>
-                  <span class="detail-val">실시간 캘린더 조회 및 즉시 확정</span>
-                </li>
-                <li>
-                  <span class="detail-key">결제 수단</span>
-                  <span class="detail-val">네이버페이 · 신용카드 간편 결제</span>
-                </li>
-                <li>
-                  <span class="detail-key">예약 안내</span>
-                  <span class="detail-val">예약 확정 즉시 알림톡 및 안내 문자 발송</span>
-                </li>
+            <div class="booking-steps-grid">
+              <div class="booking-step-item">
+                <span class="step-number">첫째 · 일정 선택</span>
+                <h4>날짜 및 인원 예약</h4>
+                <p>네이버 실시간 예약 캘린더에서 원하시는 체크인·체크아웃 날짜와 인원을 선택해 결제를 진행합니다.</p>
+              </div>
+              <div class="booking-step-item">
+                <span class="step-number">둘째 · 예약 확정</span>
+                <h4>상세 안내 문자 발송</h4>
+                <p>예약 확정 즉시 숙소 이용 안내 및 준비 사항을 문자 메시지로 차분히 안내해 드립니다.</p>
+              </div>
+              <div class="booking-step-item">
+                <span class="step-number">셋째 · 비대면 입실</span>
+                <h4>비밀번호 안내 및 체크인</h4>
+                <p>입실 당일 오전 개별 도어락 비밀번호와 주차 안내를 보내드려 프라이빗하게 입실하실 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Guidelines & Refund Ledger -->
+          <div class="policy-ledger-grid fade-up">
+            <div class="policy-ledger-col">
+              <h4>이용 유의사항</h4>
+              <ul class="policy-bullet-list">
+                <li>기준 인원(2인) 초과 시 1인당 20,000원의 추가 요금이 발생합니다. (최대 6인까지 숙박 가능)</li>
+                <li>예약된 인원 외 외부인 출입 및 무단 추가 입실은 불가하며, 확인 시 퇴실 조치될 수 있습니다.</li>
+                <li>목조 한옥의 화재 예방을 위해 실내 전체는 절대 금연 구역입니다.</li>
+                <li>밤 10시 이후에는 고요한 자연과 이웃을 배려하여 마당 내 고성방가를 삼가주시기 바랍니다.</li>
+                <li>반려동물 동반 입실은 한옥 목재 및 공간 보존을 위해 제한되오니 양해 부탁드립니다.</li>
               </ul>
             </div>
 
-            <div class="reserve-btn-stack">
-              <a
-                href="https://naver.me/Gjy3T4nj"
-                class="btn"
-                data-link="reserve.naverLink"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span data-text="reserve.naverBtn">네이버 실시간 예약하기</span> ↗
-              </a>
+            <div class="policy-ledger-col">
+              <h4>취소 및 환불 규정</h4>
+              <table class="refund-table">
+                <tbody>
+                  <tr>
+                    <th scope="row">이용일 10일 전 취소</th>
+                    <td>결제 금액 100% 전액 환불</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">이용일 7 ~ 9일 전 취소</th>
+                    <td>결제 금액의 70% 환불</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">이용일 4 ~ 6일 전 취소</th>
+                    <td>결제 금액의 50% 환불</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">이용일 3일 전 ~ 당일 취소</th>
+                    <td>취소 및 환불 불가</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">천재지변 시</th>
+                    <td>관련 증빙 서류 확인 후 전액 환불</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-
-          <!-- Column 2: Direct Concierge -->
-          <div class="reserve-channel-box">
-            <div>
-              <span class="channel-kicker">02 · CONCIERGE INQUIRY</span>
-              <h3 data-text="reserve.contactTitle">맞춤 상담 및 전화 문의</h3>
-              <p data-text="reserve.contactDesc">
-                연박 할인, 소규모 모임·워크숍 대관 및 특별한 요청 사항은 전화 또는 카카오톡으로 편하게 문의해 주세요.
-              </p>
-
-              <ul class="channel-detail-list">
-                <li>
-                  <span class="detail-key">상담 운영 시간</span>
-                  <span class="detail-val">09:00 ~ 21:00 (연중무휴)</span>
-                </li>
-                <li>
-                  <span class="detail-key">대표 연락처</span>
-                  <span class="detail-val">010-3892-8494</span>
-                </li>
-                <li>
-                  <span class="detail-key">이메일 문의</span>
-                  <span class="detail-val">lmw1027@hanmail.net</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="dual-btns">
-              <a
-                href="tel:01038928494"
-                class="btn-outline"
-                data-text="reserve.phoneBtn"
-                data-link="reserve.phoneLink"
-              >
-                전화 문의하기
-              </a>
-              <a
-                href="https://pf.kakao.com/_xxxxxx"
-                class="btn-outline"
-                data-link="reserve.kakaoLink"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span data-text="reserve.kakaoBtn">카카오톡 1:1 문의</span> ↗
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3-Step Booking Process -->
-        <div class="booking-steps-section fade-up">
-          <div>
-            <span class="section-subtitle">HOW TO BOOK</span>
-            <h3 style="font-size: 1.55rem; margin-bottom: 0.4rem;">간편한 3단계 예약 안내</h3>
-            <p class="copy-body">예약 접수부터 비대면 체크인까지 차분하고 명확하게 안내해 드립니다.</p>
-          </div>
-
-          <div class="booking-steps-grid">
-            <div class="booking-step-item">
-              <span class="step-number">STEP 01</span>
-              <h4>일정 선택 및 예약 신청</h4>
-              <p>네이버 실시간 예약 캘린더에서 체크인·체크아웃 날짜와 인원을 선택해 결제를 진행합니다.</p>
-            </div>
-            <div class="booking-step-item">
-              <span class="step-number">STEP 02</span>
-              <h4>예약 확정 및 안내 발송</h4>
-              <p>예약 완료 즉시 상세 안내 문자 및 입실 관련 유의사항 안내가 자동으로 발송됩니다.</p>
-            </div>
-            <div class="booking-step-item">
-              <span class="step-number">STEP 03</span>
-              <h4>비대면 비밀번호 안내 및 입실</h4>
-              <p>입실 당일 오전 개별 도어락 비밀번호와 주차 가이드를 문자로 전해드려 프라이빗하게 입실합니다.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Guidelines & Refund Ledger -->
-        <div class="policy-ledger-grid fade-up">
-          <div class="policy-ledger-col">
-            <h4>이용 유의사항</h4>
-            <ul class="policy-bullet-list">
-              <li>기준 인원(2인) 초과 시 1인당 20,000원의 추가 요금이 발생합니다. (최대 6인까지 숙박 가능)</li>
-              <li>예약된 인원 외 외부인 출입 및 무단 추가 입실은 불가하며, 확인 시 퇴실 조치될 수 있습니다.</li>
-              <li>목조 한옥의 화재 예방을 위해 실내 전체는 절대 금연 구역입니다.</li>
-              <li>밤 10시 이후에는 고요한 자연과 이웃을 배려하여 마당 내 고성방가를 삼가주시기 바랍니다.</li>
-              <li>반려동물 동반 입실은 한옥 목재 및 공간 보존을 위해 제한되오니 양해 부탁드립니다.</li>
-            </ul>
-          </div>
-
-          <div class="policy-ledger-col">
-            <h4>취소 및 환불 규정</h4>
-            <table class="refund-table">
-              <tbody>
-                <tr>
-                  <th scope="row">이용일 10일 전 취소</th>
-                  <td>결제 금액 100% 전액 환불</td>
-                </tr>
-                <tr>
-                  <th scope="row">이용일 7 ~ 9일 전 취소</th>
-                  <td>결제 금액의 70% 환불</td>
-                </tr>
-                <tr>
-                  <th scope="row">이용일 4 ~ 6일 전 취소</th>
-                  <td>결제 금액의 50% 환불</td>
-                </tr>
-                <tr>
-                  <th scope="row">이용일 3일 전 ~ 당일 취소</th>
-                  <td>취소 및 환불 불가</td>
-                </tr>
-                <tr>
-                  <th scope="row">천재지변 시</th>
-                  <td>관련 증빙 서류 확인 후 전액 환불</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
       </section>
@@ -255,5 +257,14 @@
     <script src="js/include.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/transitions.js"></script>
+    <script>
+      document.addEventListener("click", (e) => {
+        const dockPrimary = e.target.closest(".dock-action-primary");
+        if (dockPrimary) {
+          e.preventDefault();
+          document.getElementById("booking-channels")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    </script>
   </body>
 </html>

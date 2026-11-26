@@ -10,149 +10,153 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
-  <body data-page="roomsPage">
+  <body data-page="roomsPage" class="has-hero-banner">
     <div id="header-placeholder"></div>
 
-    <!-- Sub-Hero Banner -->
-    <div class="sub-hero">
+    <!-- Luminous Interior Lead Hero -->
+    <div class="rooms-lead-hero">
       <img
         src="images/room_hero_luxury.jpg"
         alt="차담옥 독채 객실 전경"
-        class="sub-hero-bg"
+        class="rooms-lead-bg"
       />
-      <div class="sub-hero-overlay"></div>
-      <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="roomsPage.subtitle">PRIVATE STAY &amp; SPACES</span>
-        <h1 class="sub-hero-title" data-text="roomsPage.mainTitle">편안한 쉼터</h1>
-        <p class="sub-hero-desc">
-          한옥 본연의 고아한 선과 결을 간직한 채, 온전한 쉼에 필요한 요소만 정갈하게 채웠습니다.<br />
-          하루 단 한 팀만을 위한 프라이빗 독채에서 머무는 동선마다 잔잔한 온기가 이어집니다.
+      <div class="rooms-lead-scrim"></div>
+      <div class="rooms-lead-content">
+        <span class="rooms-lead-kicker" data-text="roomsPage.subtitle">독채 객실 안내</span>
+        <h1 class="rooms-lead-title" data-text="roomsPage.mainTitle">편안한 쉼터, 차담옥</h1>
+        <p class="rooms-lead-desc">
+          한옥 본연의 고아한 선과 결을 간직한 채, 온전한 쉼에 필요한 요소만 정갈하게 채웠습니다.
         </p>
       </div>
     </div>
 
     <main>
-      <section class="container">
-        <!-- Architectural Summary Bar -->
-        <div class="rooms-summary-bar fade-up">
-          <div class="rooms-summary-item">
-            <span class="rooms-summary-label">STAY TYPE</span>
-            <span class="rooms-summary-val">하루 한 팀 독채 전체 대관</span>
-          </div>
-          <div class="rooms-summary-item">
-            <span class="rooms-summary-label">CHECK-IN / OUT</span>
-            <span class="rooms-summary-val">입실 15:00 · 퇴실 12:00</span>
-          </div>
-          <div class="rooms-summary-item">
-            <span class="rooms-summary-label">CAPACITY</span>
-            <span class="rooms-summary-val">기준 2인 · 최대 6인</span>
-          </div>
-          <div class="rooms-summary-item">
-            <span class="rooms-summary-label">AREA</span>
-            <span class="rooms-summary-val">전용 51㎡ (약 15.5평)</span>
-          </div>
-        </div>
-
-        <!-- Space Selector Tabs -->
-        <div class="rooms-tab-nav fade-up" id="rooms-tab-nav" role="tablist" aria-label="공간별 보기">
-          <!-- data.json roomsPage.roomList에서 동적 생성 -->
-        </div>
-
-        <!-- 1. Main Rooms Detail Slider -->
-        <div class="swiper rooms-page-slider fade-up">
-          <div class="swiper-wrapper" id="rooms-page-wrapper">
-            <!-- data.json roomsPage.roomList 배열에서 동적 생성 -->
-          </div>
-          <div class="slider-nav-footer">
-            <div class="swiper-pagination"></div>
-            <div class="slider-arrow-group">
-              <div class="swiper-button-prev slider-arrow-btn" aria-label="이전 공간"></div>
-              <div class="swiper-button-next slider-arrow-btn" aria-label="다음 공간"></div>
+      <!-- Compact 2x2 Mobile / 4-col Desktop Spec Strip -->
+      <div class="quick-info-strip">
+        <div class="container">
+          <div class="quick-info-grid">
+            <div class="quick-info-cell">
+              <span class="quick-info-label">객실 형태</span>
+              <span class="quick-info-val">하루 한 팀 독채 대관</span>
+            </div>
+            <div class="quick-info-cell">
+              <span class="quick-info-label">입·퇴실</span>
+              <span class="quick-info-val">입실 15:00 · 퇴실 12:00</span>
+            </div>
+            <div class="quick-info-cell">
+              <span class="quick-info-label">수용 인원</span>
+              <span class="quick-info-val">기준 2인 · 최대 6인</span>
+            </div>
+            <div class="quick-info-cell">
+              <span class="quick-info-label">전용 면적</span>
+              <span class="quick-info-val">51㎡ (약 15.5평)</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- 2. Open Plan Architectural Flow -->
-        <div class="open-plan-section fade-up">
-          <div class="section-header-split">
+      <!-- 1. Space-by-Space Photo Showcase -->
+      <section class="section-band">
+        <div class="container">
+          <div class="scroll-tabs fade-up" id="rooms-tab-nav" role="tablist" aria-label="공간별 보기">
+            <!-- data.json roomsPage.roomList에서 동적 생성 -->
+          </div>
+
+          <div class="swiper rooms-page-slider fade-up">
+            <div class="swiper-wrapper" id="rooms-page-wrapper">
+              <!-- data.json roomsPage.roomList 배열에서 동적 생성 -->
+            </div>
+            <div class="slider-controls-bar">
+              <div class="swiper-pagination"></div>
+              <div class="slider-arrow-group">
+                <div class="swiper-button-prev slider-arrow-btn" aria-label="이전 공간"></div>
+                <div class="swiper-button-next slider-arrow-btn" aria-label="다음 공간"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Open Plan Architectural Flow -->
+      <section class="section-band section-band-warm">
+        <div class="container">
+          <div class="section-head-row fade-up">
             <div>
-              <span class="section-subtitle">ARCHITECTURAL FLOW</span>
-              <h2 class="section-title" data-text="roomsPage.openPlan.title">공간의 흐름</h2>
+              <span class="section-kicker">공간의 동선</span>
+              <h2 class="section-title" data-text="roomsPage.openPlan.title">막힘없이 이어지는 공간의 흐름</h2>
             </div>
-            <p class="section-split-desc" data-text="roomsPage.openPlan.desc">
-              입구에서 침실까지, 막힘 없이 이어지는 동선이 공간의 여백을 완성합니다.
+            <p class="section-lead" style="margin-top: 0" data-text="roomsPage.openPlan.desc">
+              현관에서 부엌, 대청, 침실까지 이어지는 개방형 구조가 한옥 특유의 여유와 여백을 완성합니다.
             </p>
           </div>
 
-          <div class="open-plan-media">
+          <figure class="open-plan-media fade-up">
             <img
               src="images/open_plan_flow.jpg"
-              alt="차담옥 오픈 플랜 공간 구조 (다이닝부터 침실까지)"
+              alt="차담옥 오픈 플랜 공간 구조"
               loading="lazy"
               decoding="async"
               data-img="roomsPage.openPlan.img"
             />
-            <p class="editorial-caption" data-text="roomsPage.openPlan.subDesc">
-              다이닝부터 거실, 침실까지 이어지는 유연한 구조를 따라 하루의 리듬이 차분하게 정돈됩니다.
-            </p>
-          </div>
+            <figcaption class="editorial-caption" data-text="roomsPage.openPlan.subDesc">
+              다이닝에서 거실, 침실까지 자연스럽게 이어지는 구조를 따라 하루의 리듬이 차분하게 정돈됩니다.
+            </figcaption>
+          </figure>
 
           <div class="open-plan-track">
             <article class="open-plan-step">
               <span class="open-plan-step-no" data-text="roomsPage.openPlan.steps[0].no">01</span>
-              <h4 data-text="roomsPage.openPlan.steps[0].title">다이닝 &amp; 키친</h4>
+              <h4 data-text="roomsPage.openPlan.steps[0].title">다이닝 &amp; 주방</h4>
               <p data-text="roomsPage.openPlan.steps[0].desc">
-                현관에서 가장 먼저 만나는 다이닝과 키친. 원목 테이블에서 느긋한 식사와 대화를 즐겨보세요.
+                현관에서 가장 먼저 만나는 부엌과 원목 식탁. 함께 음식을 준비하고 느긋하게 담소를 나누는 자리입니다.
               </p>
             </article>
-
             <article class="open-plan-step">
               <span class="open-plan-step-no" data-text="roomsPage.openPlan.steps[1].no">02</span>
-              <h4 data-text="roomsPage.openPlan.steps[1].title">거실 (대청)</h4>
+              <h4 data-text="roomsPage.openPlan.steps[1].title">대청마루 거실</h4>
               <p data-text="roomsPage.openPlan.steps[1].desc">
-                높은 서까래가 만드는 개방감 속에서, 마당 풍경을 바라보며 잠시 호흡을 고르는 시간.
+                높은 서까래가 만드는 개방감 속에서 마당 풍경을 바라보며 차 한 잔으로 호흡을 고르는 중심 공간입니다.
               </p>
             </article>
-
             <article class="open-plan-step">
               <span class="open-plan-step-no" data-text="roomsPage.openPlan.steps[2].no">03</span>
               <h4 data-text="roomsPage.openPlan.steps[2].title">툇마루 침실</h4>
               <p data-text="roomsPage.openPlan.steps[2].desc">
-                낮은 턱 너머로 이어지는 침실은 문 없는 개방형 구조로, 더 깊고 부드러운 안락함을 전합니다.
+                낮은 턱 너머로 이어지는 침실은 문 없는 개방형 구조로, 답답함 없이 깊고 부드러운 안락함을 전합니다.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- 3. Room Info & Amenities Architectural Ledger -->
-      <section class="room-info-section fade-up" id="room-info">
+      <!-- 3. Room Specs & Amenities Ledger -->
+      <section class="section-band" id="room-info">
         <div class="container">
-          <div class="section-header-split">
+          <div class="section-head-row fade-up">
             <div>
-              <span class="section-subtitle" data-text="roomsPage.info.subtitle">STAY INFORMATION</span>
-              <h2 class="section-title" data-text="roomsPage.info.title">이용 안내 및 구비 물품</h2>
+              <span class="section-kicker" data-text="roomsPage.info.subtitle">시설 및 이용 안내</span>
+              <h2 class="section-title" data-text="roomsPage.info.title">객실 제원 및 구비 물품</h2>
             </div>
-            <p class="section-split-desc" data-text="roomsPage.introNotice">
-              차담옥은 하루 단 한 팀만을 위한 프라이빗 독채 한옥입니다. 안내된 모든 실내외 공간을 단독으로 자유롭게 이용하실 수 있습니다.
+            <p class="section-lead" style="margin-top: 0" data-text="roomsPage.introNotice">
+              차담옥은 하루 단 한 팀만 머무는 프라이빗 독채 한옥입니다. 안내된 모든 실내외 공간을 단독으로 자유롭게 이용하실 수 있습니다.
             </p>
           </div>
 
-          <div class="spec-ledger-grid" id="room-info-specs">
+          <div class="spec-ledger-grid fade-up" id="room-info-specs">
             <!-- data.json roomsPage.info.specs 배열에서 동적 생성 -->
           </div>
 
-          <aside class="stay-notice-strip" id="room-info-notice" aria-label="이용 주의사항">
+          <aside class="stay-notice-strip fade-up" id="room-info-notice" aria-label="이용 주의사항">
             <!-- data.json roomsPage.info.notice 배열에서 동적 생성 -->
           </aside>
 
-          <h3 class="amenities-ledger-heading" data-text="roomsPage.info.amenitiesHeading">구비 물품</h3>
-          <div class="amenities-ledger" id="room-info-amenities">
+          <h3 class="amenities-ledger-heading fade-up" data-text="roomsPage.info.amenitiesHeading">객실 구비 물품</h3>
+          <div class="amenities-ledger fade-up" id="room-info-amenities">
             <!-- data.json roomsPage.info.amenities 배열에서 동적 생성 -->
           </div>
 
-          <div class="text-center" style="margin-top: 4.5rem;">
-            <a href="reserve.html" class="btn btn-lg"><span data-text="roomsPage.ctaBtnText">독채 실시간 예약하기</span> →</a>
+          <div style="text-align: center; margin-top: 3.5rem;">
+            <a href="reserve.html" class="btn btn-lg" data-text="roomsPage.ctaBtnText">예약 및 요금 확인하기</a>
           </div>
         </div>
       </section>
@@ -166,7 +170,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       window.dataLoadPromise.then(() => {
-        // 1. Main Rooms Dynamic Slider + Tab Navigation
         const roomList = window.siteData?.roomsPage?.roomList || [];
         const roomsWrapper = document.getElementById("rooms-page-wrapper");
         const tabNav = document.getElementById("rooms-tab-nav");
@@ -176,7 +179,7 @@
             if (tabNav) {
               const tabBtn = document.createElement("button");
               tabBtn.type = "button";
-              tabBtn.className = `rooms-tab-btn${idx === 0 ? " is-active" : ""}`;
+              tabBtn.className = `scroll-tab-btn${idx === 0 ? " is-active" : ""}`;
               tabBtn.setAttribute("role", "tab");
               tabBtn.setAttribute("aria-selected", idx === 0 ? "true" : "false");
               tabBtn.textContent = room.title || `공간 ${idx + 1}`;
@@ -184,21 +187,19 @@
               tabNav.appendChild(tabBtn);
             }
 
-            const specsHtml = room.specs
-              ? room.specs.map((spec) => `<li>${spec}</li>`).join("")
-              : "";
+            const specsHtml = (room.specs || []).map((s) => `<li>${s}</li>`).join("");
             const slide = document.createElement("div");
             slide.className = "swiper-slide";
             slide.innerHTML = `
-              <div class="room-card-large">
-                <div class="room-img-wrapper">
+              <div class="room-showcase-slide">
+                <div class="room-showcase-media">
                   <img src="${room.img || ""}" alt="${room.title || ""}" loading="${idx === 0 ? "eager" : "lazy"}" decoding="async" />
                 </div>
-                <div class="room-info">
-                  <span class="room-type-tag">${room.eng || "PRIVATE SPACE"}</span>
+                <div class="room-showcase-body">
+                  <span class="room-category-label">${room.eng || "독채 공간"}</span>
                   <h3>${room.title || ""}</h3>
-                  <p class="copy-body">${room.desc || ""}</p>
-                  <ul class="room-specs">${specsHtml}</ul>
+                  <p class="room-showcase-desc">${room.desc || ""}</p>
+                  <ul class="room-specs-clean">${specsHtml}</ul>
                 </div>
               </div>
             `;
@@ -220,17 +221,20 @@
               slideChange(swiper) {
                 if (!tabNav) return;
                 const activeIdx = swiper.realIndex;
-                tabNav.querySelectorAll(".rooms-tab-btn").forEach((btn, i) => {
+                tabNav.querySelectorAll(".scroll-tab-btn").forEach((btn, i) => {
                   const active = i === activeIdx;
                   btn.classList.toggle("is-active", active);
                   btn.setAttribute("aria-selected", String(active));
+                  if (active) {
+                    btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+                  }
                 });
               },
             },
           });
 
           if (tabNav) {
-            tabNav.querySelectorAll(".rooms-tab-btn").forEach((btn) => {
+            tabNav.querySelectorAll(".scroll-tab-btn").forEach((btn) => {
               btn.addEventListener("click", () => {
                 const idx = Number(btn.dataset.index || 0);
                 if (roomsSwiper.params.loop) {
@@ -243,7 +247,6 @@
           }
         }
 
-        // 2. Room Info Specs Ledger
         const info = window.siteData?.roomsPage?.info;
         if (info) {
           const specsWrap = document.getElementById("room-info-specs");
@@ -264,7 +267,7 @@
           const noticeWrap = document.getElementById("room-info-notice");
           if (noticeWrap && Array.isArray(info.notice) && info.notice.length > 0) {
             noticeWrap.innerHTML = `
-              <h4>인원 규정 및 예약 유의사항</h4>
+              <h4>인원 규정 및 이용 유의사항</h4>
               <ul>
                 ${info.notice.map((n) => `<li>${n}</li>`).join("")}
               </ul>
@@ -274,15 +277,12 @@
           const amenitiesWrap = document.getElementById("room-info-amenities");
           if (amenitiesWrap && Array.isArray(info.amenities)) {
             amenitiesWrap.innerHTML = info.amenities
-              .map((cat, idx) => {
-                const no = `0${idx + 1}`;
-                const itemsHtml = (cat.items || [])
-                  .map((it) => `<li>${it}</li>`)
-                  .join("");
+              .map((cat) => {
+                const itemsHtml = (cat.items || []).map((it) => `<li>${it}</li>`).join("");
                 return `
                   <div class="amenity-ledger-row">
-                    <div class="amenity-ledger-title-col">
-                      <span class="amenity-ledger-eng">${no} · ${cat.eng || "AMENITIES"}</span>
+                    <div>
+                      <span class="amenity-ledger-eng">${cat.eng || "비치 품목"}</span>
                       <span class="amenity-ledger-name">${cat.title || ""}</span>
                     </div>
                     <ul class="amenity-ledger-items">${itemsHtml}</ul>
@@ -295,8 +295,6 @@
 
         if (typeof window.observeFadeUps === "function") {
           window.observeFadeUps();
-        } else {
-          document.querySelectorAll(".fade-up").forEach((el) => el.classList.add("visible"));
         }
       });
     </script>

@@ -3,34 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>특별한 경험 | 차담한옥(차담옥)</title>
+    <title>머무는 즐거움 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="special">
     <div id="header-placeholder"></div>
 
-    <!-- Sub-Hero Banner -->
-    <div class="sub-hero">
-      <img
-        src="images/special_bbq.jpg"
-        alt="차담옥 특별한 경험"
-        class="sub-hero-bg"
-      />
-      <div class="sub-hero-overlay"></div>
-      <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="special.subtitle">CURATED EXPERIENCE</span>
-        <h1 class="sub-hero-title" data-text="special.mainTitle">특별한 경험</h1>
-        <p class="sub-hero-desc" data-text="special.intro">
-          차담옥의 한옥스테이는 머무름을 넘어 깊은 경험으로 확장됩니다.<br />
-          하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.
-        </p>
+    <!-- Bright Hanji Editorial Masthead -->
+    <section class="page-masthead">
+      <div class="container masthead-inner">
+        <div class="masthead-main">
+          <span class="masthead-kicker">
+            <span class="logo-seal is-small" aria-hidden="true">茶談</span>
+            <span data-text="special.subtitle">머무는 즐거움</span>
+          </span>
+          <h1 class="masthead-title" data-text="special.mainTitle">차담옥의 특별한 경험</h1>
+          <p class="masthead-desc" data-text="special.intro">
+            머무는 동안 하루의 속도를 천천히 늦추고, 취향에 맞는 고요한 즐거움을 채워보세요.
+          </p>
+        </div>
+        <span class="masthead-vertical-note" aria-hidden="true">다도 · 바비큐 · 시네마</span>
       </div>
-    </div>
+    </section>
 
     <main>
-      <section class="container fade-up">
-        <div class="editorial-special-list" id="special-editorial-list">
-          <!-- data.json special.items에서 동적 에디토리얼 블록 생성 -->
+      <section class="section-band" style="padding-top: clamp(1.8rem, 3vw, 2.6rem);">
+        <div class="container">
+          <!-- Horizontal Quick Jump Tabs (Great on Mobile!) -->
+          <div class="scroll-tabs fade-up" id="special-jump-nav" aria-label="경험 빠른 이동">
+            <!-- data.json special.items 그룹에서 동적 생성 -->
+          </div>
+
+          <div class="editorial-special-list" id="special-editorial-list">
+            <!-- data.json special.items에서 동적 생성 -->
+          </div>
         </div>
       </section>
     </main>
@@ -60,11 +66,11 @@
       window.dataLoadPromise.then(() => {
         const items = window.siteData?.special?.items || [];
         const container = document.getElementById("special-editorial-list");
+        const jumpNav = document.getElementById("special-jump-nav");
         const lightbox = window.createLightbox(document.getElementById("special-lightbox"));
 
         if (!container || items.length === 0) return;
 
-        // 제목 기준 그룹핑
         const normalizeTitle = (t) => (t || "").replace(/\s+/g, "").toLowerCase();
         const groupMap = new Map();
         items.forEach((item) => {
@@ -73,6 +79,7 @@
           groupMap.get(key).push(item);
         });
         const groups = Array.from(groupMap.values());
+        const hanjaNums = ["一", "二", "三", "四", "五", "六", "七"];
 
         groups.forEach((group, i) => {
           const first = group[0];
@@ -80,6 +87,19 @@
           const isReverse = i % 2 === 1;
           const spaceInfo = first.space || "차담옥 독채 전용 공간";
           const guideInfo = first.guide || "투숙 기간 내 자유 이용";
+
+          if (jumpNav) {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = `scroll-tab-btn${i === 0 ? " is-active" : ""}`;
+            btn.textContent = first.title || "";
+            btn.addEventListener("click", () => {
+              jumpNav.querySelectorAll(".scroll-tab-btn").forEach((b) => b.classList.remove("is-active"));
+              btn.classList.add("is-active");
+              document.getElementById(`sp-${normKey}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+            jumpNav.appendChild(btn);
+          }
 
           const thumbsHtml =
             group.length > 1
@@ -118,7 +138,7 @@
               ${thumbsHtml}
             </div>
             <div class="editorial-text">
-              <span class="editorial-num">EXPERIENCE 0${i + 1}</span>
+              <span class="editorial-num">${hanjaNums[i] || `0${i + 1}`} · 머무는 즐거움</span>
               <h3>${first.title || ""}</h3>
               <p class="editorial-desc">${first.desc || ""}</p>
               <div class="special-meta-table">
@@ -132,7 +152,7 @@
                 </div>
               </div>
               <button type="button" class="btn-outline special-view-btn">
-                ${group.length > 1 ? `사진 크게 보기 (총 ${group.length}장) ↗` : "사진 크게 보기 ↗"}
+                ${group.length > 1 ? `사진 크게 보기 (${group.length}장)` : "사진 크게 보기"}
               </button>
             </div>
           `;
@@ -168,8 +188,6 @@
 
         if (typeof window.observeFadeUps === "function") {
           window.observeFadeUps();
-        } else {
-          document.querySelectorAll(".fade-up").forEach((el) => el.classList.add("visible"));
         }
 
         if (window.location.hash) {

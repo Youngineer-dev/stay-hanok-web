@@ -40,8 +40,9 @@ window.observeFadeUps = function () {
   document.querySelectorAll(".fade-up, .fade-in").forEach((el) => {
     _fadeObserver.observe(el);
   });
-  _applyStagger(".journal-card");
-  _applyStagger(".pillar-item");
+  _applyStagger(".experience-spread-card");
+  _applyStagger(".hanok-pillar");
+  _applyStagger(".season-card");
   _applyStagger(".open-plan-step");
   _applyStagger(".attraction-editorial-card");
 };

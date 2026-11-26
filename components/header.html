@@ -1,61 +1,59 @@
 <header>
   <div class="container header-container">
-    <!-- Brand Mark: 차담옥 (茶談屋) -->
+    <!-- Brand Mark: 전통 인장(낙관) + 차담옥 -->
     <a href="index.html" class="logo" aria-label="차담옥 홈으로 이동">
-      <span class="logo-title" data-text="common.logo">차담옥</span>
-      <span class="logo-sub">茶談屋 · CHADAM HANOK</span>
+      <span class="logo-seal" aria-hidden="true">茶談</span>
+      <span class="logo-text-group">
+        <span class="logo-title" data-text="common.logo">차담옥</span>
+        <span class="logo-sub">이천 독채 한옥</span>
+      </span>
     </a>
 
     <!-- Desktop Navigation -->
     <nav class="nav-menu" aria-label="주 메뉴">
-      <!-- 홈 & 소개 -->
       <div class="nav-item has-submenu">
-        <a href="index.html" class="nav-top-link" data-text="common.nav.home">홈</a>
+        <a href="about.html" class="nav-top-link" data-text="common.nav.about">차담옥 이야기</a>
         <div class="nav-submenu" role="menu">
           <a href="index.html" data-text="common.nav.home" role="menuitem">홈</a>
-          <a href="about.html" data-text="common.nav.about" role="menuitem">차담한옥은?</a>
+          <a href="about.html" data-text="common.nav.about" role="menuitem">차담옥 이야기</a>
           <a href="gallery.html" data-text="common.nav.gallery" role="menuitem">갤러리</a>
         </div>
       </div>
 
-      <!-- 객실 -->
       <div class="nav-item has-submenu">
-        <a href="rooms.html" class="nav-top-link" data-text="common.nav.rooms">객실</a>
+        <a href="rooms.html" class="nav-top-link" data-text="common.nav.rooms">객실 안내</a>
         <div class="nav-submenu" role="menu">
-          <a href="rooms.html" data-text="common.nav.roomsIntro" role="menuitem">객실 소개</a>
-          <a href="rooms.html#room-info" data-text="common.nav.roomsInfo" role="menuitem">객실 이용 안내</a>
+          <a href="rooms.html" data-text="common.nav.roomsIntro" role="menuitem">공간 둘러보기</a>
+          <a href="rooms.html#room-info" data-text="common.nav.roomsInfo" role="menuitem">시설 및 이용 안내</a>
         </div>
       </div>
 
-      <!-- 특별한 경험 -->
       <div class="nav-item has-submenu">
-        <a href="special.html" class="nav-top-link" data-text="common.nav.special">특별한 경험</a>
+        <a href="special.html" class="nav-top-link" data-text="common.nav.special">머무는 즐거움</a>
         <div class="nav-submenu" id="nav-special-sub" role="menu"></div>
       </div>
 
-      <!-- 갤러리 -->
       <div class="nav-item">
         <a href="gallery.html" class="nav-top-link" data-text="common.nav.gallery">갤러리</a>
       </div>
 
-      <!-- 주변 볼거리 -->
       <div class="nav-item has-submenu">
-        <a href="attractions.html" class="nav-top-link" data-text="common.nav.attractions">주변 볼거리</a>
+        <a href="attractions.html" class="nav-top-link" data-text="common.nav.attractions">주변 나들이</a>
         <div class="nav-submenu" id="nav-attractions-sub" role="menu"></div>
       </div>
 
-      <!-- 위치 -->
       <div class="nav-item">
-        <a href="access.html" class="nav-top-link" data-text="common.nav.location">위치</a>
+        <a href="access.html" class="nav-top-link" data-text="common.nav.location">오시는 길</a>
       </div>
     </nav>
 
     <!-- Header Actions -->
     <div class="header-actions">
-      <a href="reserve.html" class="btn-header-book">실시간 예약</a>
+      <a href="reserve.html" class="btn-header-book">예약하기</a>
       <button
         class="menu-toggle"
-        aria-label="Toggle menu"
+        type="button"
+        aria-label="메뉴 열기"
         aria-expanded="false"
         aria-controls="mobile-menu-overlay"
       >
@@ -67,61 +65,59 @@
   </div>
 </header>
 
-<!-- Mobile Menu Overlay -->
+<!-- Mobile Menu Drawer -->
 <div class="menu-overlay" id="mobile-menu-overlay">
   <nav class="menu-items" aria-label="모바일 메뉴">
     <div class="mobile-menu-brand">
-      <span class="mobile-brand-kor">차담옥</span>
-      <span class="mobile-brand-hanja">茶談屋 · ICHEON HANOK</span>
-    </div>
-
-    <!-- 홈 -->
-    <div class="menu-group">
-      <button type="button" class="menu-group-toggle" aria-expanded="false">
-        <span data-text="common.nav.home">홈</span>
-        <span class="menu-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="menu-sub">
-        <a href="index.html" data-text="common.nav.home">홈</a>
-        <a href="about.html" data-text="common.nav.about">차담한옥은?</a>
-        <a href="gallery.html" data-text="common.nav.gallery">갤러리</a>
+      <span class="logo-seal is-small" aria-hidden="true">茶談</span>
+      <div>
+        <span class="mobile-brand-kor">차담옥</span>
+        <span class="mobile-brand-hanja">이천 마장면 독채 한옥</span>
       </div>
     </div>
 
-    <!-- 객실 -->
-    <div class="menu-group">
-      <button type="button" class="menu-group-toggle" aria-expanded="false">
-        <span data-text="common.nav.rooms">객실</span>
-        <span class="menu-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="menu-sub">
-        <a href="rooms.html" data-text="common.nav.roomsIntro">객실 소개</a>
-        <a href="rooms.html#room-info" data-text="common.nav.roomsInfo">객실 이용 안내</a>
+    <div class="mobile-menu-body">
+      <a href="index.html" class="menu-leaf" data-text="common.nav.home">홈</a>
+      <a href="about.html" class="menu-leaf" data-text="common.nav.about">차담옥 이야기</a>
+
+      <div class="menu-group">
+        <button type="button" class="menu-group-toggle" aria-expanded="false">
+          <span data-text="common.nav.rooms">객실 안내</span>
+          <span class="menu-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="menu-sub">
+          <a href="rooms.html" data-text="common.nav.roomsIntro">공간 둘러보기</a>
+          <a href="rooms.html#room-info" data-text="common.nav.roomsInfo">시설 및 이용 안내</a>
+        </div>
+      </div>
+
+      <div class="menu-group">
+        <button type="button" class="menu-group-toggle" aria-expanded="false">
+          <span data-text="common.nav.special">머무는 즐거움</span>
+          <span class="menu-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="menu-sub" id="mobile-special-sub"></div>
+      </div>
+
+      <a href="gallery.html" class="menu-leaf" data-text="common.nav.gallery">갤러리</a>
+
+      <div class="menu-group">
+        <button type="button" class="menu-group-toggle" aria-expanded="false">
+          <span data-text="common.nav.attractions">주변 나들이</span>
+          <span class="menu-chevron" aria-hidden="true"></span>
+        </button>
+        <div class="menu-sub" id="mobile-attractions-sub"></div>
+      </div>
+
+      <a href="access.html" class="menu-leaf" data-text="common.nav.location">오시는 길</a>
+    </div>
+
+    <div class="mobile-menu-foot">
+      <a href="reserve.html" class="menu-leaf-reserve" data-text="common.nav.reservation">실시간 예약 안내</a>
+      <div class="mobile-menu-contact">
+        <a href="tel:01038928494" class="mobile-menu-tel">전화 문의 · 010-3892-8494</a>
+        <p class="mobile-menu-hours">입실 15:00 · 퇴실 12:00 · 상담 09:00–21:00</p>
       </div>
     </div>
-
-    <!-- 특별한 경험 (동적) -->
-    <div class="menu-group">
-      <button type="button" class="menu-group-toggle" aria-expanded="false">
-        <span data-text="common.nav.special">특별한 경험</span>
-        <span class="menu-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="menu-sub" id="mobile-special-sub"></div>
-    </div>
-
-    <!-- 주변 볼거리 (동적) -->
-    <div class="menu-group">
-      <button type="button" class="menu-group-toggle" aria-expanded="false">
-        <span data-text="common.nav.attractions">주변 볼거리</span>
-        <span class="menu-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="menu-sub" id="mobile-attractions-sub"></div>
-    </div>
-
-    <!-- 위치 -->
-    <a href="access.html" class="menu-leaf" data-text="common.nav.location">위치</a>
-
-    <!-- 예약 및 문의 -->
-    <a href="reserve.html" class="menu-leaf menu-leaf-reserve" data-text="common.nav.reservation">예약 및 문의</a>
   </nav>
 </div>
