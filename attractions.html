@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>주변 명소 | 차담한옥</title>
+    <title>주변 명소 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="attractions">
@@ -18,7 +18,7 @@
       />
       <div class="sub-hero-overlay"></div>
       <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="attractions.subtitle">LOCAL GUIDE & DESTINATIONS</span>
+        <span class="sub-hero-subtitle" data-text="attractions.subtitle">LOCAL GUIDE &amp; DESTINATIONS</span>
         <h1 class="sub-hero-title" data-text="attractions.mainTitle">주변 볼거리</h1>
         <p class="sub-hero-desc" data-text="attractions.intro">
           이천의 청정한 자연과 문화가 어우러진 차담옥 인근의 명소들을 소개합니다.<br />
@@ -28,13 +28,13 @@
     </div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 4rem; padding-bottom: 6rem;">
-        <!-- Curated 1N2D Healing Course -->
-        <div class="attractions-itinerary fade-up">
+      <section class="container fade-up">
+        <!-- Curated 1N2D Hairline Timeline -->
+        <div class="itinerary-section fade-up">
           <div class="itinerary-heading">
             <span class="section-subtitle">RECOMMENDED ITINERARY</span>
-            <h3>차담지기 추천 1박 2일 힐링 코스</h3>
-            <p>이천의 맑은 숲과 한옥의 정취를 온전히 누리는 완벽한 힐링 여정</p>
+            <h3>차담지기 추천 1박 2일 힐링 여정</h3>
+            <p>이천의 맑은 숲과 한옥의 정취를 온전히 누리는 여유로운 하루의 흐름</p>
           </div>
 
           <div class="itinerary-timeline">
@@ -45,32 +45,34 @@
             </div>
             <div class="itinerary-step">
               <span class="itinerary-time">DAY 1 · 15:00</span>
-              <h4>체크인 & 웰컴 다도</h4>
+              <h4>체크인 &amp; 웰컴 다도</h4>
               <p>차담옥 입실 후 대청마루에서 정갈한 다기 세트로 따뜻한 전통 잎차를 우리며 여독을 풉니다.</p>
             </div>
             <div class="itinerary-step">
               <span class="itinerary-time">DAY 1 · 18:30</span>
-              <h4>바베큐 & 빔 시네마</h4>
+              <h4>바베큐 &amp; 빔 시네마</h4>
               <p>실내외 전용 바베큐장에서 프라이빗 만찬을 즐기고, 150인치 대형 빔으로 영화를 감상합니다.</p>
             </div>
             <div class="itinerary-step">
               <span class="itinerary-time">DAY 2 · 12:00</span>
-              <h4>정오 퇴실 & 미식 탐방</h4>
+              <h4>정오 퇴실 &amp; 미식 탐방</h4>
               <p>여유로운 12시 체크아웃 후 이천 도예마을을 산책하고 이천 쌀밥 명가에서 든든한 점심을 즐깁니다.</p>
             </div>
           </div>
         </div>
 
-        <!-- Attractions Grid Section -->
-        <div class="text-center fade-up" style="margin-top: 4.5rem; margin-bottom: 2rem;">
-          <span class="section-subtitle">NEARBY SPOTS</span>
-          <h3 class="section-title" style="font-size: 1.8rem; margin-bottom: 0.5rem;">차담옥 인근 추천 명소</h3>
-          <p class="copy-lead copy-medium copy-center" style="font-size: 0.95rem;">
-            차량으로 10분 내외 거리에 위치한 엄선된 여행지를 만나보세요.
+        <!-- Attractions Editorial Local Guide Grid -->
+        <div class="section-header-split fade-up">
+          <div>
+            <span class="section-subtitle">NEARBY SPOTS</span>
+            <h2 class="section-title">차담옥 인근 추천 명소</h2>
+          </div>
+          <p class="section-split-desc">
+            차량으로 10~20분 내외 거리에 위치한 이천·곤지암의 수목원, 도예마을, 온천 명소를 모았습니다.
           </p>
         </div>
 
-        <div class="special-grid" id="attractions-items">
+        <div class="attractions-editorial-grid" id="attractions-items">
           <!-- data.json attractions.items 배열에서 동적 생성 -->
         </div>
       </section>
@@ -84,55 +86,56 @@
     <script>
       window.dataLoadPromise.then(() => {
         const items = window.siteData?.attractions?.items || [];
-        const grid = document.getElementById('attractions-items');
+        const grid = document.getElementById("attractions-items");
+        if (!grid) return;
 
         items.forEach((item, i) => {
-          const rawTitle = item.title || '';
+          const rawTitle = item.title || "";
           const distMatch = rawTitle.match(/\(([^)]+)\)/);
-          const cleanTitle = rawTitle.replace(/\s*\([^)]+\)/, '').trim();
-          const distanceStr = distMatch ? distMatch[1] : '';
+          const cleanTitle = rawTitle.replace(/\s*\([^)]+\)/, "").trim();
+          const distanceStr = distMatch ? distMatch[1] : "";
 
-          const el = document.createElement(item.link ? 'a' : 'div');
-          el.className = 'special-item attraction-card fade-up';
+          const el = document.createElement(item.link ? "a" : "article");
+          el.className = "attraction-editorial-card fade-up";
           el.id = `attr-${i}`;
 
           if (item.link) {
             el.href = item.link;
-            el.target = '_blank';
-            el.rel = 'noopener noreferrer';
+            el.target = "_blank";
+            el.rel = "noopener noreferrer";
           }
 
           el.innerHTML = `
-            <div class="img-wrapper">
+            <div class="attraction-media-frame">
               <img
-                src="${item.img || ''}"
+                src="${item.img || ""}"
                 alt="${cleanTitle}"
-                loading="${i === 0 ? 'eager' : 'lazy'}"
+                loading="${i < 2 ? "eager" : "lazy"}"
                 decoding="async"
               />
-              ${distanceStr ? `<span class="attraction-dist-badge">차량 ${distanceStr}</span>` : ''}
-              ${item.link ? `<span class="attraction-link-chip">공식 웹사이트 ↗</span>` : ''}
             </div>
-            <div class="attraction-card-content">
-              <div class="attraction-meta-tag">NEARBY DESTINATION 0${i + 1}</div>
-              <h3>${cleanTitle} <span class="link-arrow">↗</span></h3>
-              <p class="copy-body">${item.desc || ''}</p>
+            <div class="attraction-meta-line">
+              <span>SPOT 0${i + 1}</span>
+              ${distanceStr ? `<span>차담옥 기준 ${distanceStr}</span>` : ""}
             </div>
+            <h3>${cleanTitle}</h3>
+            <p>${item.desc || ""}</p>
+            ${item.link ? `<span class="attraction-ext-link">공식 웹사이트 바로가기 ↗</span>` : ""}
           `;
           grid.appendChild(el);
         });
 
-        if (typeof window.observeFadeUps === 'function') {
+        if (typeof window.observeFadeUps === "function") {
           window.observeFadeUps();
         } else {
-          document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+          document.querySelectorAll(".fade-up").forEach((el) => el.classList.add("visible"));
         }
 
         if (window.location.hash) {
           const id = decodeURIComponent(window.location.hash.slice(1));
           const target = document.getElementById(id);
           if (target) {
-            setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+            setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
           }
         }
       });

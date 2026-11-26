@@ -13,16 +13,16 @@
     const mapContainers = document.querySelectorAll('.naver-map-container');
     mapContainers.forEach((container) => {
       container.innerHTML = `
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; min-height: 420px; background: #fdfbf7; padding: 2rem; text-align: center; color: #5a4f47; box-sizing: border-box;">
-          <div style="font-size: 2.2rem; margin-bottom: 0.75rem;">🗺️</div>
-          <h4 style="font-family: 'MaruBuri', serif; font-size: 1.15rem; color: #1a1411; margin-bottom: 0.5rem;">네이버 지도 웹 서비스 URL 등록 안내</h4>
-          <p style="font-size: 0.85rem; line-height: 1.6; max-width: 420px; margin-bottom: 1.25rem; color: #6d635c;">
-            현재 접속 중인 주소(<strong>${window.location.origin}</strong>)가 네이버 클라우드 플랫폼(NCP) 콘솔의 <strong>Web 서비스 URL</strong>에 등록되어야 지도가 정상 표시됩니다.
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; min-height: 400px; background: #fbf9f5; padding: 2.25rem; text-align: center; color: #5b5248; box-sizing: border-box;">
+          <span style="font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #8c6a43; font-weight: 600; margin-bottom: 0.65rem;">LOCATION MAP</span>
+          <h4 style="font-family: var(--font-heading, 'Noto Serif KR', serif); font-size: 1.18rem; font-weight: 400; color: #1e1915; margin-bottom: 0.6rem;">네이버 지도 웹 서비스 URL 등록 안내</h4>
+          <p style="font-size: 0.88rem; line-height: 1.7; max-width: 420px; margin-bottom: 1.25rem; color: #5b5248;">
+            현재 접속 중인 주소(<strong style="color: #1e1915;">${window.location.origin}</strong>)가 네이버 클라우드 플랫폼(NCP) 콘솔의 <strong style="color: #1e1915;">Web 서비스 URL</strong>에 등록되어야 지도가 표시됩니다.
           </p>
-          <div style="background: rgba(201, 169, 122, 0.15); border: 1px dashed #c9a97a; padding: 0.75rem 1.25rem; border-radius: 8px; font-size: 0.8rem; margin-bottom: 1.25rem;">
-            등록 권장 URL: <code style="font-weight: 600; color: #1a1411;">${window.location.origin}</code>
+          <div style="background: #f7f4ee; border: 1px solid #ddd5c7; padding: 0.7rem 1.25rem; border-radius: 1px; font-size: 0.82rem; margin-bottom: 1.4rem; color: #5b5248;">
+            등록 권장 URL: <code style="font-weight: 600; color: #1e1915;">${window.location.origin}</code>
           </div>
-          <a href="https://map.naver.com/v5/search/${encodeURIComponent('경기 이천시 마장면 마도로248번길 32-101')}" target="_blank" rel="noopener noreferrer" class="btn btn-naver-map" style="font-size: 0.82rem; padding: 0.6rem 1.4rem;">
+          <a href="https://map.naver.com/v5/search/${encodeURIComponent('경기 이천시 마장면 마도로248번길 32-101')}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             네이버 지도에서 바로보기 ↗
           </a>
         </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Special | 차담한옥(차담옥)</title>
+    <title>특별한 경험 | 차담한옥(차담옥)</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body data-page="special">
@@ -18,26 +18,26 @@
       />
       <div class="sub-hero-overlay"></div>
       <div class="sub-hero-content">
-        <span class="sub-hero-subtitle" data-text="special.subtitle">EXPERIENCE & MEMORIES</span>
+        <span class="sub-hero-subtitle" data-text="special.subtitle">CURATED EXPERIENCE</span>
         <h1 class="sub-hero-title" data-text="special.mainTitle">특별한 경험</h1>
         <p class="sub-hero-desc" data-text="special.intro">
-          차담옥의 스테이는 단순한 머무름을 넘어 취향과 감각의 경험으로 확장됩니다.<br />
-          하루의 속도를 늦추고, 온전히 나에게 집중하는 순간을 채워보세요.
+          차담옥의 한옥스테이는 머무름을 넘어 깊은 경험으로 확장됩니다.<br />
+          하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.
         </p>
       </div>
     </div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 4rem; padding-bottom: 6rem;">
+      <section class="container fade-up">
         <div class="editorial-special-list" id="special-editorial-list">
-          <!-- 동적 에디토리얼 Z-패턴 스토리텔링 블록 렌더링 -->
+          <!-- data.json special.items에서 동적 에디토리얼 블록 생성 -->
         </div>
       </section>
     </main>
 
-    <!-- 이미지 라이트박스 갤러리 -->
+    <!-- 이미지 라이트박스 -->
     <div class="special-lightbox" id="special-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
-      <button class="lightbox-close" data-lb-close aria-label="창 닫기">창 닫기</button>
+      <button class="lightbox-close" data-lb-close aria-label="창 닫기">닫기 ✕</button>
       <button class="lightbox-prev" data-lb-prev aria-label="이전 이미지">&lsaquo;</button>
       <button class="lightbox-next" data-lb-next aria-label="다음 이미지">&rsaquo;</button>
       <div class="lightbox-stage">
@@ -59,21 +59,13 @@
     <script>
       window.dataLoadPromise.then(() => {
         const items = window.siteData?.special?.items || [];
-        const container = document.getElementById('special-editorial-list');
-        const lightbox = window.createLightbox(document.getElementById('special-lightbox'));
+        const container = document.getElementById("special-editorial-list");
+        const lightbox = window.createLightbox(document.getElementById("special-lightbox"));
 
-        // 경험별 큐레이션 태그 맵
-        const experienceTags = {
-          '다도체험': ['정갈한 다도 공간', '한옥 대청마루', '차분한 휴식'],
-          '카페테리아&라운지': ['스페셜티 원두 커피', '한옥 마당 정취', '투숙객 전용 라운지'],
-          '프라이빗빔시네마': ['150인치 대형 스크린', '고화질 빔프로젝터', '넷플릭스 & OTT 지원'],
-          '어쿠스틱&엔터테인먼트': ['통기타 & 마이크 완비', '방음 프라이빗 공간', '추억의 음악 여행'],
-          '사계절전용바베큐장': ['사계절 냉·난방 완비', '프라이빗 다이닝', '우천 시 정상 이용'],
-          '유기농텃밭힐링': ['친환경 제철 채소', '자연 수확의 기쁨', '소박한 흙의 온기']
-        };
+        if (!container || items.length === 0) return;
 
         // 제목 기준 그룹핑
-        const normalizeTitle = (t) => (t || '').replace(/\s+/g, '').toLowerCase();
+        const normalizeTitle = (t) => (t || "").replace(/\s+/g, "").toLowerCase();
         const groupMap = new Map();
         items.forEach((item) => {
           const key = normalizeTitle(item.title);
@@ -82,70 +74,109 @@
         });
         const groups = Array.from(groupMap.values());
 
-        // 매거진 에디토리얼 Z-패턴 렌더링
         groups.forEach((group, i) => {
           const first = group[0];
           const normKey = normalizeTitle(first.title);
           const isReverse = i % 2 === 1;
-          const tags = experienceTags[normKey] || ['프라이빗 독채', '한옥 스테이', '감성 힐링'];
+          const spaceInfo = first.space || "차담옥 독채 전용 공간";
+          const guideInfo = first.guide || "투숙 기간 내 자유 이용";
 
-          const row = document.createElement('div');
-          row.className = `editorial-special-row ${isReverse ? 'reverse' : ''} fade-up`;
+          const thumbsHtml =
+            group.length > 1
+              ? `<div class="special-thumb-strip" role="group" aria-label="${first.title || ""} 추가 사진">
+                  ${group
+                    .map(
+                      (gItem, thumbIdx) => `
+                        <button
+                          type="button"
+                          class="special-thumb-btn${thumbIdx === 0 ? " is-active" : ""}"
+                          data-thumb-idx="${thumbIdx}"
+                          aria-label="${first.title || ""} 사진 ${thumbIdx + 1}"
+                        >
+                          <img src="${gItem.img || ""}" alt="${first.title || ""} ${thumbIdx + 1}" loading="lazy" decoding="async" />
+                        </button>
+                      `
+                    )
+                    .join("")}
+                </div>`
+              : "";
+
+          const row = document.createElement("article");
+          row.className = `editorial-special-row${isReverse ? " reverse" : ""} fade-up`;
           row.id = `sp-${normKey}`;
 
           row.innerHTML = `
-            <div class="editorial-media" role="button" tabindex="0" aria-label="${first.title || ''} 사진 크게 보기">
-              <img
-                src="${first.img || ''}"
-                alt="${first.title || ''}"
-                loading="${i === 0 ? 'eager' : 'lazy'}"
-                decoding="async"
-              />
-              ${group.length > 1 ? `<span class="editorial-media-badge">+${group.length - 1}장의 사진</span>` : ''}
-              <div class="editorial-zoom-bar">
-                <span>클릭하여 갤러리 감상</span>
-                <span>↗</span>
+            <div class="editorial-media-group">
+              <div class="editorial-media" role="button" tabindex="0" aria-label="${first.title || ""} 사진 크게 보기">
+                <img
+                  src="${first.img || ""}"
+                  alt="${first.title || ""}"
+                  loading="${i === 0 ? "eager" : "lazy"}"
+                  decoding="async"
+                />
               </div>
+              ${thumbsHtml}
             </div>
             <div class="editorial-text">
               <span class="editorial-num">EXPERIENCE 0${i + 1}</span>
-              <h3>${first.title || ''}</h3>
-              <p class="editorial-desc">${first.desc || ''}</p>
-              <div class="editorial-tags">
-                ${tags.map(tag => `<span class="editorial-tag-item"># ${tag}</span>`).join('')}
+              <h3>${first.title || ""}</h3>
+              <p class="editorial-desc">${first.desc || ""}</p>
+              <div class="special-meta-table">
+                <div class="special-meta-row">
+                  <span class="special-meta-label">이용 공간</span>
+                  <span class="special-meta-val">${spaceInfo}</span>
+                </div>
+                <div class="special-meta-row">
+                  <span class="special-meta-label">이용 안내</span>
+                  <span class="special-meta-val">${guideInfo}</span>
+                </div>
               </div>
-              <button type="button" class="editorial-btn-view" aria-label="${first.title || ''} 갤러리 감상">
-                <span>포토 갤러리 감상 (총 ${group.length}장)</span>
-                <span>↗</span>
+              <button type="button" class="btn-outline special-view-btn">
+                ${group.length > 1 ? `사진 크게 보기 (총 ${group.length}장) ↗` : "사진 크게 보기 ↗"}
               </button>
             </div>
           `;
 
-          const openLightbox = () => lightbox && lightbox.open(group, 0);
-          row.querySelector('.editorial-media').addEventListener('click', openLightbox);
-          row.querySelector('.editorial-media').addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+          let currentIndex = 0;
+          const mainMediaEl = row.querySelector(".editorial-media");
+          const mainImgEl = mainMediaEl.querySelector("img");
+          const thumbBtns = row.querySelectorAll(".special-thumb-btn");
+
+          thumbBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const idx = Number(btn.dataset.thumbIdx || 0);
+              currentIndex = idx;
+              if (mainImgEl && group[idx]) {
+                mainImgEl.src = group[idx].img || "";
+              }
+              thumbBtns.forEach((b, bIdx) => b.classList.toggle("is-active", bIdx === idx));
+            });
+          });
+
+          const openLightbox = () => lightbox && lightbox.open(group, currentIndex);
+          mainMediaEl.addEventListener("click", openLightbox);
+          mainMediaEl.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
               openLightbox();
             }
           });
-          row.querySelector('.editorial-btn-view').addEventListener('click', openLightbox);
+          row.querySelector(".special-view-btn").addEventListener("click", openLightbox);
 
           container.appendChild(row);
         });
 
-        if (typeof window.observeFadeUps === 'function') {
+        if (typeof window.observeFadeUps === "function") {
           window.observeFadeUps();
         } else {
-          document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+          document.querySelectorAll(".fade-up").forEach((el) => el.classList.add("visible"));
         }
 
-        // 앵커 이동
         if (window.location.hash) {
           const id = decodeURIComponent(window.location.hash.slice(1));
           const target = document.getElementById(id);
           if (target) {
-            setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+            setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 120);
           }
         }
       });

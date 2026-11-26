@@ -28,27 +28,27 @@
     </div>
 
     <main>
-      <section class="container fade-up" style="padding-top: 3.5rem; padding-bottom: 6rem;">
-        <!-- Category Filter Tabs -->
-        <div class="gallery-filter-nav fade-up">
-          <button type="button" class="gallery-filter-btn is-active" data-filter="all">전체 (ALL)</button>
-          <button type="button" class="gallery-filter-btn" data-filter="exterior">외관 & 마당 (EXTERIOR)</button>
-          <button type="button" class="gallery-filter-btn" data-filter="interior">실내 & 객실 (INTERIOR)</button>
-          <button type="button" class="gallery-filter-btn" data-filter="healing">다도 & 쉼 (HEALING)</button>
+      <section class="container fade-up">
+        <!-- Underline Filter Navigation -->
+        <div class="gallery-filter-nav" role="tablist" aria-label="갤러리 분류">
+          <button type="button" class="gallery-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">전체 보기</button>
+          <button type="button" class="gallery-filter-btn" data-filter="exterior" role="tab" aria-selected="false">외관과 마당</button>
+          <button type="button" class="gallery-filter-btn" data-filter="interior" role="tab" aria-selected="false">대청과 침실</button>
+          <button type="button" class="gallery-filter-btn" data-filter="seasons" role="tab" aria-selected="false">다도와 사계절</button>
         </div>
 
-        <div class="gallery-grid fade-up" id="gallery-items">
-          <!-- data.json gallery.photos 배열에서 동적 생성 (역순) -->
+        <div class="gallery-archive-grid" id="gallery-items">
+          <!-- data.json gallery.photos 배열에서 동적 생성 -->
         </div>
 
         <div class="gallery-more-wrap" id="gallery-more-wrap">
           <button
             type="button"
             id="gallery-more-btn"
-            class="gallery-more-btn"
+            class="btn-outline"
             style="display: none"
           >
-            + 더보기
+            더 많은 사진 보기 +
           </button>
         </div>
       </section>
@@ -62,15 +62,9 @@
       role="dialog"
       aria-modal="true"
     >
-      <button class="lightbox-close" data-lb-close aria-label="창 닫기">
-        창 닫기
-      </button>
-      <button class="lightbox-prev" data-lb-prev aria-label="이전 이미지">
-        &lsaquo;
-      </button>
-      <button class="lightbox-next" data-lb-next aria-label="다음 이미지">
-        &rsaquo;
-      </button>
+      <button class="lightbox-close" data-lb-close aria-label="창 닫기">닫기 ✕</button>
+      <button class="lightbox-prev" data-lb-prev aria-label="이전 이미지">&lsaquo;</button>
+      <button class="lightbox-next" data-lb-next aria-label="다음 이미지">&rsaquo;</button>
       <div class="lightbox-stage">
         <img class="lightbox-img" data-lb-img src="" alt="" />
         <div class="lightbox-info">
@@ -89,29 +83,48 @@
     <script src="js/lightbox.js"></script>
     <script>
       window.dataLoadPromise.then(() => {
-        const photos = (window.siteData?.gallery?.photos || []).slice().reverse();
+        const photos = window.siteData?.gallery?.photos || [];
         const grid = document.getElementById("gallery-items");
         const moreBtn = document.getElementById("gallery-more-btn");
         const filterBtns = document.querySelectorAll(".gallery-filter-btn");
         if (!grid || photos.length === 0) return;
 
-        // 사진별 카테고리 태깅 로직
         function categorizePhoto(photo, index) {
-          const text = ((photo.alt || '') + ' ' + (photo.caption || '') + ' ' + (photo.img || '')).toLowerCase();
-          if (/다도|차|티|커피|카페|음악|빔|시네마|불멍|바베큐|힐링|여백/.test(text)) return 'healing';
-          if (/마당|외관|처마|기와|전경|꽃|나무|수목|하늘|풍경|자연/.test(text)) return 'exterior';
-          if (/방|거실|대청|침대|주방|욕실|실내|내부|소품|조명/.test(text)) return 'interior';
-          // 균형있는 배분을 위한 기본 할당
-          const defaults = ['exterior', 'interior', 'healing'];
+          if (photo.category) return photo.category;
+          const text = ((photo.alt || "") + " " + (photo.caption || "") + " " + (photo.img || "")).toLowerCase();
+          if (/다도|차|티|봄|여름|가을|겨울|아궁이/.test(text)) return "seasons";
+          if (/마당|외관|처마|바베큐|텃밭/.test(text)) return "exterior";
+          if (/방|거실|대청|침실|주방|라운지/.test(text)) return "interior";
+          const defaults = ["exterior", "interior", "seasons"];
           return defaults[index % defaults.length];
         }
 
         const categorizedPhotos = photos.map((p, i) => ({
           ...p,
-          category: categorizePhoto(p, i)
+          category: categorizePhoto(p, i),
         }));
 
-        let activeFilter = 'all';
+        // 각 분류별 개수 표기
+        const counts = {
+          all: categorizedPhotos.length,
+          exterior: categorizedPhotos.filter((p) => p.category === "exterior").length,
+          interior: categorizedPhotos.filter((p) => p.category === "interior").length,
+          seasons: categorizedPhotos.filter((p) => p.category === "seasons").length,
+        };
+        const labels = {
+          all: "전체 보기",
+          exterior: "외관과 마당",
+          interior: "대청과 침실",
+          seasons: "다도와 사계절",
+        };
+        filterBtns.forEach((btn) => {
+          const key = btn.dataset.filter;
+          if (labels[key]) {
+            btn.textContent = `${labels[key]} (${counts[key] || 0})`;
+          }
+        });
+
+        let activeFilter = "all";
         let currentFilteredPhotos = categorizedPhotos;
         const INITIAL_COUNT = 9;
         const INCREMENT = 9;
@@ -122,10 +135,11 @@
         );
 
         function renderGallery() {
-          grid.innerHTML = '';
-          currentFilteredPhotos = activeFilter === 'all'
-            ? categorizedPhotos
-            : categorizedPhotos.filter(p => p.category === activeFilter);
+          grid.innerHTML = "";
+          currentFilteredPhotos =
+            activeFilter === "all"
+              ? categorizedPhotos
+              : categorizedPhotos.filter((p) => p.category === activeFilter);
 
           visibleCount = Math.min(INITIAL_COUNT, currentFilteredPhotos.length);
 
@@ -137,21 +151,23 @@
           }));
 
           currentFilteredPhotos.forEach((photo, i) => {
-            const item = document.createElement("div");
-            item.className = "gallery-item fade-up visible";
+            const item = document.createElement("article");
+            item.className = "gallery-archive-item fade-up visible";
             item.setAttribute("role", "button");
             item.setAttribute("tabindex", "0");
             item.setAttribute("aria-label", `${photo.alt || "사진"} 크게 보기`);
             if (i >= visibleCount) item.classList.add("is-hidden");
 
             item.innerHTML = `
-              <img
-                src="${photo.img}"
-                alt="${photo.alt || ""}"
-                loading="${i < 9 ? "eager" : "lazy"}"
-                decoding="async"
-              />
-              <div class="gallery-item-overlay">
+              <div class="gallery-photo-frame">
+                <img
+                  src="${photo.img}"
+                  alt="${photo.alt || ""}"
+                  loading="${i < 9 ? "eager" : "lazy"}"
+                  decoding="async"
+                />
+              </div>
+              <div class="gallery-caption-bar">
                 <h3 class="gallery-item-title">${photo.alt || ""}</h3>
                 ${photo.caption ? `<p class="gallery-item-desc">${photo.caption}</p>` : ""}
               </div>
@@ -178,14 +194,14 @@
           } else {
             moreBtn.style.display = "";
             const remaining = currentFilteredPhotos.length - visibleCount;
-            moreBtn.textContent = `+ 더보기 (${remaining})`;
+            moreBtn.textContent = `더 많은 사진 보기 (+${remaining})`;
           }
         }
 
         if (moreBtn) {
           moreBtn.addEventListener("click", () => {
             const next = Math.min(visibleCount + INCREMENT, currentFilteredPhotos.length);
-            const items = grid.querySelectorAll(".gallery-item");
+            const items = grid.querySelectorAll(".gallery-archive-item");
             for (let j = visibleCount; j < next; j++) {
               items[j]?.classList.remove("is-hidden");
             }
@@ -194,17 +210,19 @@
           });
         }
 
-        // 필터 탭 이벤트
-        filterBtns.forEach(btn => {
+        filterBtns.forEach((btn) => {
           btn.addEventListener("click", () => {
-            filterBtns.forEach(b => b.classList.remove("is-active"));
+            filterBtns.forEach((b) => {
+              b.classList.remove("is-active");
+              b.setAttribute("aria-selected", "false");
+            });
             btn.classList.add("is-active");
+            btn.setAttribute("aria-selected", "true");
             activeFilter = btn.dataset.filter;
             renderGallery();
           });
         });
 
-        // 초기 렌더링
         renderGallery();
       });
     </script>

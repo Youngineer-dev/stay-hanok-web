@@ -1,14 +1,14 @@
 <header>
   <div class="container header-container">
-    <!-- Logo with Luxury Hanok Branding -->
-    <a href="index.html" class="logo">
-      <span class="logo-title">차담옥</span>
-      <span class="logo-sub">CHADAM HANOK</span>
+    <!-- Brand Mark: 차담옥 (茶談屋) -->
+    <a href="index.html" class="logo" aria-label="차담옥 홈으로 이동">
+      <span class="logo-title" data-text="common.logo">차담옥</span>
+      <span class="logo-sub">茶談屋 · CHADAM HANOK</span>
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="nav-menu">
-      <!-- 홈: 정적 하위 메뉴 -->
+    <nav class="nav-menu" aria-label="주 메뉴">
+      <!-- 홈 & 소개 -->
       <div class="nav-item has-submenu">
         <a href="index.html" class="nav-top-link" data-text="common.nav.home">홈</a>
         <div class="nav-submenu" role="menu">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <!-- 객실: 정적 하위 메뉴 (앵커 스크롤) -->
+      <!-- 객실 -->
       <div class="nav-item has-submenu">
         <a href="rooms.html" class="nav-top-link" data-text="common.nav.rooms">객실</a>
         <div class="nav-submenu" role="menu">
@@ -27,32 +27,32 @@
         </div>
       </div>
 
-      <!-- 주변 볼거리: data.json attractions.items[].title에서 동적 생성 -->
-      <div class="nav-item has-submenu">
-        <a href="attractions.html" class="nav-top-link" data-text="common.nav.attractions">주변 볼거리</a>
-        <div class="nav-submenu" id="nav-attractions-sub" role="menu"></div>
-      </div>
-
-      <!-- 특별한 경험: data.json special.items[].title 중복 제거 후 동적 생성 -->
+      <!-- 특별한 경험 -->
       <div class="nav-item has-submenu">
         <a href="special.html" class="nav-top-link" data-text="common.nav.special">특별한 경험</a>
         <div class="nav-submenu" id="nav-special-sub" role="menu"></div>
+      </div>
+
+      <!-- 갤러리 -->
+      <div class="nav-item">
+        <a href="gallery.html" class="nav-top-link" data-text="common.nav.gallery">갤러리</a>
+      </div>
+
+      <!-- 주변 볼거리 -->
+      <div class="nav-item has-submenu">
+        <a href="attractions.html" class="nav-top-link" data-text="common.nav.attractions">주변 볼거리</a>
+        <div class="nav-submenu" id="nav-attractions-sub" role="menu"></div>
       </div>
 
       <!-- 위치 -->
       <div class="nav-item">
         <a href="access.html" class="nav-top-link" data-text="common.nav.location">위치</a>
       </div>
-
-      <!-- 예약 및 문의 -->
-      <div class="nav-item">
-        <a href="reserve.html" class="nav-top-link" data-text="common.nav.reservation">예약/문의</a>
-      </div>
     </nav>
 
-    <!-- Header Actions (Mobile Menu Toggle) -->
+    <!-- Header Actions -->
     <div class="header-actions">
-      <!-- Hamburger (Mobile Only) -->
+      <a href="reserve.html" class="btn-header-book">실시간 예약</a>
       <button
         class="menu-toggle"
         aria-label="Toggle menu"
@@ -67,9 +67,14 @@
   </div>
 </header>
 
-<!-- Mobile Menu Overlay (Hidden by CSS on Desktop) -->
+<!-- Mobile Menu Overlay -->
 <div class="menu-overlay" id="mobile-menu-overlay">
-  <nav class="menu-items">
+  <nav class="menu-items" aria-label="모바일 메뉴">
+    <div class="mobile-menu-brand">
+      <span class="mobile-brand-kor">차담옥</span>
+      <span class="mobile-brand-hanja">茶談屋 · ICHEON HANOK</span>
+    </div>
+
     <!-- 홈 -->
     <div class="menu-group">
       <button type="button" class="menu-group-toggle" aria-expanded="false">
@@ -95,32 +100,28 @@
       </div>
     </div>
 
-    <!-- 주변 볼거리 (동적) -->
-    <div class="menu-group">
-      <button type="button" class="menu-group-toggle" aria-expanded="false">
-        <span data-text="common.nav.attractions">주변 볼거리</span>
-        <span class="menu-chevron" aria-hidden="true"></span>
-      </button>
-      <div class="menu-sub" id="mobile-attractions-sub">
-        <!-- JS에서 동적 생성 -->
-      </div>
-    </div>
-
     <!-- 특별한 경험 (동적) -->
     <div class="menu-group">
       <button type="button" class="menu-group-toggle" aria-expanded="false">
         <span data-text="common.nav.special">특별한 경험</span>
         <span class="menu-chevron" aria-hidden="true"></span>
       </button>
-      <div class="menu-sub" id="mobile-special-sub">
-        <!-- JS에서 동적 생성 -->
-      </div>
+      <div class="menu-sub" id="mobile-special-sub"></div>
     </div>
 
-    <!-- 위치 (하위 없음) -->
+    <!-- 주변 볼거리 (동적) -->
+    <div class="menu-group">
+      <button type="button" class="menu-group-toggle" aria-expanded="false">
+        <span data-text="common.nav.attractions">주변 볼거리</span>
+        <span class="menu-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="menu-sub" id="mobile-attractions-sub"></div>
+    </div>
+
+    <!-- 위치 -->
     <a href="access.html" class="menu-leaf" data-text="common.nav.location">위치</a>
 
-    <!-- 예약 및 문의 (하위 없음) -->
-    <a href="reserve.html" class="menu-leaf" data-text="common.nav.reservation">예약 및 문의</a>
+    <!-- 예약 및 문의 -->
+    <a href="reserve.html" class="menu-leaf menu-leaf-reserve" data-text="common.nav.reservation">예약 및 문의</a>
   </nav>
 </div>

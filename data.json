@@ -1,7 +1,7 @@
 {
   "common": {
     "ogTitle": "차담한옥(차담옥) - 쉼이 머무는 차담옥",
-    "ogImage": "images/hero_main.jpg",
+    "ogImage": "images/hero_main.png",
     "logo": "차담옥",
     "nav": {
       "home": "홈",
@@ -23,14 +23,15 @@
       "instagram": "https://www.instagram.com/chadamjigi",
       "blog": "https://blog.naver.com/",
       "copyright": "&copy; 2026 차담한옥(차담옥). All Rights Reserved.",
-      "mobileCta": "지금 예약하기"
+      "mobileCta": "실시간 예약하기"
     }
   },
   "index": {
-    "title": "차담한옥(차담옥) | 쉼이 머무는 차담한옥",
+    "title": "차담한옥(차담옥) | 쉼이 머무는 차담옥",
     "hero": [
       {
         "img": "images/hero_main.png",
+        "eyebrow": "이천 프라이빗 독채 한옥",
         "title": "쉼이 머무는 차담옥",
         "desc": "도심을 벗어나 만나는 온전한 고요와 고즈넉한 독채 한옥",
         "btnText": "객실 둘러보기",
@@ -38,6 +39,7 @@
       },
       {
         "img": "images/hero_interior.png",
+        "eyebrow": "PRIVATE DETACHED STAY",
         "title": "시간의 결을 품은<br />독채 한옥 스테이",
         "desc": "오직 한 팀만을 위한 안락한 대청과 프라이빗 정원",
         "btnText": "실시간 예약",
@@ -45,6 +47,7 @@
       },
       {
         "img": "images/침실5.jpg",
+        "eyebrow": "SANCTUARY OF REST",
         "title": "자연의 볕이 스며드는<br />아늑한 침실",
         "desc": "정갈한 원목 침구와 은은한 햇살이 전하는 깊은 휴식",
         "btnText": "공간 안내",
@@ -52,6 +55,7 @@
       },
       {
         "img": "images/다도1.jpg",
+        "eyebrow": "TEA & CONTEMPLATION",
         "title": "차 한 잔에 담아낸<br />사색의 순간",
         "desc": "엄선한 잎차와 함께하는 품격 있는 다도 & 홈카페 체험",
         "btnText": "특별한 경험",
@@ -59,6 +63,7 @@
       },
       {
         "img": "images/마당1.jpg",
+        "eyebrow": "FOUR SEASONS COURTYARD",
         "title": "사계절의 정취를<br />마주하는 마당",
         "desc": "아침 처마 끝의 햇살부터 밤하늘의 쏟아지는 별빛까지",
         "btnText": "갤러리 감상",
@@ -72,31 +77,35 @@
       "desc2": "아늑한 대청마루와 정갈한 침실, 향긋한 차 향이 피어오르는 다도 공간과 프라이빗 시네마까지 당신만의 온전한 하루를 완성합니다.",
       "features": [
         {
-          "tag": "01 / PRIVATE HANOK",
+          "no": "01",
+          "tag": "온전한 독채",
           "title": "독채 한옥스테이",
-          "desc": "오직 한 팀만을 위한 안락한 대청마루와<br />사계절의 정취가 머무는 단독 마당",
+          "desc": "오직 한 팀만을 위한 안락한 대청마루와 사계절의 정취가 머무는 단독 마당을 온전히 누립니다.",
           "img": "images/hero_interior.png"
         },
         {
-          "tag": "02 / TEA & CAFE",
+          "no": "02",
+          "tag": "차와 사색",
           "title": "홈카페 & 다도체험",
-          "desc": "정성껏 준비한 찻자리와 은은한 커피 향으로<br />마음의 속도를 늦추는 사색의 시간",
+          "desc": "정성껏 준비한 찻자리와 은은한 커피 향으로 마음의 속도를 늦추는 고요한 시간을 전합니다.",
           "img": "images/special_tea.jpg"
         },
         {
-          "tag": "03 / PRIVATE ENTERTAINMENT",
-          "title": "시네마 & 힐링",
-          "desc": "대형 스크린 빔프로젝터와 개별 바베큐장으로<br />풍성하고 소중한 추억을 선물합니다",
+          "no": "03",
+          "tag": "사계절의 정취",
+          "title": "시네마 & 개별 바베큐",
+          "desc": "150인치 대형 스크린과 사계절 이용 가능한 개별 바베큐장에서 여유로운 저녁을 보냅니다.",
           "img": "images/special_cinema.jpg"
         }
       ]
     },
     "rooms": {
-      "subtitle": "Rooms",
+      "subtitle": "EXCLUSIVE SPACES",
       "title": "머무름의 미학",
       "list": [
         {
           "img": "images/침실5.jpg",
+          "category": "MAIN BUILDING · 안채",
           "roomTitle": "안채 (Main Room)",
           "roomDesc": "차담한옥의 중심이 되는 안채는 햇살이 오래 머무는 침실과 넓은 대청마루가 여유롭게 이어집니다.<br />전통 한옥의 고즈넉한 균형과 현대적인 편안함을 단독으로 누려보세요.",
           "specs": [
@@ -104,11 +113,12 @@
             "탁 트인 툇마루와 단독 앞마당",
             "향긋한 여유를 위한 다도 세트 구비"
           ],
-          "btnText": "전체 공간 둘러보기",
+          "btnText": "객실 전체 둘러보기",
           "btnLink": "rooms.html"
         },
         {
           "img": "images/거실8.jpg",
+          "category": "DETACHED WING · 사랑채",
           "roomTitle": "사랑채 (Private Room)",
           "roomDesc": "메인 공간과 분리되어 더욱 아늑하고 사적인 휴식이 가능한 특별한 침실입니다.<br />은은하게 스며드는 자연광과 조용한 정원을 조망하며 깊은 수면에 빠져보세요.",
           "specs": [
@@ -116,18 +126,18 @@
             "사랑채 전용 미니 정원 조망",
             "조용한 휴식과 사색의 창"
           ],
-          "btnText": "전체 공간 둘러보기",
+          "btnText": "객실 전체 둘러보기",
           "btnLink": "rooms.html"
         }
       ]
     },
     "location": {
-      "subtitle": "Location",
+      "subtitle": "LOCATION & ACCESS",
       "title": "오시는 길",
       "img": "images/map_illustration.jpg",
       "naverMapLink": "https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101",
-      "naverMapBtn": "네이버 지도로 보기",
-      "addressLabel": "주소:",
+      "naverMapBtn": "네이버 지도 길찾기",
+      "addressLabel": "주소",
       "addressValue": "경기 이천시 마장면 마도로248번길 32-101"
     },
     "specialCta": {
@@ -135,8 +145,8 @@
     }
   },
   "about": {
-    "title": "About Us | 차담한옥",
-    "subtitle": "Philosophy",
+    "title": "차담한옥은? | 차담한옥(차담옥)",
+    "subtitle": "PHILOSOPHY & SPACE",
     "mainTitle": "공간의 이야기",
     "img": "images/about_detail.jpg",
     "headline": "오랜 시간을 견뎌온 나무의 숨결",
@@ -146,62 +156,67 @@
     "desc4": "이곳에서의 하루는 여행보다 깊은 쉼에 가깝습니다."
   },
   "roomsPage": {
-    "title": "객실 안내 | 차담한옥",
-    "subtitle": "Rooms",
+    "title": "객실 안내 | 차담한옥(차담옥)",
+    "subtitle": "PRIVATE STAY & SPACES",
     "mainTitle": "편안한 쉼터",
     "intro1": "한옥의 본연을 해치지 않으면서, 숙면과 여유에 필요한 요소만 정교하게 채웠습니다.",
     "intro2": "머무는 동선마다 잔잔한 온기가 이어집니다.",
-    "introNotice": "※ 차담한옥은 오직 한 팀만을 위한 프라이빗 독채 한옥 입니다.<br />예약 시 안내된 모든 공간을 단독으로 자유롭게 이용하실 수 있습니다.",
-    "ctaBtnText": "프라이빗 독채 전체 예약하기",
+    "introNotice": "차담옥은 하루 단 한 팀만을 위한 프라이빗 독채 한옥입니다. 안내된 모든 실내외 공간을 단독으로 자유롭게 이용하실 수 있습니다.",
+    "ctaBtnText": "독채 실시간 예약하기",
     "roomList": [
       {
         "img": "images/거실8.jpg",
-        "title": "거실(living Room)",
-        "desc": "넓고 높은 천장의 대청마루와 아늑한 침실이 막힘없이 이어지는 독채의 메인 공간입니다.<br />창문을 열면 한옥 특유의 아름다운 지붕선과 바람이 느껴지며, 부드러운 전구색 조명 아래 고품격 휴식을 완성합니다.",
+        "eng": "LIVING HALL",
+        "title": "대청마루 거실",
+        "desc": "높은 서까래 천장의 대청마루와 아늑한 휴식 공간이 막힘없이 이어지는 독채의 중심 공간입니다.<br />창을 열면 한옥 특유의 고아한 지붕선과 마당의 바람이 느껴지며, 은은한 전구색 조명 아래 고즈넉한 시간을 보낼 수 있습니다.",
         "specs": [
-          "넓은 거실, 탁트인 통창의 시원한 시야를 자랑합니다.",
-          "쉬폰커튼의 아름답고 프라이빗한 공간 제공",
-          "개별 욕실 및 어메니티"
-        ]
-      },
-      {
-        "img": "images/주방3.jpg",
-        "title": "주방/KITCHEN",
-        "desc": "가정식 넓은 주방공간 입니다.<br />요리하시는데 불편함 없도록 준비 했습니다.",
-        "specs": [
-          "요리가 즐거운공간",
-          "마음이 편안해지는 전용 정원 조망",
-          "개별 냉난방 시스템 완비"
+          "탁 트인 통창을 통해 마주하는 사계절 마당 풍경",
+          "차담지기가 직접 디자인한 한국화 블라인드와 쉬폰 커튼",
+          "45인치 TV 및 150인치 빔 프로젝터 시네마 환경"
         ]
       },
       {
         "img": "images/침실5.jpg",
-        "title": "침실 (Bed Room)",
-        "desc": "일행 중 조용하고 분리된 수면과 휴식을 원하시는 분들께 가장 완벽한 침실입니다.<br />차분하게 가라앉는 분위기 속에서 창밖의 자연 채광을 온전히 독차지해 보세요.",
+        "eng": "MAIN BEDROOM",
+        "title": "안채 침실",
+        "desc": "아침 햇살이 창호지를 투과해 부드럽게 스며드는 안채의 메인 침실입니다.<br />정갈한 침구와 원목 가구가 어우러져 도심에서 쌓인 피로를 온전히 내려놓을 수 있습니다.",
         "specs": [
-          "독립된 퀸 사이즈 침대",
-          "마음이 편안해지는 전용 정원 조망",
-          "개별 냉난방 시스템 완비"
+          "편안한 숙면을 위한 퀸 사이즈 침대 및 정갈한 침구",
+          "대청마루와 부드럽게 이어지는 문 없는 개방형 동선",
+          "사계절 쾌적한 개별 냉·난방 시스템 완비"
         ]
       },
       {
         "img": "images/침실2.jpg",
-        "title": "침실 (Bed Room)",
-        "desc": "일행 중 조용하고 분리된 수면과 휴식을 원하시는 분들께 가장 완벽한 침실입니다.<br />차분하게 가라앉는 분위기 속에서 창밖의 자연 채광을 온전히 독차지해 보세요.",
+        "eng": "PRIVATE BEDROOM",
+        "title": "사랑채 침실",
+        "desc": "일행 중 더욱 조용하고 분리된 수면과 사색을 원하시는 분들을 위한 독립된 침실 공간입니다.<br />은은하게 스며드는 자연광과 고요한 정원을 바라보며 차분한 휴식을 누리실 수 있습니다.",
         "specs": [
-          "독립된 퀸 사이즈 침대",
-          "마음이 편안해지는 전용 정원 조망",
-          "개별 냉난방 시스템 완비"
+          "프라이빗하게 분리된 퀸 사이즈 독립 침실",
+          "사랑채 전용 미니 정원 조망 창호",
+          "개별 냉·난방 및 간접 조명 완비"
         ]
       },
       {
-        "img": "images/거실1.jpg",
-        "title": "침실 (Bed Room)",
-        "desc": "차분하게 가라앉는 분위기 속에서 창밖의 자연 채광을 온전히 독차지해 보세요.",
+        "img": "images/주방3.jpg",
+        "eng": "DINING & KITCHEN",
+        "title": "다이닝 & 주방",
+        "desc": "가정식 요리를 편안하게 준비하고, 원목 식탁에 둘러앉아 느긋하게 식사와 담소를 나누는 공간입니다.<br />조리 도구부터 와인잔, 다기까지 머무는 분의 편의를 세심히 헤아려 정갈하게 채웠습니다.",
         "specs": [
-          "개방감 있는 넓은거실",
-          "차담지기가 디자인한 한국화 블라인드",
-          "개별 냉난방 시스템 완비"
+          "인덕션 · 밥솥 · 전자레인지 · 수저소독기 등 주방 가전 완비",
+          "접시 · 그릇 · 냄비 · 와인잔 등 정갈한 식기 일체 구비",
+          "원목 다이닝 테이블 및 전용 정원 조망"
+        ]
+      },
+      {
+        "img": "images/바베큐1.jpg",
+        "eng": "COURTYARD & BBQ",
+        "title": "야외 바비큐 & 마당",
+        "desc": "사계절 날씨에 구애받지 않고 이용할 수 있는 개별 바비큐 공간과 돌담·잔디가 어우러진 단독 마당입니다.<br />낮에는 산책과 텃밭 체험을, 밤에는 별빛 아래 프라이빗한 저녁 만찬을 즐기실 수 있습니다.",
+        "specs": [
+          "냉·난방 시설을 갖춘 사계절 전용 개별 바비큐장",
+          "넓은 단독 한옥 마당 및 무료 주차 공간(최대 3대)",
+          "차담지기가 가꾸는 계절별 야생화와 친환경 텃밭"
         ]
       }
     ],
@@ -230,45 +245,47 @@
       ]
     },
     "info": {
-      "subtitle": "Info",
-      "title": "이용 안내",
+      "subtitle": "STAY INFORMATION",
+      "title": "이용 안내 및 구비 물품",
       "specs": [
         {
-          "label": "입실",
-          "value": "오후 3시"
+          "label": "입실 시간",
+          "value": "오후 3시 (15:00)"
         },
         {
-          "label": "퇴실",
-          "value": "오후 12시"
+          "label": "퇴실 시간",
+          "value": "오후 12시 (12:00)"
         },
         {
-          "label": "인원",
-          "value": "기준 2명 · 최대 6명"
+          "label": "수용 인원",
+          "value": "기준 2인 · 최대 6인"
         },
         {
-          "label": "면적",
-          "value": "51㎡"
+          "label": "전용 면적",
+          "value": "51㎡ (약 15.5평)"
         },
         {
-          "label": "객실유형",
-          "value": "독채 · 거실 + 침대방 1 + 개별 야외 바비큐장 + 화장실 1",
+          "label": "객실 유형",
+          "value": "프라이빗 독채 · 대청 거실 + 침대방 + 주방 + 화장실 1 + 개별 야외 바비큐장",
           "wide": "true"
         }
       ],
       "notice": [
-        "예약된 인원 이외의 추가 인원은 입실을 금하며, 환불 또한 불가합니다.",
-        "기준 인원 초과 시 20,000원 추가 요금이 발생됩니다."
+        "예약된 인원 이외의 추가 인원 및 외부인 출입은 불가하며, 사전 협의 없는 추가 입실 시 퇴실 조치될 수 있습니다.",
+        "기준 인원(2인) 초과 시 1인당 20,000원의 추가 요금이 발생합니다. (최대 6인까지 숙박 가능)"
       ],
       "amenitiesHeading": "구비 물품",
       "amenities": [
         {
           "title": "타올류",
+          "eng": "LINEN & TOWELS",
           "items": [
             "페이스타올"
           ]
         },
         {
           "title": "전자제품",
+          "eng": "APPLIANCES",
           "items": [
             "45인치 TV",
             "에어컨 1대",
@@ -280,6 +297,7 @@
         },
         {
           "title": "주방용품",
+          "eng": "KITCHEN & DINING",
           "items": [
             "크기별 접시, 밥그릇, 국그릇",
             "와인잔, 맥주잔, 유리컵, 소주잔",
@@ -291,6 +309,7 @@
         },
         {
           "title": "욕실용품",
+          "eng": "BATH & CARE",
           "items": [
             "샴푸",
             "컨디셔너",
@@ -301,6 +320,7 @@
         },
         {
           "title": "비치물품",
+          "eng": "LIVING ESSENTIALS",
           "items": [
             "휴지",
             "탈취제",
@@ -313,18 +333,25 @@
     }
   },
   "special": {
-    "title": "Special | 차담한옥",
-    "subtitle": "Experience",
+    "title": "특별한 경험 | 차담한옥(차담옥)",
+    "subtitle": "CURATED EXPERIENCE",
     "mainTitle": "특별한 경험",
-    "intro": "차담옥의 한옥스테이는 머무름을 넘어 경험으로 확장됩니다.<br />하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.",
+    "intro": "차담옥의 한옥스테이는 머무름을 넘어 깊은 경험으로 확장됩니다.<br />하루의 속도를 낮추고, 취향에 맞는 순간을 천천히 채워보세요.",
     "items": [
       {
         "img": "images/special_tea.jpg",
         "title": "다도 체험 (Tea Ceremony)",
-        "desc": "엄선한 전통 잎차와 정갈한 다기 세트가 준비되어 있습니다.<br />차를 우리고 음미하는 고요한 시간 속에서 지친 일상의 결을 차분히 정돈해 보세요."
+        "desc": "엄선한 전통 잎차와 정갈한 다기 세트가 준비되어 있습니다.<br />차를 우리고 음미하는 고요한 시간 속에서 지친 일상의 결을 차분히 정돈해 보세요.",
+        "space": "안채 다도실 · 대청마루",
+        "guide": "입실 시 웰컴 티 및 다기 세트 상시 비치"
       },
       {
         "img": "images/다도1.jpg",
+        "title": "다도 체험 (Tea Ceremony)",
+        "desc": "엄선한 전통 잎차와 정갈한 다기 세트가 준비되어 있습니다.<br />차를 우리고 음미하는 고요한 시간 속에서 지친 일상의 결을 차분히 정돈해 보세요."
+      },
+      {
+        "img": "images/다도4.jpg",
         "title": "다도 체험 (Tea Ceremony)",
         "desc": "엄선한 전통 잎차와 정갈한 다기 세트가 준비되어 있습니다.<br />차를 우리고 음미하는 고요한 시간 속에서 지친 일상의 결을 차분히 정돈해 보세요."
       },
@@ -336,22 +363,30 @@
       {
         "img": "images/special_cafe.jpg",
         "title": "카페테리아 & 라운지",
-        "desc": "투숙객 전용 라운지에서 커피와 향긋한 다과를 편안하게 즐기실 수 있습니다.<br />아침 햇살과 한옥 마당의 정취를 바라보며 여유로운 하루를 시작하세요."
+        "desc": "투숙객 전용 라운지에서 커피와 향긋한 다과를 편안하게 즐기실 수 있습니다.<br />아침 햇살과 한옥 마당의 정취를 바라보며 여유로운 하루를 시작하세요.",
+        "space": "투숙객 전용 라운지 공간",
+        "guide": "머무시는 동안 자유롭게 이용 가능"
       },
       {
         "img": "images/special_cinema.jpg",
         "title": "프라이빗 빔 시네마",
-        "desc": "150인치 대형 스크린과 고화질 빔 프로젝터로 나만의 독립 영화관이 완성됩니다.<br />넷플릭스 등 OTT 콘텐츠를 자유롭고 아늑하게 감상하세요."
+        "desc": "150인치 대형 스크린과 고화질 빔 프로젝터로 나만의 독립 영화관이 완성됩니다.<br />넷플릭스 등 OTT 콘텐츠를 자유롭고 아늑하게 감상하세요.",
+        "space": "대청마루 거실 대형 스크린",
+        "guide": "개인 OTT 계정 연동 및 자유 시청"
       },
       {
         "img": "images/special_karaoke.jpg",
         "title": "어쿠스틱 & 엔터테인먼트",
-        "desc": "통기타와 노래방 시설이 완비되어 있어 소중한 이들과 잊지 못할 추억을 남길 수 있습니다.<br />방음과 프라이빗함이 보장된 공간에서 자유롭게 즐겨보세요."
+        "desc": "통기타와 노래방 시설이 완비되어 있어 소중한 이들과 잊지 못할 추억을 남길 수 있습니다.<br />방음과 프라이빗함이 보장된 공간에서 자유롭게 즐겨보세요.",
+        "space": "전용 엔터테인먼트 룸",
+        "guide": "방음 공간 내 22:00 이전 자유 이용"
       },
       {
         "img": "images/bbq1.jpg",
         "title": "사계절 전용 바베큐장",
-        "desc": "냉·난방 시설이 완비된 쾌적한 전용 실내외 바베큐 다이닝 공간입니다.<br />날씨에 구애받지 않고 소중한 분들과 프라이빗한 저녁 만찬을 만끽하세요."
+        "desc": "냉·난방 시설이 완비된 쾌적한 전용 실내외 바베큐 다이닝 공간입니다.<br />날씨에 구애받지 않고 소중한 분들과 프라이빗한 저녁 만찬을 만끽하세요.",
+        "space": "독채 마당 개별 바베큐 다이닝",
+        "guide": "사전 예약 시 숯·그릴 준비 (우천 시 실내 이용)"
       },
       {
         "img": "images/바베큐1.jpg",
@@ -371,6 +406,13 @@
       {
         "img": "images/텃밭1.jpg",
         "title": "유기농 텃밭 힐링",
+        "desc": "차담지기가 정성껏 가꾼 친환경 텃밭에서 신선한 제철 과채소를 직접 만나보실 수 있습니다.<br />자연의 소박한 온기를 직접 느껴보세요.",
+        "space": "한옥 마당 옆 유기농 텃밭",
+        "guide": "제철 작물 수확 및 산책 무료 체험"
+      },
+      {
+        "img": "images/텃밭2.jpg",
+        "title": "유기농 텃밭 힐링",
         "desc": "차담지기가 정성껏 가꾼 친환경 텃밭에서 신선한 제철 과채소를 직접 만나보실 수 있습니다.<br />자연의 소박한 온기를 직접 느껴보세요."
       },
       {
@@ -381,9 +423,9 @@
     ]
   },
   "attractions": {
-    "title": "주변 명소 | 차담한옥",
-    "subtitle": "Attractions",
-    "mainTitle": "주변 가볼만한 곳",
+    "title": "주변 명소 | 차담한옥(차담옥)",
+    "subtitle": "LOCAL GUIDE & DESTINATIONS",
+    "mainTitle": "주변 볼거리",
     "intro": "차담한옥 인근의 아름다운 명소들을 소개합니다.<br />머무시는 동안 여유로운 발걸음으로 주변을 둘러보세요.",
     "items": [
       {
@@ -431,103 +473,187 @@
     ]
   },
   "access": {
-    "title": "오시는 길 | 차담한옥",
-    "subtitle": "Location",
+    "title": "오시는 길 | 차담한옥(차담옥)",
+    "subtitle": "LOCATION & ACCESS",
     "mainTitle": "찾아오시는 길",
     "intro1": "이천의 고요한 골목을 따라 천천히 걸어오시면,",
     "intro2": "한옥의 온기를 담은 차담한옥을 만나실 수 있습니다.",
     "mapImg": "images/map_illustration.jpg",
     "naverLink": "https://map.naver.com/v5/search/경기 이천시 마장면 마도로248번길 32-101",
-    "naverText": "네이버 지도",
+    "naverText": "네이버 지도 길찾기",
     "kakaoLink": "https://map.kakao.com/link/search/경기 이천시 마장면 마도로248번길 32-101",
-    "kakaoText": "카카오맵",
+    "kakaoText": "카카오맵 길찾기",
     "addressTitle": "주소",
     "addressDesc": "이천의 조용한 골목 안쪽에 자리하고 있습니다.",
     "parkingTitle": "주차 안내",
     "parkingDesc": "한옥 마당 안쪽에 전용 주차 공간이 마련되어 있습니다."
   },
   "gallery": {
-    "title": "갤러리 | 차담한옥",
-    "subtitle": "Gallery",
+    "title": "갤러리 | 차담한옥(차담옥)",
+    "subtitle": "PHOTO ARCHIVE",
     "mainTitle": "공간을 담다",
     "intro": "빛이 머무는 대청, 계절이 스며드는 마당, 차담한옥의 하루를 담았습니다.<br />이미지를 클릭하면 원본 크기로 감상할 수 있습니다.",
     "photos": [
       {
         "img": "images/한옥1.jpg",
+        "category": "exterior",
         "alt": "고즈넉한 한옥 외관",
         "caption": "자연과 어우러진 전통 한옥의 고아한 선"
       },
       {
         "img": "images/마당1.jpg",
+        "category": "exterior",
         "alt": "넓은 한옥 마당",
         "caption": "사계절의 볕이 온전히 스며드는 전용 마당"
       },
       {
-        "img": "images/봄4.jpg",
-        "alt": "봄날의 창밖 풍경",
-        "caption": "목련꽃이 활짝 피어나는 한옥의 봄"
-      },
-      {
         "img": "images/거실8.jpg",
+        "category": "interior",
         "alt": "대청마루 거실",
         "caption": "높은 서까래와 넓은 통창이 만드는 개방감"
       },
       {
-        "img": "images/침실2.jpg",
-        "alt": "아늑한 침실",
-        "caption": "차분한 쉼과 숙면을 선사하는 독립 침실"
+        "img": "images/침실5.jpg",
+        "category": "interior",
+        "alt": "햇살 스미는 안채 침실",
+        "caption": "정갈한 침구와 은은한 자연광이 머무는 휴식처"
       },
       {
         "img": "images/다도1.jpg",
+        "category": "seasons",
         "alt": "정갈한 다도 공간",
         "caption": "따뜻한 잎차를 우리며 일상을 정돈하는 시간"
       },
       {
-        "img": "images/주방1.jpg",
-        "alt": "가정식 주방 공간",
-        "caption": "정갈한 식기와 조리도구가 완비된 주방"
+        "img": "images/주방3.jpg",
+        "category": "interior",
+        "alt": "다이닝과 주방",
+        "caption": "원목 테이블과 정갈한 식기가 준비된 주방"
       },
       {
-        "img": "images/special_cafe.jpg",
-        "alt": "투숙객 전용 라운지",
-        "caption": "향긋한 커피와 음악이 흐르는 홈카페"
+        "img": "images/봄1.jpg",
+        "category": "seasons",
+        "alt": "봄꽃이 피어난 마당",
+        "caption": "처마 너머로 봄빛이 가득 내려앉은 풍경"
+      },
+      {
+        "img": "images/봄4.jpg",
+        "category": "seasons",
+        "alt": "봄날의 창밖 풍경",
+        "caption": "목련꽃이 활짝 피어나는 한옥의 봄"
+      },
+      {
+        "img": "images/여름1.jpg",
+        "category": "seasons",
+        "alt": "푸르른 여름 한옥",
+        "caption": "짙은 녹음과 처마 그늘이 어우러진 여름날"
       },
       {
         "img": "images/가을1.jpg",
+        "category": "seasons",
         "alt": "가을의 차담옥",
         "caption": "단풍과 노을빛이 아름답게 물드는 가을 정취"
       },
       {
+        "img": "images/겨울1.jpg",
+        "category": "seasons",
+        "alt": "눈 내린 겨울 한옥",
+        "caption": "소복한 설경이 기와지붕을 덮은 고요한 겨울"
+      },
+      {
         "img": "images/겨울아궁이.jpg",
+        "category": "seasons",
         "alt": "겨울날 아궁이와 불멍",
         "caption": "타닥타닥 장작 타는 소리와 따스한 온기"
       },
       {
+        "img": "images/마당2.jpg",
+        "category": "exterior",
+        "alt": "돌담과 앞마당 전경",
+        "caption": "오직 한 팀만 거닐 수 있는 고요한 마당 길"
+      },
+      {
+        "img": "images/마당5.jpg",
+        "category": "exterior",
+        "alt": "처마와 야외 공간",
+        "caption": "한옥의 처마선 아래 펼쳐진 평화로운 정원"
+      },
+      {
+        "img": "images/침실2.jpg",
+        "category": "interior",
+        "alt": "사랑채 침실",
+        "caption": "차분한 쉼과 숙면을 선사하는 독립 침실"
+      },
+      {
+        "img": "images/침실1.jpg",
+        "category": "interior",
+        "alt": "창호가 있는 침실",
+        "caption": "한지 창호 사이로 아늑한 빛이 스며드는 방"
+      },
+      {
+        "img": "images/거실1.jpg",
+        "category": "interior",
+        "alt": "한국화 블라인드 거실",
+        "caption": "차담지기가 디자인한 창호와 고재가 어우러진 공간"
+      },
+      {
+        "img": "images/주방1.jpg",
+        "category": "interior",
+        "alt": "가정식 주방 공간",
+        "caption": "정갈한 식기와 조리도구가 완비된 주방"
+      },
+      {
+        "img": "images/다도4.jpg",
+        "category": "seasons",
+        "alt": "찻잔과 다기 세트",
+        "caption": "차를 음미하며 호흡을 가다듬는 찻자리"
+      },
+      {
+        "img": "images/다도6.jpg",
+        "category": "seasons",
+        "alt": "창가 찻자리",
+        "caption": "창밖 풍경을 벗 삼아 즐기는 오후의 차 한 잔"
+      },
+      {
+        "img": "images/special_cafe.jpg",
+        "category": "interior",
+        "alt": "투숙객 전용 라운지",
+        "caption": "향긋한 커피와 음악이 흐르는 홈카페"
+      },
+      {
         "img": "images/바베큐1.jpg",
+        "category": "exterior",
         "alt": "사계절 전용 바베큐장",
         "caption": "날씨 걱정 없이 프라이빗하게 즐기는 만찬"
       },
       {
+        "img": "images/바베큐2.jpg",
+        "category": "exterior",
+        "alt": "야외 바베큐 다이닝",
+        "caption": "자연과 함께하는 저녁 식사 공간"
+      },
+      {
         "img": "images/텃밭1.jpg",
+        "category": "exterior",
         "alt": "친환경 유기농 텃밭",
         "caption": "차담지기가 정성으로 가꾼 신선한 제철 채소"
       }
     ]
   },
   "reserve": {
-    "title": "예약 및 문의 | 차담한옥",
-    "subtitle": "Reservation",
+    "title": "예약 및 문의 | 차담한옥(차담옥)",
+    "subtitle": "RESERVATION & CONCIERGE",
     "mainTitle": "예약 및 문의",
     "intro": "예약은 네이버 예약으로 간편하게 진행됩니다.<br />숙박 전 문의가 필요한 경우 전화 또는 카카오톡으로 편하게 연락해 주세요.",
-    "reserveTitle": "실시간 예약",
-    "reserveDesc": "원하시는 날짜와 인원을 선택한 뒤, 네이버 예약 페이지에서 결제를 완료해 주세요.",
-    "naverBtn": "네이버 예약 바로가기",
+    "reserveTitle": "네이버 실시간 예약",
+    "reserveDesc": "실시간 잔여 객실 캘린더를 확인하시고 네이버페이 및 카드로 간편하게 예약을 확정하실 수 있습니다.",
+    "naverBtn": "네이버 실시간 예약하기",
     "naverLink": "https://naver.me/Gjy3T4nj",
-    "contactTitle": "문의하기",
-    "contactDesc": "운영 시간 내 순차적으로 신속하게 안내드립니다.",
-    "phoneBtn": "전화 문의",
+    "contactTitle": "맞춤 상담 및 전화 문의",
+    "contactDesc": "연박 할인, 소규모 모임·워크숍 대관 및 특별한 요청 사항은 전화 또는 카카오톡으로 편하게 문의해 주세요.",
+    "phoneBtn": "전화 문의하기",
     "phoneLink": "tel:01038928494",
-    "kakaoBtn": "카카오톡 상담",
+    "kakaoBtn": "카카오톡 1:1 문의",
     "kakaoLink": "https://pf.kakao.com/_xxxxxx"
   }
 }

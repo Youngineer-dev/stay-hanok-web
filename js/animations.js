@@ -3,8 +3,8 @@
   ---------------------------------------------------- */
 const _observerOptions = {
   root: null,
-  rootMargin: "0px",
-  threshold: 0.15,
+  rootMargin: "0px 0px -24px 0px",
+  threshold: 0.05,
 };
 
 const _fadeObserver = new IntersectionObserver((entries, obs) => {
@@ -25,7 +25,7 @@ const _ensureRevealClass = (el) => {
 const _delayToken = getComputedStyle(document.documentElement)
   .getPropertyValue("--motion-enter-delay-step")
   .trim();
-const _delayMs = Number.parseFloat(_delayToken) || 80;
+const _delayMs = Number.parseFloat(_delayToken) || 70;
 
 const _applyStagger = (selector) => {
   const items = document.querySelectorAll(selector);
@@ -36,14 +36,14 @@ const _applyStagger = (selector) => {
   });
 };
 
-// 동적으로 추가된 요소도 감지할 수 있도록 전역 노출
 window.observeFadeUps = function () {
   document.querySelectorAll(".fade-up, .fade-in").forEach((el) => {
     _fadeObserver.observe(el);
   });
-  _applyStagger(".special-grid .special-item");
-  _applyStagger(".features-grid .feature-card");
-  _applyStagger(".open-plan-track .open-plan-step");
+  _applyStagger(".journal-card");
+  _applyStagger(".pillar-item");
+  _applyStagger(".open-plan-step");
+  _applyStagger(".attraction-editorial-card");
 };
 
 document.addEventListener("DOMContentLoaded", function () {
